@@ -214,6 +214,9 @@ progress {
     #bgWrapper{
         filter: url(#goo);
         position: absolute;
+        box-sizing: content-box;
+        margin: 0;
+        left: 0;
         width: 100%;
         height: calc(var(--bubble-diameter));
         bottom: var(--menu-category-height);
