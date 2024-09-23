@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./magnific/magnific-popup.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Font-awesome 6.6 -->
+    <script src="fontawesome-free-6.6.0-web/js/all.min.js"></script>
+    <link rel="stylesheet" href="./fontawesome-free-6.6.0-web/css/fontawesome.min.css">
+
+    <!--gsap - TEST-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"></script>
+</head>
+<body ondragover="drag_over(event)" ondrop="drop(event)">
+    <div id="txt2" draggable="true" ondragstart="drag_start(event)" class="draggable"> Drag me</div>
+
+    <!--PROGRESS BAR-->
+    <!--TODO: add visual clue for page section & title-->
+    <!--TODO: add interactive elements to allow navigation upon click-->
+    <div>
+        <progress>
+        </progress>
+        <!--<div class="progress-label"></div>-->
+    </div>
+    <!--end of PROGRESS BAR-->
+
+    <!--&lt;!&ndash;NAV BAR&ndash;&gt;-->
+    <!--<section id="tab-navbar">-->
+    <!--    <button id="tab-navbar-button" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav">-->
+    <!--        <div id="bar1" class="bar"></div>-->
+    <!--        <div id="bar2" class="bar"></div>-->
+    <!--        <div id="bar3" class="bar"></div>-->
+    <!--    </button>-->
+    <!--    <div>-->
+    <!--        <ul id="nav" class="nav">-->
+    <!--            <li><a href="#">Home</a></li>-->
+    <!--            <li><a href="#">About</a></li>-->
+    <!--            <li><a href="#">Menu</a></li>-->
+    <!--            <li><a href="#">Contact</a></li>-->
+    <!--        </ul>-->
+    <!--    </div>-->
+    <!--</section>-->
+    <!--&lt;!&ndash;end of NAV BAR&ndash;&gt;-->
+
+    <!--WELCOME PANE-->
+    <!--TODO: redesign text (position, font, size, color)-->
+    <section class="welcome-pane">
+        <div style="display:grid; grid-template-columns: repeat(5, 1fr)">
+            <a style="grid-column: 4/ span 2" href="tel:(949) 328-9951">
+                <h3>
+                    <i class="fa-solid fa-phone"></i> Call us now to place an order of happiness!
+                </h3>
+            </a>
+        </div>
+        <div class="hero">
+            <h1 class="title">Alo Asian Kitchen</h1>
+            <h2 class="title">Where you find the right Pho</h2>
+            <!--<a href="#" class="hero-button pulsate">Book a table</a>-->
+        </div>
+    </section>
+    <!--end of WELCOME PANE-->
+
+    <!--ABOUT-->
+    <section id="about">
+        <div>
+            <h2 class="title-text">About Us</h2>
+        </div>
+        <div class="about-center">
+            <!---Single item-->
+            <article class="about">
+                <div class="about-icon"><i class="fa-solid fa-mug-hot"></i></div>
+                <div class="about-text">
+                    <h2 class="about-subtitle">Drinks</h2>
+                    <p class="about-info">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Quisquam, temporibus!</p>
+                </div>
+            </article>
+            <!--End of single item-->
+            <!---Single item-->
+            <article class="about">
+                <div class="about-icon"><i class="fas fa-utensils"></i></div>
+                <div class="about-text">
+                    <h2 class="about-subtitle">Healthy Food</h2>
+                    <p class="about-info">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Quisquam, temporibus!</p>
+                </div>
+            </article>
+            <!--End of single item-->
+            <!---Single item-->
+            <article class="about">
+                <div class="about-icon"><i class="fas fa-mortar-pestle"></i></div>
+                <div class="about-text">
+                    <h2 class="about-subtitle">Organic Food</h2>
+                    <p class="about-info">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Quisquam, temporibus!</p>
+                </div>
+            </article>
+            <!--End of single item-->
+            <!---Single item-->
+            <article class="about">
+                <div class="about-icon"><i class="fas fa-drumstick-bite"></i></div>
+                <div class="about-text">
+                    <h2 class="about-subtitle">White Meat</h2>
+                    <p class="about-info">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Quisquam, temporibus!</p>
+                </div>
+            </article>
+            <!--End of single item-->
+            <!---Single item-->
+            <article class="about">
+                <div class="about-icon"><i class="fas fa-fish"></i></div>
+                <div class="about-text">
+                    <h2 class="about-subtitle">Sea Food</h2>
+                    <p class="about-info">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Quisquam, temporibus!</p>
+                </div>
+            </article>
+            <!--End of single item-->
+            <!---Single item-->
+            <article class="about">
+                <div class="about-icon"><i class="fas fa-pepper-hot "></i></div>
+                <div class="about-text">
+                    <h2 class="about-subtitle">Hot & Spicy</h2>
+                    <p class="about-info">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Quisquam, temporibus!</p>
+                </div>
+            </article>
+            <!--End of single item-->
+        </div>
+    </section>
+    <!--end of ABOUT-->
+
+    <!--MENU-->
+    <!--TODO: add filter function to menu buttons-->
+    <!--TODO: add menu with scrolling-->
+    <!--<section class="menu" id="menu">-->
+    <!--    <article class="menu-image"></article>-->
+    <!--    <article class="menu-text">-->
+    <!--        <div class="menu-text-center">-->
+    <!--            <h1>Our Menu</h1>-->
+    <!--            <p>Lorem ipsum dolor, sit amet consectetur adipisicing-->
+    <!--                elit. Aut omnis nam iusto praesentium inventore vitae-->
+    <!--                esse tempora repellendus.</p>-->
+    <!--            <a href="#">Explore</a>-->
+    <!--        </div>-->
+    <!--    </article>-->
+    <!--</section>-->
+
+    <div style="display: flex; justify-content: center">
+        <div id="menuContainer" class="menu">
+            <div id="menuContent">
+                <h1 class="ice-cream-item">Menu Item</h1>
+                <h1 class="ice-cream-item">Menu Item</h1>
+                <h1 class="ice-cream-item">Menu Item</h1>
+                <h1 class="ice-cream-item">Menu Item</h1>
+                <h1 class="ice-cream-item">Menu Item</h1>
+                <h1 class="ice-cream-item">Menu Item</h1>
+                <h1 class="ice-cream-item">Menu Item</h1>
+                <h1 class="ice-cream-item">Menu Item</h1>
+                <h1 class="ice-cream-item">Menu Item</h1>
+                <h1 class="ice-cream-item">Menu Item</h1>
+                <h1 class="ice-cream-item">Menu Item</h1>
+                <h1 class="ice-cream-item">Menu Item</h1>
+            </div>
+            <div id="menuCategory">
+                <div id="menuCategoryBubbleWrapper" class="flex-menu-category">
+                    <div id="bubble1" class="bubble"><span class="icon"><img style="width: 14px; height: 20px" src="noodles.png"/></span></div>
+                    <div id="bubble2" class="bubble"><span class="icon"><i class="fa-solid fa-bowl-food"></i></span></div>
+                    <div id="bubble3" class="bubble"><span class="icon"><i class="fa-solid fa-ice-cream"></i></span></div>
+                    <div id="bubble4" class="bubble"><span class="icon"><img style="width: 14px; height: 30px" src="https://cdn4.iconfinder.com/data/icons/drinks-solid-icons-vol-1/72/16-1024.png"/></span></div>
+                </div>
+                <div id="menuCategoryIconWrapper" class="flex-menu-category">
+                    <div id="menu1" class="menuElement" onclick="move('1', '#ffcc80')"><img style="opacity:50%;max-width: 20px" src="noodles.png"/></div>
+                    <div id="menu2" class="menuElement" onclick="move('2', '#81d4fa')"><i class="fa-solid fa-bowl-food"></i></div>
+                    <div id="menu3" class="menuElement" onclick="move('3', '#c5e1a5')"><i class="fa-solid fa-ice-cream"></i></div>
+                    <div id="menu4" class="menuElement" onclick="move('4', '#ce93d8')"><img style="max-width: 20px" src="https://cdn4.iconfinder.com/data/icons/drinks-solid-icons-vol-1/72/16-1024.png"/></i></div>
+                </div>
+            </div>
+            <div id="bgWrapper">
+                <div id="bg"></div>
+                <div id="bgBubble"></div>
+            </div>
+        </div>
+    </div>
+    <svg width="0" height="0">
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur" id="blurFilter"></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 30 -15" result="goo"></feColorMatrix>
+                <feComposite in="SourceGraphic" in2="goo" operator="atop"></feComposite>
+            </filter>
+        </defs>
+    </svg>
+    <!--end of MENU-->
+
+    <!--Misc.-->
+    <div>
+    <!--&lt;!&ndash;MENU ITEM COUNTER&ndash;&gt;-->
+    <!--<section id="numbers">-->
+    <!--    <article class="number">-->
+    <!--        <i class="fa
+    s fa-cloud-meatball"></i>-->
+    <!--        <p>50</p>-->
+    <!--        <h3> Meat dishes</h3>-->
+    <!--    </article>-->
+    <!--    <article class="number">-->
+    <!--        <i class="fas fa-cheese"></i>-->
+    <!--        <p>35</p>-->
+    <!--        <h3> Cheese Variations</h3>-->
+    <!--    </article>-->
+    <!--    <article class="number">-->
+    <!--        <i class="fas fa-pizza-slice"></i>-->
+    <!--        <p>25</p>-->
+    <!--        <h3> Pizzas</h3>-->
+    <!--    </article>-->
+    <!--    <article class="number">-->
+    <!--        <i class="fas fa-ice-cream"></i>-->
+    <!--        <p>40</p>-->
+    <!--        <h3> Desserts</h3>-->
+    <!--    </article>-->
+    <!--</section>-->
+    <!--&lt;!&ndash;end of MENU ITEM COUNTER&ndash;&gt;-->
+
+    <!--&lt;!&ndash;FOOD CARD&ndash;&gt;-->
+    <!--<section id="food">-->
+    <!--    <div>-->
+    <!--        <h2 class="title-text"> Food Fusion</h2>-->
+    <!--    </div>-->
+    <!--    <div class="food-container">-->
+    <!--        &lt;!&ndash;======Card Start &#45;&#45;&#45;&#45;============&ndash;&gt;-->
+    <!--        <article class="food-card">-->
+    <!--            <img src="https://images.pexels.com/photos/574111/pexels-photo-574111.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="food-img"alt="">-->
+    <!--            <div class="img-text">-->
+    <!--                <h1>Breakfast</h1>-->
+    <!--            </div>-->
+    <!--            <div class="img-footer">-->
+    <!--                <div class="footer-icon">-->
+    <!--                    <i class="fas fa-dollar-sign">25</i>-->
+    <!--                </div>-->
+    <!--                <div class="footer-btn">-->
+    <!--                    <button type="button"class="food-btn">Order Now</button>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </article>-->
+    <!--        <article class="food-card">-->
+    <!--            <img src="https://images.pexels.com/photos/14457194/pexels-photo-14457194.jpeg?auto=compress&cs=tinysrgb&w=600" class="food-img"alt="">-->
+    <!--            <div class="img-text">-->
+    <!--                <h1>Lunch</h1>-->
+    <!--            </div>-->
+    <!--            <div class="img-footer">-->
+    <!--                <div class="footer-icon">-->
+    <!--                    <i class="fas fa-dollar-sign">35</i>-->
+    <!--                </div>-->
+    <!--                <div class="footer-btn">-->
+    <!--                    <button type="button"class="food-btn">Order Now</button>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </article>-->
+    <!--        <article class="food-card">-->
+    <!--            <img src="https://images.pexels.com/photos/410648/pexels-photo-410648.jpeg?auto=compress&cs=tinysrgb&w=600" class="food-img"alt="">-->
+    <!--            <div class="img-text">-->
+    <!--                <h1>Dinner</h1>-->
+    <!--            </div>-->
+    <!--            <div class="img-footer">-->
+    <!--                <div class="footer-icon">-->
+    <!--                    <i class="fas fa-dollar-sign">45</i>-->
+    <!--                </div>-->
+    <!--                <div class="footer-btn">-->
+    <!--                    <button type="button"class="food-btn">Order Now</button>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </article>-->
+    <!--    </div>-->
+
+
+
+    <!--</section>-->
+    <!--&lt;!&ndash;end of FOOD CARD&ndash;&gt;-->
+
+    <!--&lt;!&ndash;FOOD GALLERY&ndash;&gt;-->
+    <!--<section id="gallery">-->
+    <!--    <div>-->
+    <!--        <h2 class="title-text">Main Cuisines</h2>-->
+    <!--    </div>-->
+    <!--    <div id="gallery-center">-->
+    <!--        <article class="gallery-item">-->
+    <!--            <a href="https://images.pexels.com/photos/842142/pexels-photo-842142.jpeg?auto=compress&cs=tinysrgb&w=600g">-->
+    <!--                <img src="https://images.pexels.com/photos/842142/pexels-photo-842142.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">-->
+    <!--            </a>-->
+    <!--        </article>-->
+    <!--        <article class="gallery-item">-->
+    <!--            <a href="https://images.pexels.com/photos/842545/pexels-photo-842545.jpeg?auto=compress&cs=tinysrgb&w=600">-->
+    <!--                <img src="https://images.pexels.com/photos/842545/pexels-photo-842545.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">-->
+    <!--            </a>-->
+    <!--        </article>-->
+    <!--        <article class="gallery-item">-->
+    <!--            <a href="https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&w=600">-->
+    <!--                <img src="https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">-->
+    <!--            </a>-->
+    <!--        </article>-->
+    <!--        <article class="gallery-item">-->
+    <!--            <a href="https://images.pexels.com/photos/3850838/pexels-photo-3850838.jpeg?auto=compress&cs=tinysrgb&w=600">-->
+    <!--                <img src="https://images.pexels.com/photos/3850838/pexels-photo-3850838.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">-->
+    <!--            </a>-->
+    <!--        </article>-->
+    <!--        <article class="gallery-item">-->
+    <!--            <a href="https://images.pexels.com/photos/1263870/pexels-photo-1263870.jpeg?auto=compress&cs=tinysrgb&w=600">-->
+    <!--                <img src="https://images.pexels.com/photos/1263870/pexels-photo-1263870.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">-->
+    <!--            </a>-->
+    <!--        </article>-->
+    <!--        <article class="gallery-item">-->
+    <!--            <a href="https://images.pexels.com/photos/2773940/pexels-photo-2773940.jpeg?auto=compress&cs=tinysrgb&w=600">-->
+    <!--                <img src="https://images.pexels.com/photos/2773940/pexels-photo-2773940.jpeg?auto=compress&cs=tinysrgb&w=600">-->
+    <!--            </a>-->
+    <!--        </article>-->
+    <!--        <article class="gallery-item">-->
+    <!--            <a href="https://images.pexels.com/photos/858508/pexels-photo-858508.jpeg?auto=compress&cs=tinysrgb&w=600">-->
+    <!--                <img src="https://images.pexels.com/photos/858508/pexels-photo-858508.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">-->
+    <!--            </a>-->
+    <!--        </article>-->
+    <!--        <article class="gallery-item">-->
+    <!--            <a href="https://images.pexels.com/photos/2059151/pexels-photo-2059151.jpeg?auto=compress&cs=tinysrgb&w=600">-->
+    <!--                <img src="https://images.pexels.com/photos/2059151/pexels-photo-2059151.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">-->
+    <!--            </a>-->
+    <!--        </article>-->
+    <!--    </div>-->
+    <!--</section>-->
+    <!--&lt;!&ndash;end of FOOD GALLERY&ndash;&gt;-->
+    </div>
+
+    <!--OPERATION HOURS-->
+    <!--TODO: add table with 2 rows, header for days of week, the 2nd row is the hours, merge days with similar hours, let first day of week be Monday-->
+    <section id="operation-hours">
+    </section>
+    <!--end of OPERATION HOURS-->
+
+    <!--Social Icons-->
+    <section id="social-icons">
+
+        <a href="https://www.yelp.com/biz/alo-asian-kitchen-laguna-niguel">
+            <i style="color:red" class="fa-brands fa-yelp"></i>
+        </a>
+        <a href="https://www.facebook.com/ALOASIANKITCHENLN/">
+            <i class="fa-brands fa-facebook-f facebook"></i>
+        </a>
+        <!--<a href="#">-->
+        <!--    <i class="fa-brands fa-twitter twitter"></i></a>-->
+        <a href="https://www.instagram.com/aloasiankitchen/">
+            <i class="fa-brands fa-instagram instagram"></i></a>
+        <!--<a href="#">-->
+        <!--    <i class="fa-brands fa-google-plus plus"></i></a>-->
+    </section>
+    <!--End of Social Icons-->
+
+    <!--FOOTER-->
+    <footer class="footer">
+        <div class="section-center">
+            <p class="text">
+                &copy; <span>AAK @ 2024</span>
+            </p>
+        </div>
+    </footer>
+    <!--end of FOOTER-->
+
+    <!--SCRIPTS-->
+    <section>
+        <!--Magnific POPup Jquery also-->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="magnific/jquery.magnific-popup.min.js"></script>
+        <script src="magnific/magnific.js"></script>
+
+        <script src="progressBar.js"></script>
+        <script src="menuByCategory.js"></script>
+        <script src="dragElementsOnScreen.js"></script>
+        <script>
+            // $(document).ready(function() {
+            //
+            //     $('button').on('click', function() {
+            //         if($(this).hasClass('nav-button')) {
+            //             $('nav div').addClass('show');
+            //         } else if($(this).hasClass('exit-menu')) {
+            //             $('nav div').removeClass('show');
+            //         }
+            //         else if($(this).hasClass('to-top')) {
+            //             $('html,body').animate({scrollTop:0}, 'slow');
+            //         }
+            //     });
+            //
+            //     AOS.init({
+            //         duration: 1800,
+            //         easing: 'ease'
+            //     });
+            //
+            // })
+        </script>
+        <script>
+            $(document).ready(function() {
+
+                // Update visual of menu bar button
+                const tabNavbarButton = $('#tab-navbar-button');
+                const tabNavbar = $('#tab-navbar');
+                tabNavbarButton.on('click', () => {
+                    tabNavbar.toggleClass("change")
+                });
+            });
+        </script>
+
+    </section>
+    <!--end of SCRIPTS-->
+
+</body>
+</html>
