@@ -24,8 +24,9 @@
     <!--gsap - TEST-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"></script>
 </head>
+<!--<body>-->
 <body ondragover="drag_over(event)" ondrop="drop(event)">
-    <div id="txt2" draggable="true" ondragstart="drag_start(event)" class="draggable"> Drag me</div>
+    <div id="dragme" draggable="true" ondragstart="drag_start(event)" class="draggable"> Drag me</div>
 
     <!--PROGRESS BAR-->
     <!--TODO: add visual clue for page section & title-->
@@ -177,16 +178,16 @@
             </div>
             <div id="menuCategory">
                 <div id="menuCategoryBubbleWrapper" class="flex-menu-category">
-                    <div id="bubble1" class="bubble"><span class="icon"><img style="width: 14px; height: 20px" src="noodles.png"/></span></div>
+                    <div id="bubble1" class="bubble"><span class="icon"><i class="fa-solid fa-pizza-slice"></i></span></div>
                     <div id="bubble2" class="bubble"><span class="icon"><i class="fa-solid fa-bowl-food"></i></span></div>
                     <div id="bubble3" class="bubble"><span class="icon"><i class="fa-solid fa-ice-cream"></i></span></div>
-                    <div id="bubble4" class="bubble"><span class="icon"><img style="width: 14px; height: 30px" src="https://cdn4.iconfinder.com/data/icons/drinks-solid-icons-vol-1/72/16-1024.png"/></span></div>
+                    <div id="bubble4" class="bubble"><span class="icon"><i class="fa-solid fa-glass-water"></i></span></div>
                 </div>
                 <div id="menuCategoryIconWrapper" class="flex-menu-category">
-                    <div id="menu1" class="menuElement" onclick="move('1', '#ffcc80')"><img style="opacity:50%;max-width: 20px" src="noodles.png"/></div>
+                    <div id="menu1" class="menuElement" onclick="move('1', '#ffcc80')"><i class="fa-solid fa-pizza-slice"></i></div>
                     <div id="menu2" class="menuElement" onclick="move('2', '#81d4fa')"><i class="fa-solid fa-bowl-food"></i></div>
                     <div id="menu3" class="menuElement" onclick="move('3', '#c5e1a5')"><i class="fa-solid fa-ice-cream"></i></div>
-                    <div id="menu4" class="menuElement" onclick="move('4', '#ce93d8')"><img style="max-width: 20px" src="https://cdn4.iconfinder.com/data/icons/drinks-solid-icons-vol-1/72/16-1024.png"/></i></div>
+                    <div id="menu4" class="menuElement" onclick="move('4', '#ce93d8')"><i class="fa-solid fa-glass-water"></i></div>
                 </div>
             </div>
             <div id="bgWrapper">

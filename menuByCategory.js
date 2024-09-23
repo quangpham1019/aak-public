@@ -5,13 +5,7 @@ function move(id, color) {
     var curBubble = $(`#bubble${id}`);
     var curBubbleDiameter = curBubble.css("width");
     var offset = curBubble.offset();
-    console.log(offset);
-    let curBubbleIconWidth = curBubble.find(".icon").css("width");
-    var bgBubble = $("#bgBubble");
-    var bgBubbleDiameter = bgBubble.css("width");
-
     let leftOffset = offset.left ;
-
 
     console.log(leftOffset);
     var tl = gsap.timeline();
@@ -34,7 +28,6 @@ function move(id, color) {
 function changeMenuContent(id) {
     var menuContent = $(`#menuContent`);
     menuContent.removeClass();
-    menuContent.find(".overlay").remove();
 
     var menuDict = {
         1: "soup-item-wrapper",
@@ -44,32 +37,5 @@ function changeMenuContent(id) {
     }
 
     menuContent.addClass(menuDict[id]);
-    menuContent.addClass("gridVisualizer");
-    enhanceGridVisual();
-
     // return true;
-}
-
-function enhanceGridVisual() {
-    var grid = document.querySelector('.gridVisualizer');
-    var overlay = document.createElement("div");
-    overlay.className = 'overlay';
-    overlay.style.gridTemplateRows = window.getComputedStyle(grid, null).getPropertyValue("grid-template-rows");
-    overlay.style.gridTemplateColumns = window.getComputedStyle(grid, null).getPropertyValue("grid-template-columns");
-    grid.appendChild(overlay);
-
-    /* Get the number of items*/
-    var Nc = overlay.style.gridTemplateColumns.split(" ").length;
-    var Nr = overlay.style.gridTemplateRows.split(" ").length;
-    /* Create placeholder items*/
-    for (var i = 0; i < Nc * Nr; i++) {
-        var d = document.createElement("div");
-        overlay.appendChild(d);
-    }
-
-    // /* Update the values on hover*/
-    // grid.addEventListener('mouseover', function() {
-    //     overlay.style.gridTemplateRows = window.getComputedStyle(grid, null).getPropertyValue("grid-template-rows");
-    //     overlay.style.gridTemplateColumns = window.getComputedStyle(grid, null).getPropertyValue("grid-template-columns");
-    // })
 }
