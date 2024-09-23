@@ -237,6 +237,7 @@ progress {
             width: var(--bg-bubble-diameter);
             height: var(--bg-bubble-diameter);
             border-radius: 50%;
+            z-index: 1;
             /*bottom: -50px;*/
             /*left: 50px;*/
             /*transform: translateX(-50%);*/

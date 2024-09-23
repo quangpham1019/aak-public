@@ -22,24 +22,20 @@ $(document).ready(function () {
     })
 
     $("#menu3").click();
-
-    const heightOutput = document.querySelector("#height");
-    const widthOutput = document.querySelector("#width");
-
-    function reportWindowSize() {
-        heightOutput.textContent = window.innerHeight;
-        widthOutput.textContent = window.innerWidth;
-        console.log("resizing window");
-    }
-
-    window.onresize = reportWindowSize;
 });
 
 function move(id, color, leftOffset) {
     let curBubble = $(`#bubble${id}`);
+    let bgBubble = $("#bgBubble");
+
     let curBubbleDiameter = curBubble.css("width");
-    let bgBubbleDiameter = $("#bgBubble").css("width");
+    let bgBubbleDiameter = bgBubble.css("width");
+
     let additionalOffset = (parseInt(bgBubbleDiameter) - parseInt(curBubbleDiameter))/2;
+    let totalLeftOffset = leftOffset-additionalOffset;
+
+    let bgWrapperWidth = $("#bgWrapper").css("width");
+    let percentageLeftOffset = (totalLeftOffset/parseInt(bgWrapperWidth))*100;
 
     let tl = gsap.timeline();
     tl.to("#bgBubble", {duration: 0.15, bottom: "-30px", ease: "ease-out"}, 0)
@@ -48,7 +44,7 @@ function move(id, color, leftOffset) {
         .to("#bubble3", {duration: 0.1, y: "120%", boxShadow: 'none', ease: "ease-out",}, 0)
         .to("#bubble4", {duration: 0.1, y: "120%", boxShadow: 'none', ease: "ease-out",}, 0)
         .to(".icon", {duration: 0.05, opacity: 0, ease: "ease-out",}, 0)
-        .to("#bgBubble", {duration: 0.2, left: leftOffset - additionalOffset, ease: "ease-in-out"}, 0.1)
+        .to("#bgBubble", {duration: 0.2, left: `${percentageLeftOffset}%`, ease: "ease-in-out"}, 0.1)
         .to("#bgBubble", {duration: 0.15, bottom: `-${curBubbleDiameter}`, ease: "ease-out"}, '-=0.2')
         .to(`#bubble${id}`, {
             duration: 0.15,
