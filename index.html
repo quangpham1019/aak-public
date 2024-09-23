@@ -24,9 +24,32 @@
     <!--gsap - TEST-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"></script>
 </head>
-<!--<body>-->
-<body ondragover="drag_over(event)" ondrop="drop(event)">
-    <div id="dragme" draggable="true" ondragstart="drag_start(event)" class="draggable"> Drag me</div>
+<body>
+<!--<body ondragover="drag_over(event)" ondrop="drop(event)">-->
+    <div id="dragme"
+         draggable="true"
+         ondragstart="drag_start(event)"
+         class="draggable"
+         style="width: 50%">
+        <!--<ul class="ruler"><li>1</li><li>2</li><li>3</li><li>4</li></ul>-->
+
+        <div>
+            <ul class="ruler" data-items="20"></ul>
+        </div>
+
+        <div>
+            <label for="spacing">Spacing</label>
+            <select id="spacing">
+                <option>1cm</option>
+                <option>2cm</option>
+                <option>1in</option>
+                <option>1em</option>
+                <option>20px</option>
+            </select>
+        </div>
+    </div>
+
+
 
     <!--PROGRESS BAR-->
     <!--TODO: add visual clue for page section & title-->
@@ -386,6 +409,7 @@
         <script src="progressBar.js"></script>
         <script src="menuByCategory.js"></script>
         <script src="dragElementsOnScreen.js"></script>
+        <script src="onScreenRuler.js"></script>
         <script>
             // $(document).ready(function() {
             //

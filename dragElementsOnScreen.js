@@ -5,7 +5,7 @@ function drag_start(event) {
 }
 function drop(event) {
     var offset = event.dataTransfer.getData("text/plain").split(',');
-    var dm = document.getElementById('txt2');
+    var dm = document.getElementById('dragme');
     dm.style.left = (event.clientX + parseInt(offset[0],10)) + 'px';
     dm.style.top = (event.clientY + parseInt(offset[1],10)) + 'px';
     event.preventDefault();
