@@ -97,18 +97,14 @@ progress {
         height: calc(100% - var(--bubble-diameter));
         grid-row: 1;
 
-        /*display: flex;*/
-        /*flex-wrap: wrap;*/
-        /*justify-content: space-around;*/
-        /*column-gap: 10px;*/
-        /*row-gap: 10px;*/
+        * {
+            /*does not collapse top and bottom margin*/
+            margin-left: 10px;
+            margin-right: 10px;
 
-        /*.menuItem {*/
-        /*    min-height: 15%;*/
-        /*    min-width: 40%;*/
-        /*    background-color: black;*/
-        /*    color: white;*/
-        /*}*/
+            /*will collapse top and bottom margin*/
+            /*margin: auto 10px;*/
+        }
     }
 
     .soup-item-wrapper {
@@ -119,6 +115,9 @@ progress {
         grid-column-gap: 5px;
         grid-row-gap: 5px;
         overflow: hidden;
+        .soup-item {
+
+        }
     }
     .rice-item-wrapper {
         display: grid;
@@ -128,6 +127,10 @@ progress {
         grid-column-gap: 5px;
         grid-row-gap: 5px;
         overflow: hidden;
+
+        .rice-item {
+
+        }
     }
     .ice-cream-item-wrapper {
         display: grid;
@@ -150,6 +153,10 @@ progress {
         grid-column-gap: 5px;
         grid-row-gap: 5px;
         overflow: hidden;
+
+        .drink-item {
+
+        }
     }
 
     #menuCategory {

@@ -4,53 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant</title>
-    <link rel="stylesheet" href="main.css">
-    <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./magnific/magnific-popup.css">
 
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2:400,700&display=swap" rel="stylesheet">
+
+    <!--MAGNIFIC POPUP-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/jquery.magnific-popup.js" integrity="sha512-tOyzsVuGuz0il5EcXFi/qA5DI4BNLna4gHbWn+HbQBP0jmRhyqMKup24fzyKnxSX0jBxt2+qStqwwHDIh5TaGA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/magnific-popup.css" integrity="sha512-UhvuUthI9VM4N3ZJ5o1lZgj2zNtANzr3zyucuZZDy67BO6Ep5+rJN2PST7kPj+fOI7M/7wVeYaSaaAICmIQ4sQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--end of MAGNIFIC POPUP-->
+
+    <!--BOOTSTRAP-->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
     <!-- Latest compiled JavaScript for BOOTSTRAP -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--end of BOOTSTRAP-->
 
-    <!-- Font-awesome 6.6 -->
-    <script src="fontawesome-free-6.6.0-web/js/all.min.js"></script>
-    <link rel="stylesheet" href="./fontawesome-free-6.6.0-web/css/fontawesome.min.css">
+    <!--FONT-AWESOME 6.6-->
+    <script src="./assets/fontawesome-free-6.6.0-web/js/all.min.js"></script>
+    <link rel="stylesheet" href="./assets/fontawesome-free-6.6.0-web/css/fontawesome.min.css">
+    <!--end of FONT-AWESOME-->
 
-    <!--gsap - TEST-->
+    <!--GSAP-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"></script>
+    <!--end of GSAP-->
 </head>
 <body>
+<!--DRAGGABLE?-->
 <!--<body ondragover="drag_over(event)" ondrop="drop(event)">-->
-    <div id="dragme"
-         draggable="true"
-         ondragstart="drag_start(event)"
-         class="draggable"
-         style="width: 50%">
-        <!--<ul class="ruler"><li>1</li><li>2</li><li>3</li><li>4</li></ul>-->
+    <!--DRAGGABLE-->
+    <!--<div id="dragme"-->
+    <!--     draggable="true"-->
+    <!--     ondragstart="drag_start(event)"-->
+    <!--     class="draggable"-->
+    <!--     style="width: 50%">-->
 
-        <div>
-            <ul class="ruler" data-items="20"></ul>
-        </div>
-
-        <div>
-            <label for="spacing">Spacing</label>
-            <select id="spacing">
-                <option>1cm</option>
-                <option>2cm</option>
-                <option>1in</option>
-                <option>1em</option>
-                <option>20px</option>
-                <option>50px</option>
-            </select>
-        </div>
-    </div>
-
-
+    <!--    <div>-->
+    <!--        <ul class="ruler" data-items="20"></ul>-->
+    <!--    </div>-->
+    <!--    <div>-->
+    <!--        <label for="spacing">Spacing</label>-->
+    <!--        <select id="spacing">-->
+    <!--            <option>1cm</option>-->
+    <!--            <option>1in</option>-->
+    <!--            <option>1em</option>-->
+    <!--            <option>20px</option>-->
+    <!--            <option>50px</option>-->
+    <!--        </select>-->
+    <!--    </div>-->
+    <!--</div>-->
 
     <!--PROGRESS BAR-->
     <!--TODO: add visual clue for page section & title-->
@@ -62,23 +66,25 @@
     </div>
     <!--end of PROGRESS BAR-->
 
-    <!--&lt;!&ndash;NAV BAR&ndash;&gt;-->
-    <!--<section id="tab-navbar">-->
-    <!--    <button id="tab-navbar-button" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav">-->
-    <!--        <div id="bar1" class="bar"></div>-->
-    <!--        <div id="bar2" class="bar"></div>-->
-    <!--        <div id="bar3" class="bar"></div>-->
-    <!--    </button>-->
-    <!--    <div>-->
-    <!--        <ul id="nav" class="nav">-->
-    <!--            <li><a href="#">Home</a></li>-->
-    <!--            <li><a href="#">About</a></li>-->
-    <!--            <li><a href="#">Menu</a></li>-->
-    <!--            <li><a href="#">Contact</a></li>-->
-    <!--        </ul>-->
-    <!--    </div>-->
-    <!--</section>-->
-    <!--&lt;!&ndash;end of NAV BAR&ndash;&gt;-->
+    <div>
+        <!--&lt;!&ndash;NAV BAR&ndash;&gt;-->
+        <!--<section id="tab-navbar">-->
+        <!--    <button id="tab-navbar-button" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav">-->
+        <!--        <div id="bar1" class="bar"></div>-->
+        <!--        <div id="bar2" class="bar"></div>-->
+        <!--        <div id="bar3" class="bar"></div>-->
+        <!--    </button>-->
+        <!--    <div>-->
+        <!--        <ul id="nav" class="nav">-->
+        <!--            <li><a href="#">Home</a></li>-->
+        <!--            <li><a href="#">About</a></li>-->
+        <!--            <li><a href="#">Menu</a></li>-->
+        <!--            <li><a href="#">Contact</a></li>-->
+        <!--        </ul>-->
+        <!--    </div>-->
+        <!--</section>-->
+        <!--&lt;!&ndash;end of NAV BAR&ndash;&gt;-->
+    </div>
 
     <!--WELCOME PANE-->
     <!--TODO: redesign text (position, font, size, color)-->
@@ -168,37 +174,28 @@
     </section>
     <!--end of ABOUT-->
 
-    <!--MENU-->
-    <!--TODO: add filter function to menu buttons-->
-    <!--TODO: add menu with scrolling-->
-    <!--<section class="menu" id="menu">-->
-    <!--    <article class="menu-image"></article>-->
-    <!--    <article class="menu-text">-->
-    <!--        <div class="menu-text-center">-->
-    <!--            <h1>Our Menu</h1>-->
-    <!--            <p>Lorem ipsum dolor, sit amet consectetur adipisicing-->
-    <!--                elit. Aut omnis nam iusto praesentium inventore vitae-->
-    <!--                esse tempora repellendus.</p>-->
-    <!--            <a href="#">Explore</a>-->
-    <!--        </div>-->
-    <!--    </article>-->
-    <!--</section>-->
+    <div>
+        <!--MENU design for reference-->
+        <!--TODO: add filter function to menu buttons-->
+        <!--TODO: add menu with scrolling-->
+        <!--<section class="menu" id="menu">-->
+        <!--    <article class="menu-image"></article>-->
+        <!--    <article class="menu-text">-->
+        <!--        <div class="menu-text-center">-->
+        <!--            <h1>Our Menu</h1>-->
+        <!--            <p>Lorem ipsum dolor, sit amet consectetur adipisicing-->
+        <!--                elit. Aut omnis nam iusto praesentium inventore vitae-->
+        <!--                esse tempora repellendus.</p>-->
+        <!--            <a href="#">Explore</a>-->
+        <!--        </div>-->
+        <!--    </article>-->
+        <!--</section>-->
+    </div>
 
+    <!--TODO: refactor js to dynamically render menu categories and their bubbles-->
     <div style="display: flex; justify-content: center">
         <div id="menuContainer" class="menu">
             <div id="menuContent">
-                <h1 class="ice-cream-item">Menu Item</h1>
-                <h1 class="ice-cream-item">Menu Item</h1>
-                <h1 class="ice-cream-item">Menu Item</h1>
-                <h1 class="ice-cream-item">Menu Item</h1>
-                <h1 class="ice-cream-item">Menu Item</h1>
-                <h1 class="ice-cream-item">Menu Item</h1>
-                <h1 class="ice-cream-item">Menu Item</h1>
-                <h1 class="ice-cream-item">Menu Item</h1>
-                <h1 class="ice-cream-item">Menu Item</h1>
-                <h1 class="ice-cream-item">Menu Item</h1>
-                <h1 class="ice-cream-item">Menu Item</h1>
-                <h1 class="ice-cream-item">Menu Item</h1>
             </div>
             <div id="menuCategory">
                 <div id="menuCategoryBubbleWrapper" class="flex-menu-category">
@@ -403,46 +400,26 @@
     <!--SCRIPTS-->
     <section>
         <!--Magnific POPup Jquery also-->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="magnific/jquery.magnific-popup.min.js"></script>
-        <script src="magnific/magnific.js"></script>
+        <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+        <!--<script src="magnific/jquery.magnific-popup.min.js"></script>-->
+        <!--<script src="magnific/magnific.js"></script>-->
 
-        <script src="progressBar.js"></script>
-        <script src="menuByCategory.js"></script>
-        <script src="dragElementsOnScreen.js"></script>
-        <script src="onScreenRuler.js"></script>
-        <script>
-            // $(document).ready(function() {
-            //
-            //     $('button').on('click', function() {
-            //         if($(this).hasClass('nav-button')) {
-            //             $('nav div').addClass('show');
-            //         } else if($(this).hasClass('exit-menu')) {
-            //             $('nav div').removeClass('show');
-            //         }
-            //         else if($(this).hasClass('to-top')) {
-            //             $('html,body').animate({scrollTop:0}, 'slow');
-            //         }
-            //     });
-            //
-            //     AOS.init({
-            //         duration: 1800,
-            //         easing: 'ease'
-            //     });
-            //
-            // })
-        </script>
-        <script>
-            $(document).ready(function() {
+        <script src="js/progressBar.js"></script>
+        <script src="js/menuByCategory.js"></script>
+        <!--<script src="js/dragElementsOnScreen.js"></script>-->
+        <script src="js/onScreenRuler.js"></script>
+        <!--<script>-->
+        <!--    &lt;!&ndash;SIDE NAVBAR&ndash;&gt;-->
+        <!--    $(document).ready(function() {-->
 
-                // Update visual of menu bar button
-                const tabNavbarButton = $('#tab-navbar-button');
-                const tabNavbar = $('#tab-navbar');
-                tabNavbarButton.on('click', () => {
-                    tabNavbar.toggleClass("change")
-                });
-            });
-        </script>
+        <!--        // Update visual of menu bar button-->
+        <!--        const tabNavbarButton = $('#tab-navbar-button');-->
+        <!--        const tabNavbar = $('#tab-navbar');-->
+        <!--        tabNavbarButton.on('click', () => {-->
+        <!--            tabNavbar.toggleClass("change")-->
+        <!--        });-->
+        <!--    });-->
+        <!--</script>-->
 
     </section>
     <!--end of SCRIPTS-->

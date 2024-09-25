@@ -16,7 +16,6 @@ $(document).ready(function () {
                 'menu4': '#ce93d8'
             }
 
-            $(window).resize()
             move(menuIdNum, menuDict[menu.id], left);
         });
     })
@@ -61,16 +60,91 @@ function move(id, color, leftOffset) {
 }
 
 function changeMenuContent(id) {
-    var menuContent = $(`#menuContent`);
-    menuContent.removeClass();
+
+    // remove class from #menuContent
+    // update #menuContent with new class "<category>-item-wrapper"
+
+    // remove all child of menuContent
+    // generate div for each item that belong to the class
+
+    // update each div with new class "<category>-item"
 
     var menuDict = {
-        1: "soup-item-wrapper",
-        2: "rice-item-wrapper",
-        3: "ice-cream-item-wrapper",
-        4: "drink-item-wrapper"
+        1: "soup",
+        2: "rice",
+        3: "ice-cream",
+        4: "drink"
     }
 
-    menuContent.addClass(menuDict[id]);
-    // return true;
+    let menuContent = document.querySelector("#menuContent");
+
+    // remove all class from #menuContent
+    // add wrapper class pertaining to current menu category
+    menuContent.classList.forEach(curClass => {
+        menuContent.classList.remove(curClass);
+    })
+    menuContent.classList.add(`${menuDict[id]}-item-wrapper`);
+
+    // delete all children of menuContent
+    // get the menu based on menu category
+    // for each menu item, create a div with name, price
+    menuContent.replaceChildren();
+    let menuItemList = getMenuItem(menuDict[id]);
+    Object.keys(menuItemList).forEach(item => {
+        let newEl = document.createElement("div");
+
+        // create each element for item representation (name, price, image?)
+        let itemName = document.createElement("h1");
+        itemName.innerText = item;
+        let itemPrice = document.createElement("p");
+        itemPrice.innerText = menuItemList[item];
+
+        // add all the children element to newEl
+        // add the <category>-item class for newEl
+        // add newEl to menuContent
+        newEl.replaceChildren(itemName, itemPrice);
+        newEl.classList.add(`${menuDict[id]}-item`);
+        menuContent.appendChild(newEl);
+    })
+}
+
+function getMenuItem(itemCategory) {
+    let iceCream = {
+        "chocolate" : 5,
+        "mango": 5,
+        "vanilla": 5,
+        "coffee": 6,
+        "durian": 5,
+        "strawberry": 4
+    };
+
+    let soup = {
+        "pho dac biet": 17,
+        "tai nam": 15,
+        "pho suon bo": 20,
+        "hu tieu mi": 16,
+        "curry": 17
+    };
+
+    let rice = {
+        "banh mi": 8,
+        "bun cha gio": 14,
+        "filet mignon noodle": 16
+    };
+
+    let drink = {
+        "boba": 7,
+        "smoothies": 7,
+        "tea": 6,
+        "coffee": 6
+    };
+
+    let categoryDict = {
+        "ice-cream" : iceCream,
+        soup,
+        rice,
+        drink
+    }
+
+    return categoryDict[itemCategory];
 }
