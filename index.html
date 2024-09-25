@@ -193,6 +193,7 @@
     </div>
 
     <!--TODO: refactor js to dynamically render menu categories and their bubbles-->
+    <!--TODO: design data structure so that user can easily update menu items & menu categories-->
     <div style="display: flex; justify-content: center">
         <div id="menuContainer" class="menu">
             <div id="menuContent">
@@ -364,8 +365,34 @@
     </div>
 
     <!--OPERATION HOURS-->
-    <!--TODO: add table with 2 rows, header for days of week, the 2nd row is the hours, merge days with similar hours, let first day of week be Monday-->
-    <section id="operation-hours">
+    <!--TODO: Add sliding background-->
+    <!--TODO: Edit table css for better visual-->
+    <section id="operation-hours"
+             style="background: url('https://captainkimo.s3.amazonaws.com/wp-content/uploads/2015/04/WPB-City-Skyline-Sunset-at-Palm-Beach-Marina.jpg');
+                    background-size: cover;
+                    background-blend-mode: saturation;
+                    width: 100%; height:100vh;
+                    display: flex; align-items: center; justify-content: center">
+        <table style="font-style: oblique; font-weight: bold; font-size: x-large">
+            <thead>
+                <tr>
+                    <td>Monday</td>
+                    <td>Tuesday</td>
+                    <td style="background-color: orange">Wednesday</td>
+                    <td>Thursday</td>
+                    <td>Friday</td>
+                    <td>Saturday</td>
+                    <td>Sunday</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2" style="text-align: center">11-9</td>
+                    <td colspan="1" style="background-color: orange">closed</td>
+                    <td colspan="4" style="text-align: center">11-9</td>
+                </tr>
+            </tbody>
+        </table>
     </section>
     <!--end of OPERATION HOURS-->
 
@@ -399,28 +426,11 @@
 
     <!--SCRIPTS-->
     <section>
-        <!--Magnific POPup Jquery also-->
-        <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
-        <!--<script src="magnific/jquery.magnific-popup.min.js"></script>-->
-        <!--<script src="magnific/magnific.js"></script>-->
-
         <script src="js/progressBar.js"></script>
         <script src="js/menuByCategory.js"></script>
         <!--<script src="js/dragElementsOnScreen.js"></script>-->
         <!--<script src="js/onScreenRuler.js"></script>-->
-        <!--<script>-->
-        <!--    &lt;!&ndash;SIDE NAVBAR&ndash;&gt;-->
-        <!--    $(document).ready(function() {-->
-
-        <!--        // Update visual of menu bar button-->
-        <!--        const tabNavbarButton = $('#tab-navbar-button');-->
-        <!--        const tabNavbar = $('#tab-navbar');-->
-        <!--        tabNavbarButton.on('click', () => {-->
-        <!--            tabNavbar.toggleClass("change")-->
-        <!--        });-->
-        <!--    });-->
-        <!--</script>-->
-
+        <!--<script src="js/sideNavBar.js"></script>-->
     </section>
     <!--end of SCRIPTS-->
 
