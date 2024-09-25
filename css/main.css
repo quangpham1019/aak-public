@@ -76,7 +76,7 @@ progress {
 /*    overflow: hidden;*/
 /*}*/
 
-#menuContainer{
+#menu-container{
     --menu-category-height: 60px;
     --bg-bubble-diameter: 70px;
     --bubble-diameter: 50px;
@@ -92,7 +92,7 @@ progress {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 
 
-    #menuContent {
+    #menu-content {
         width: 100%;
         height: calc(100% - var(--bubble-diameter));
         grid-row: 1;
@@ -159,7 +159,7 @@ progress {
         }
     }
 
-    #menuCategory {
+    #menu-category {
         width: 100%;
         height: var(--menu-category-height);
         background-color: #fff;
@@ -170,7 +170,7 @@ progress {
             justify-content: space-evenly;
         }
 
-        #menuCategoryBubbleWrapper{
+        #menu-category-bubble-wrapper{
             width: 100%;
             bottom: calc(var(--menu-category-height)/2);
 
@@ -199,10 +199,10 @@ progress {
                 opacity: 0;
             }
         }
-        #menuCategoryIconWrapper{
+        #menu-category-icon-wrapper{
             width: 100%;
 
-            .menuElement {
+            .menu-icon {
                 opacity: 0.4;
                 transform: translateY(100%);
                 cursor: pointer;
@@ -218,7 +218,7 @@ progress {
         }
     }
 
-    #bgWrapper{
+    #bg-wrapper{
         filter: url(#goo);
         position: absolute;
         box-sizing: content-box;
@@ -238,7 +238,7 @@ progress {
             /*margin-left: -10%;*/
             /*margin-right: -10%;*/
         }
-        #bgBubble{
+        #bg-bubble{
             position: absolute;
             background-color: #ffcc80;
             width: var(--bg-bubble-diameter);

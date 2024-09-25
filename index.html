@@ -192,29 +192,18 @@
         <!--</section>-->
     </div>
 
-    <!--TODO: refactor js to dynamically render menu categories and their bubbles-->
-    <!--TODO: design data structure so that user can easily update menu items & menu categories-->
+    <!--TODO: refactor js so that bg-bubble readjust more inline with menu category icons as window resize-->
     <div style="display: flex; justify-content: center">
-        <div id="menuContainer" class="menu">
-            <div id="menuContent">
+        <div id="menu-container" class="menu">
+            <div id="menu-content">
             </div>
-            <div id="menuCategory">
-                <div id="menuCategoryBubbleWrapper" class="flex-menu-category">
-                    <div id="bubble1" class="bubble"><span class="icon"><i class="fa-solid fa-pizza-slice"></i></span></div>
-                    <div id="bubble2" class="bubble"><span class="icon"><i class="fa-solid fa-bowl-food"></i></span></div>
-                    <div id="bubble3" class="bubble"><span class="icon"><i class="fa-solid fa-ice-cream"></i></span></div>
-                    <div id="bubble4" class="bubble"><span class="icon"><i class="fa-solid fa-glass-water"></i></span></div>
-                </div>
-                <div id="menuCategoryIconWrapper" class="flex-menu-category">
-                    <div id="menu1" class="menuElement"><i class="fa-solid fa-pizza-slice"></i></div>
-                    <div id="menu2" class="menuElement"><i class="fa-solid fa-bowl-food"></i></div>
-                    <div id="menu3" class="menuElement"><i class="fa-solid fa-ice-cream"></i></div>
-                    <div id="menu4" class="menuElement"><i class="fa-solid fa-glass-water"></i></div>
-                </div>
+            <div id="menu-category">
+                <div id="menu-category-bubble-wrapper" class="flex-menu-category"></div>
+                <div id="menu-category-icon-wrapper" class="flex-menu-category"></div>
             </div>
-            <div id="bgWrapper">
+            <div id="bg-wrapper">
                 <div id="bg"></div>
-                <div id="bgBubble"></div>
+                <div id="bg-bubble"></div>
             </div>
         </div>
     </div>
