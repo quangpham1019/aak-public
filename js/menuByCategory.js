@@ -1,6 +1,6 @@
 let menuCategoryData = {
-    'soup': {
-        'icon': 'fa-solid fa-pizza-slice',
+    'special': {
+        'icon': 'fa-solid fa-star',
         'backgroundColor': '#ffcc80',
         'items': {
             'pho dac biet': 17,
@@ -42,6 +42,9 @@ let menuCategoryData = {
         }
     }
 }
+
+// TODO: add second navigation bar for drink
+// TODO: section into 2/5, 3/5 row layout, top for scoop and price, bottom for flavor
 
 $(document).ready(function () {
     initializeMenuCategory();
@@ -156,8 +159,10 @@ function changeMenuContent(menuCategory) {
         itemName.innerText = item;
         let itemPrice = document.createElement("p");
         itemPrice.innerText = menuItemList[item];
+        let description = document.createElement("p");
+        description.innerText = "this is a description";
 
-        newEl.replaceChildren(itemName, itemPrice);
+        newEl.replaceChildren(itemName, itemPrice, description);
         newEl.className = `${menuCategory}-item`;
         tree.appendChild(newEl);
     })

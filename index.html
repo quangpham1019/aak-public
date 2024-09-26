@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant</title>
-
+    <title>Alo Asian Kitchen</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.ico" />
     <link rel="stylesheet" href="css/main.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
@@ -195,8 +195,7 @@
     <!--TODO: refactor js so that bg-bubble readjust more inline with menu category icons as window resize-->
     <div style="display: flex; justify-content: center">
         <div id="menu-container" class="menu">
-            <div id="menu-content">
-            </div>
+            <div id="menu-content"></div>
             <div id="menu-category">
                 <div id="menu-category-bubble-wrapper" class="flex-menu-category"></div>
                 <div id="menu-category-icon-wrapper" class="flex-menu-category"></div>
@@ -359,10 +358,15 @@
     <section id="operation-hours"
              style="background: url('https://captainkimo.s3.amazonaws.com/wp-content/uploads/2015/04/WPB-City-Skyline-Sunset-at-Palm-Beach-Marina.jpg');
                     background-size: cover;
+                    background-color: rgba(0, 0, 0, 0.5);
                     background-blend-mode: saturation;
                     width: 100%; height:100vh;
                     display: flex; align-items: center; justify-content: center">
-        <table style="font-style: oblique; font-weight: bold; font-size: x-large">
+        <div id="opening-hours-grid">
+
+        </div>
+        <table style="background-color: rgba(255, 255, 255, 0.8);
+                    font-style: oblique; font-weight: bold; font-size: x-large;">
             <thead>
                 <tr>
                     <td>Monday</td>
