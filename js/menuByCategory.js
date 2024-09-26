@@ -40,6 +40,14 @@ let menuCategoryData = {
             'tea': 6,
             'coffee': 6
         }
+    },
+    'catering': {
+        'icon': 'fa-solid fa-bell-concierge',
+        'backgroundColor': '#ce93d8',
+        'items': {
+            'chicken wings 25pcs': 25,
+            'egg rolls 20cps': 20,
+        }
     }
 }
 
@@ -147,25 +155,218 @@ function calculateLeftOffsetOfMenuCategoryIcon(curBubbleDiameter, leftOffset){
 function changeMenuContent(menuCategory) {
 
     let menuContent = document.querySelector("#menu-content");
-    menuContent.className = `${menuCategory}-item-wrapper`;
 
-    let tree = document.createDocumentFragment();
-    let menuItemList = menuCategoryData[menuCategory].items;
+    // TODO: it seems I only need one instance of MenuDesignFactory,
+    //      this could be a good place to apply Singleton pattern
+    let menuDesignFactory = new MenuDesignFactory(menuCategory);
+    let curMenuDesign = menuDesignFactory.getMenuDesign();
+    curMenuDesign.createMenuItems();
+    menuContent.className = curMenuDesign.getMenuDesignClasses();
+    menuContent.replaceChildren(curMenuDesign.getTree());
+}
 
-    Object.keys(menuItemList).forEach(item => {
+class MenuDesignFactory {
+
+    _menuDesign;
+
+    constructor(menuCategory) {
+        this.initializeMenuDesign(menuCategory);
+    }
+
+    initializeMenuDesign(menuCategory) {
+
+        // This is where the object creation happens\
+        // MENU-DESIGN = MENU-CSS-STYLE + ITEM-DESIGN + ITEM-CSS-STYLE
+        // ITEM-DESIGN & ITEM-CSS-STYLE are decoupled here
+        // ITEM-DESIGN & MENU-CSS-STYLE are coupled
+            // ITEM-DESIGN & MENU-CSS-STYLE must match in format
+            // To decouple these two, assuming ITEM-DESIGN & ITEM-CSS-STYLE have limited variants
+            // extend the class of ITEM-DESIGN & ITEM-CSS-STYLE then alter the MENU-CSS-STYLE
+        switch (menuCategory) {
+            case "special":
+                this._menuDesign = new SpecialMenuDesign(menuCategory);
+                console.log("using SpecialMenuDesign");
+                break;
+            case "rice":
+            case "drink":
+            case "catering":
+                this._menuDesign = new RowMenuDesign(menuCategory);
+                console.log("using RowMenuDesign");
+                break;
+            case "ice-cream":
+                this._menuDesign = new FlavorAndPriceMenuDesign(menuCategory);
+                console.log("using FlavorAndPriceMenuDesign");
+                break;
+            default:
+                this._menuDesign = new RowMenuDesign(menuCategory);
+                console.log("using default design (ROW)");
+        }
+    }
+
+    getMenuDesign() {
+        return this._menuDesign;
+    }
+}
+class MenuDesign {
+
+    _menuCategory;
+    _menuItems;
+    _menuDesignClasses;
+    _tree;
+
+    constructor() {
+        if (this.constructor == MenuDesign) {
+            throw new Error("Abstract classes can't be instantiated.");
+        }
+    }
+
+    createMenuItems() {
+        this._tree = document.createDocumentFragment();
+
+        Object.keys(this._menuItems).forEach(item => {
+            this.createMenuItem(item);
+        })
+    }
+    createMenuItem() {
+        throw new Error("Method createMenuItem() must be implemented.");
+    }
+
+    getTree() {
+        return this._tree;
+    }
+    getMenuDesignClasses() {
+        return this._menuDesignClasses;
+    }
+}
+class FlavorAndPriceMenuDesign extends MenuDesign {
+    constructor(menuCategory) {
+        super();
+        this._menuCategory = menuCategory;
+        this._menuItems = menuCategoryData[menuCategory].items;
+
+        // change css design-wrapper for #menuContent here
+        // MENU-CSS-STYLE
+        // TODO: which design pattern can I apply if
+        //      I expect multiple menu-css-style for this menu item design
+        //      and the number of menu item design will also grow huge
+        //      (ie. menu-css-styles * item-designs * item-css-styles)
+        this._menuDesignClasses = `flavor-and-price-design-wrapper`;
+    }
+
+    createMenuItem(item)   {
+
+        // change layout for each menu design here
+        // ITEM-DESIGN
+        // must match format of MENU-CSS-STYLE or else the display might break
         let newEl = document.createElement("div");
 
         let itemName = document.createElement("h1");
         itemName.innerText = item;
         let itemPrice = document.createElement("p");
-        itemPrice.innerText = menuItemList[item];
+        itemPrice.innerText = this._menuItems[item];
         let description = document.createElement("p");
-        description.innerText = "this is a description";
+        description.innerText = "Flavor and price design is exclusively tailored for ice cream";
 
         newEl.replaceChildren(itemName, itemPrice, description);
-        newEl.className = `${menuCategory}-item`;
-        tree.appendChild(newEl);
-    })
-    
-    menuContent.replaceChildren(tree);
+
+        // change css item class for each menu item here
+        // ITEM-CSS-STYLE
+        newEl.className = `${this._menuCategory}-item`;
+
+        this._tree.appendChild(newEl);
+    }
+}
+// class FlavorAndPriceMenuDesign extends MenuDesign {
+//     constructor(menuCategory) {
+//         super();
+//         this._menuCategory = menuCategory;
+//         this._menuItems = menuCategoryData[menuCategory].items;
+//
+//         // change css design-wrapper for #menuContent here
+//         // MENU-CSS-STYLE
+//         // TODO: which design pattern can I apply if
+//         //      I expect multiple menu-css-style for this menu item design
+//         //      and the number of menu item design will also grow huge
+//         //      (ie. menu-css-styles * item-designs * item-css-styles)
+//         this._menuDesignClasses = `flavor-and-price-design-wrapper`;
+//     }
+//
+//     createMenuItems() {
+//         this._tree = document.createDocumentFragment();
+//
+//         Object.keys(this._menuItems).forEach(item => {
+//             this.createMenuItem(item);
+//         })
+//     }
+//
+//     createMenuItem(item)   {
+//
+//         // change layout for each menu design here
+//         // ITEM-DESIGN
+//         // must match format of MENU-CSS-STYLE or else the display might break
+//         let newEl = document.createElement("div");
+//
+//         let itemName = document.createElement("h1");
+//         itemName.innerText = item;
+//         let itemPrice = document.createElement("p");
+//         itemPrice.innerText = this._menuItems[item];
+//         let description = document.createElement("p");
+//         description.innerText = "Flavor and price design is exclusively tailored for ice cream";
+//
+//         newEl.replaceChildren(itemName, itemPrice, description);
+//
+//         // change css item class for each menu item here
+//         // ITEM-CSS-STYLE
+//         newEl.className = `${this._menuCategory}-item`;
+//
+//         this._tree.appendChild(newEl);
+//     }
+// }
+class RowMenuDesign extends MenuDesign {
+    constructor(menuCategory) {
+        super();
+        this._menuCategory = menuCategory;
+        this._menuItems = menuCategoryData[this._menuCategory].items;
+        this._menuDesignClasses = `row-design-wrapper`;
+    }
+
+    createMenuItem(item)   {
+        let newEl = document.createElement("div");
+
+        let itemName = document.createElement("h1");
+        itemName.innerText = item;
+        let itemPrice = document.createElement("p");
+        itemPrice.innerText = this._menuItems[item];
+        let description = document.createElement("p");
+        description.innerText = `Row menu design provide common menu item layout for several categories`;
+
+        newEl.replaceChildren(itemName, itemPrice, description);
+        newEl.className = `${this._menuCategory}-item`;
+
+        this._tree.appendChild(newEl);
+    }
+}
+class SpecialMenuDesign extends MenuDesign {
+    constructor(menuCategory) {
+        super();
+        this._menuCategory = menuCategory;
+        this._menuItems = menuCategoryData[this._menuCategory].items;
+        this._menuDesignClasses = `special-design-wrapper`;
+    }
+
+    createMenuItem(item)   {
+        let newEl = document.createElement("div");
+
+        let itemName = document.createElement("h1");
+        itemName.innerText = item;
+        let itemPrice = document.createElement("p");
+        itemPrice.innerText = this._menuItems[item];
+        let description = document.createElement("p");
+        description.innerText = `This special menu design will feature exclusive items`;
+
+        newEl.replaceChildren(itemName, itemPrice, description);
+        newEl.className = `${this._menuCategory}-item`;
+
+        this._tree.appendChild(newEl);
+    }
 }

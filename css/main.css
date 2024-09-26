@@ -159,7 +159,16 @@ progress {
         }
     }
 
-    .special-item-wrapper {
+    .special-design-wrapper {
+        display: grid;
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        position: relative;
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+        overflow: hidden;
+    }
+    .row-design-wrapper {
         display: grid;
         grid-template-rows: repeat(5, 1fr);
         grid-template-columns: repeat(1, 1fr);
@@ -167,49 +176,38 @@ progress {
         grid-column-gap: 5px;
         grid-row-gap: 5px;
         overflow: hidden;
-
-        .special-item {
-
-        }
     }
-    .rice-item-wrapper {
+    .flavor-and-price-design-wrapper {
         display: grid;
         grid-template-rows: repeat(5, 1fr);
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         position: relative;
         grid-column-gap: 5px;
         grid-row-gap: 5px;
         overflow: hidden;
 
-        .rice-item {
+        #flavor {
+            color: black;
+        }
 
+        #price {
+            color: blue;
         }
     }
-    .ice-cream-item-wrapper {
-        display: grid;
-        grid-template-rows: repeat(5, 1fr);
-        grid-template-columns: repeat(1, 1fr);
-        position: relative;
-        grid-column-gap: 5px;
-        grid-row-gap: 5px;
-        overflow: hidden;
-
-        .ice-cream-item {
-            /*background-color: red;*/
-        }
+    .special-item {
+        color: green;
     }
-    .drink-item-wrapper {
-        display: grid;
-        grid-template-rows: repeat(4, 1fr);
-        grid-template-columns: repeat(1, 1fr);
-        position: relative;
-        grid-column-gap: 5px;
-        grid-row-gap: 5px;
-        overflow: hidden;
-
-        .drink-item {
-
-        }
+    .rice-item {
+        color: blue;
+    }
+    .ice-cream-item {
+        color: red;
+    }
+    .drink-item {
+        color: yellow;
+    }
+    .catering-item {
+        color: white;
     }
 
     #menu-category {
