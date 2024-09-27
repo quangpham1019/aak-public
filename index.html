@@ -59,10 +59,11 @@
     <!--PROGRESS BAR-->
     <!--TODO: add visual clue for page section & title-->
     <!--TODO: add interactive elements to allow navigation upon click-->
-    <div>
-        <progress>
-        </progress>
-        <!--<div class="progress-label"></div>-->
+    <div class="progress-bar-container">
+        <div id="progress-bar-wrapper">
+            <progress id="progress-bar"></progress>
+        </div>
+        <div id="progress-bar-section"></div>
     </div>
     <!--end of PROGRESS BAR-->
 
@@ -88,7 +89,7 @@
 
     <!--WELCOME PANE-->
     <!--TODO: redesign text (position, font, size, color)-->
-    <section class="welcome-pane">
+    <section id="welcome-pane" class="welcome-pane">
         <div style="display:grid; grid-template-columns: repeat(5, 1fr)">
             <a style="grid-column: 4/ span 2" href="tel:(949) 328-9951">
                 <h3>
@@ -192,9 +193,11 @@
         <!--</section>-->
     </div>
 
+
     <!--TODO: refactor js so that bg-bubble readjust more inline with menu category icons as window resize-->
-    <div style="display: flex; justify-content: center">
-        <div id="menu-container" class="menu">
+    <!--MENU-->
+    <div id="menu-wrapper" style="height: 100vh; display: flex; justify-content: center; align-items: center">
+        <div id="menu-container">
             <div id="menu-content"></div>
             <div id="menu-category">
                 <div id="menu-category-bubble-wrapper" class="flex-menu-category"></div>
