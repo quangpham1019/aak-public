@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+    .progress-bar-container {
+        position: fixed;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+
+        --progress-bar-height: 50px;
+        --progress-bar-color: gainsboro;
+        --progress-bar-value-color: dodgerblue;
+        --progress-bar-value: 20%;
+
+        /*progress-bar-length*/
+        --progress-bar-width: 40vh;
+        width: var(--progress-bar-width);
+        /*progress-bar-length*/
+
+        top: calc(var(--progress-bar-width)/2 + 20vh);
+        left: calc(var(--progress-bar-width) / -2 + 5vw);
+        height: var(--progress-bar-height);
+        background-color: var(--progress-bar-color);
+        border: none;
+
+        /*ROTATING A GRID BY 90deg HAS SEVERAL EFFECTS ON ELEMENTS' ORIENTATION*/
+        /*THESE EFFECTS APPLY TO THE GRID AND ALL OF ITS CHILDREN*/
+        /*Display width = height*/
+        /*Display height = width*/
+        /*Grid column = grid-row*/
+        /*Grid row = grid-column*/
+        transform: rotate(90deg);
+        z-index: 1;
+
+        progress {
+            grid-row: 2;
+            grid-column: 1 / -1;
+            appearance: none;
+
+            display: flex;
+            align-items: center;
+
+            &::-moz-progress-bar {
+                background-color: var(--progress-bar-value-color);
+            }
+
+            &::-webkit-progress-bar {
+                background-color: var(--progress-bar-color);
+            }
+
+            &::-webkit-progress-value {
+                background-color: var(--progress-bar-value-color);
+            }
+
+            &::-ms-fill {
+            }
+        }
+
+        #progress-bar-section {
+            grid-column: 1 / span 3;
+            grid-row: 1 / span 3;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            button {
+                width: 10px;
+                height: 100%;
+                border-radius: 50px;
+            }
+        }
+    }
+</style>
+<body>
+
+    <h2>Dynamic Progress Bar with Labels</h2>
+    <p>Centered label:</p>
+
+    <div class="progress-bar-container">
+        <progress id="progress-bar" style="width: 0"></progress>
+        <div id="progress-bar-section"></div>
+    </div>
+
+    <script>
+        let numOfButtons = 5;
+
+        let pageSection = document.getElementById("progress-bar-section");
+        let curTree = document.createDocumentFragment();
+        for (let i = 0; i < numOfButtons; i++) {
+            let newEl = document.createElement("button");
+            newEl.className = "w3-button w3-green";
+            newEl.addEventListener('click', () => {
+                let curPercent = Math.round(i/(numOfButtons-1) * 100);
+                // newEl.innerText = `${curPercent}%`;
+                move(curPercent);
+            });
+            curTree.appendChild(newEl);
+        }
+        pageSection.appendChild(curTree);
+    </script>
+    <script>
+        function move(percent) {
+            let progressBar = document.getElementById("progress-bar");
+            let progress = parseInt(progressBar.style.width);
+            let id = setInterval(() => {
+                adjustProgressBar(percent);
+            }, 10);
+
+            function adjustProgressBar(percent) {
+                if (progress === percent) {
+                    clearInterval(id);
+                } else {
+                    progress = (progress < percent) ? progress+1 : progress-1;
+                    progressBar.style.width = progress + '%';
+                    // progressBar.innerHTML = width + '%';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

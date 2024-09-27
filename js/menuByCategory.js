@@ -160,7 +160,7 @@ function changeMenuContent(menuCategory) {
     //      this could be a good place to apply Singleton pattern
     let menuDesignFactory = new MenuDesignFactory(menuCategory);
     let curMenuDesign = menuDesignFactory.getMenuDesign();
-    curMenuDesign.createMenuItems();
+    curMenuDesign.createMenuLayout();
     menuContent.className = curMenuDesign.getMenuDesignClasses();
     menuContent.replaceChildren(curMenuDesign.getTree());
 }
@@ -176,12 +176,12 @@ class MenuDesignFactory {
     initializeMenuDesign(menuCategory) {
 
         // This is where the object creation happens\
-        // MENU-DESIGN = MENU-CSS-STYLE + ITEM-DESIGN + ITEM-CSS-STYLE
-        // ITEM-DESIGN & ITEM-CSS-STYLE are decoupled here
-        // ITEM-DESIGN & MENU-CSS-STYLE are coupled
-            // ITEM-DESIGN & MENU-CSS-STYLE must match in format
-            // To decouple these two, assuming ITEM-DESIGN & ITEM-CSS-STYLE have limited variants
-            // extend the class of ITEM-DESIGN & ITEM-CSS-STYLE then alter the MENU-CSS-STYLE
+        // MENU-DESIGN = MENU-LAYOUT-CSS-STYLE + ITEM-LAYOUT + ITEM-CSS-STYLE
+        // ITEM-LAYOUT & ITEM-CSS-STYLE are decoupled here
+        // ITEM-LAYOUT & MENU-LAYOUT-CSS-STYLE are coupled
+            // ITEM-LAYOUT & MENU-LAYOUT-CSS-STYLE must match in format
+            // To decouple these two, assuming ITEM-LAYOUT & ITEM-CSS-STYLE have limited variants
+            // extend the class of ITEM-LAYOUT & ITEM-CSS-STYLE then alter the MENU-LAYOUT-CSS-STYLE
         switch (menuCategory) {
             case "special":
                 this._menuDesign = new SpecialMenuDesign(menuCategory);
@@ -220,15 +220,17 @@ class MenuDesign {
         }
     }
 
-    createMenuItems() {
+    // createMenuLayout(): default creation of menu items, can be overridden
+    // each child must implement createItemLayout()
+    createMenuLayout() {
         this._tree = document.createDocumentFragment();
 
         Object.keys(this._menuItems).forEach(item => {
-            this.createMenuItem(item);
+            this.createItemLayout(item);
         })
     }
-    createMenuItem() {
-        throw new Error("Method createMenuItem() must be implemented.");
+    createItemLayout() {
+        throw new Error("Method createItemLayout() must be implemented.");
     }
 
     getTree() {
@@ -238,44 +240,6 @@ class MenuDesign {
         return this._menuDesignClasses;
     }
 }
-class FlavorAndPriceMenuDesign extends MenuDesign {
-    constructor(menuCategory) {
-        super();
-        this._menuCategory = menuCategory;
-        this._menuItems = menuCategoryData[menuCategory].items;
-
-        // change css design-wrapper for #menuContent here
-        // MENU-CSS-STYLE
-        // TODO: which design pattern can I apply if
-        //      I expect multiple menu-css-style for this menu item design
-        //      and the number of menu item design will also grow huge
-        //      (ie. menu-css-styles * item-designs * item-css-styles)
-        this._menuDesignClasses = `flavor-and-price-design-wrapper`;
-    }
-
-    createMenuItem(item)   {
-
-        // change layout for each menu design here
-        // ITEM-DESIGN
-        // must match format of MENU-CSS-STYLE or else the display might break
-        let newEl = document.createElement("div");
-
-        let itemName = document.createElement("h1");
-        itemName.innerText = item;
-        let itemPrice = document.createElement("p");
-        itemPrice.innerText = this._menuItems[item];
-        let description = document.createElement("p");
-        description.innerText = "Flavor and price design is exclusively tailored for ice cream";
-
-        newEl.replaceChildren(itemName, itemPrice, description);
-
-        // change css item class for each menu item here
-        // ITEM-CSS-STYLE
-        newEl.className = `${this._menuCategory}-item`;
-
-        this._tree.appendChild(newEl);
-    }
-}
 // class FlavorAndPriceMenuDesign extends MenuDesign {
 //     constructor(menuCategory) {
 //         super();
@@ -283,7 +247,7 @@ class FlavorAndPriceMenuDesign extends MenuDesign {
 //         this._menuItems = menuCategoryData[menuCategory].items;
 //
 //         // change css design-wrapper for #menuContent here
-//         // MENU-CSS-STYLE
+//         // MENU-LAYOUT-CSS-STYLE
 //         // TODO: which design pattern can I apply if
 //         //      I expect multiple menu-css-style for this menu item design
 //         //      and the number of menu item design will also grow huge
@@ -291,19 +255,11 @@ class FlavorAndPriceMenuDesign extends MenuDesign {
 //         this._menuDesignClasses = `flavor-and-price-design-wrapper`;
 //     }
 //
-//     createMenuItems() {
-//         this._tree = document.createDocumentFragment();
-//
-//         Object.keys(this._menuItems).forEach(item => {
-//             this.createMenuItem(item);
-//         })
-//     }
-//
-//     createMenuItem(item)   {
+//     createItemLayout(item)   {
 //
 //         // change layout for each menu design here
-//         // ITEM-DESIGN
-//         // must match format of MENU-CSS-STYLE or else the display might break
+//         // ITEM-LAYOUT
+//         // must match format of MENU-LAYOUT-CSS-STYLE or else the display might break
 //         let newEl = document.createElement("div");
 //
 //         let itemName = document.createElement("h1");
@@ -322,6 +278,81 @@ class FlavorAndPriceMenuDesign extends MenuDesign {
 //         this._tree.appendChild(newEl);
 //     }
 // }
+class FlavorAndPriceMenuDesign extends MenuDesign {
+    constructor(menuCategory) {
+        super();
+        this._menuCategory = menuCategory;
+        this._menuItems = menuCategoryData[menuCategory].items;
+
+        // change css design-wrapper for #menuContent here
+        // MENU-LAYOUT-CSS-STYLE
+        // TODO: which design pattern can I apply if
+        //      I expect multiple menu-css-style for this menu item design
+        //      and the number of menu item design will also grow huge
+        //      (ie. menu-css-styles * item-designs * item-css-styles)
+        this._menuDesignClasses = `flavor-and-price-design-wrapper`;
+    }
+
+    // override default implementation of base class
+    createMenuLayout() {
+        this._tree = document.createDocumentFragment();
+
+        // create first section with id "price"
+        let curTree = document.createElement("div");
+        curTree.id = "price";
+
+        let scoopPrice = {
+            "SINGLE SCOOP": 4.95,
+            "MID-SIZE": 6.95,
+            "V.I.P.": 8.95,
+            "TERMINATOR": 10.95
+        }
+        Object.keys(scoopPrice).forEach((scoopSize, index) => {
+            let newEl = document.createElement("div");
+
+            let scoopSizeEl = document.createElement("h1");
+            scoopSizeEl.innerText = scoopSize;
+            let scoopPriceEl = scoopPrice[scoopSize];
+
+            newEl.replaceChildren(scoopSizeEl, scoopPriceEl);
+            newEl.id = `${curTree.id}-${index+1}`;
+            curTree.appendChild(newEl);
+        })
+        this._tree.appendChild(curTree);
+
+        // create second section with id "flavor"
+        curTree = document.createElement("div");
+        curTree.id = "flavor";
+
+        Object.keys(this._menuItems).forEach(item => {
+            this.createItemLayout(item, curTree);
+        })
+        this._tree.appendChild(curTree);
+    }
+
+    createItemLayout(item, curTree)   {
+
+        // change layout for each menu design here
+        // ITEM-LAYOUT
+        // must match format of MENU-LAYOUT-CSS-STYLE or else the display might break
+        let newEl = document.createElement("div");
+
+        let itemName = document.createElement("h1");
+        itemName.innerText = item;
+        let itemPrice = document.createElement("p");
+        itemPrice.innerText = this._menuItems[item];
+        let description = document.createElement("p");
+        description.innerText = "Flavor and price design is exclusively tailored for ice cream";
+
+        newEl.replaceChildren(itemName, itemPrice, description);
+
+        // change css item class for each menu item here
+        // ITEM-CSS-STYLE
+        newEl.className = `${this._menuCategory}-item`;
+
+        curTree.appendChild(newEl);
+    }
+}
 class RowMenuDesign extends MenuDesign {
     constructor(menuCategory) {
         super();
@@ -330,7 +361,7 @@ class RowMenuDesign extends MenuDesign {
         this._menuDesignClasses = `row-design-wrapper`;
     }
 
-    createMenuItem(item)   {
+    createItemLayout(item)   {
         let newEl = document.createElement("div");
 
         let itemName = document.createElement("h1");
@@ -354,7 +385,7 @@ class SpecialMenuDesign extends MenuDesign {
         this._menuDesignClasses = `special-design-wrapper`;
     }
 
-    createMenuItem(item)   {
+    createItemLayout(item)   {
         let newEl = document.createElement("div");
 
         let itemName = document.createElement("h1");

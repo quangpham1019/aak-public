@@ -180,20 +180,46 @@ progress {
     .flavor-and-price-design-wrapper {
         display: grid;
         grid-template-rows: repeat(5, 1fr);
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         position: relative;
         grid-column-gap: 5px;
         grid-row-gap: 5px;
         overflow: hidden;
 
-        #flavor {
-            color: black;
-        }
-
         #price {
             color: blue;
+            grid-row: 1/ span 3;
+            font-size: 15px;
+            display: grid;
+            width: 100%;
+
+            grid-template-areas:
+                "a a . ."
+                ". b b ."
+                ". . c c"
+                ". . . d";
+            #price-1 {
+                grid-area: a;
+            }
+            #price-2 {
+                grid-area: b;
+            }
+            #price-3 {
+                grid-area: c;
+            }
+            #price-4 {
+                grid-area: d;
+            }
+        }
+        #flavor {
+            display: flex;
+            color: black;
+            grid-row: 4 / span 2;
+            grid-column: 1 / span 2;
+            overflow: auto;
         }
     }
+
     .special-item {
         color: green;
     }
