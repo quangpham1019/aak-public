@@ -25,13 +25,19 @@ $(document).ready(function() {
         const about = document.getElementById("about");
         const welcomePane = document.getElementById("welcome-pane");
         const operationHours = document.getElementById("operation-hours");
+        const footer = document.getElementById("contact-us");
 
-        let pageSectionList = [welcomePane, about, menu, operationHours];
+        let pageSectionList = [welcomePane, about, menu, operationHours, footer];
         let pageSection = document.getElementById("progress-bar-section");
         let curTree = document.createDocumentFragment();
 
         pageSectionList.forEach((section, index) => {
             let curPercent = Math.round((section.getBoundingClientRect().top + window.scrollY) / getMaxScrollY() * 100);
+
+            // This solution expect there is only one section with height less than 30-50vh at the end of the page
+            // If there are multiples section with such height, the page section buttons might overlap
+            curPercent = curPercent < 100 ? curPercent : 100;
+
             let newEl = createAndAssignButtonPositionOnProgressBar(index, curPercent);
 
             newEl.addEventListener('click', () => {
