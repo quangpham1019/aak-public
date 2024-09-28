@@ -100,13 +100,13 @@ body{
 /*end of PROGRESS BAR*/
 
 /*WELCOME PANE*/
-.welcome-pane{
+#welcome-pane{
     /* display: flex;*/
     min-height: 100vh;
     background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4)),
     var(--welcome-pane-img)center/cover no-repeat fixed;
     /* flex-direction: column;*/
-    margin-top: auto;
+    /*margin-top: auto;*/
 }
 .hero{
     display: flex;
@@ -161,6 +161,13 @@ body{
 
 }
 /*end of WELCOME PANE*/
+
+/*YELP REVIEW*/
+#yelp-review-wrapper {
+    height: 100vh;
+    background-color: lightgrey;
+}
+/*end of YELP REVIEW*/
 
 /*MENU*/
 #menu-container{
@@ -363,6 +370,21 @@ body{
     }
 }
 /*end of MENU*/
+
+/*OPENING HOURS*/
+#opening-hours {
+    --opening-hours-background: url('https://captainkimo.s3.amazonaws.com/wp-content/uploads/2015/04/WPB-City-Skyline-Sunset-at-Palm-Beach-Marina.jpg');
+
+    background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4)),
+    var(--opening-hours-background)center/cover no-repeat fixed;
+    width: 80%;
+    height:100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*end of OPENING HOURS*/
 
 /*SOCIAL ICONS*/
 #social-icons{

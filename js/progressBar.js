@@ -21,13 +21,14 @@ $(document).ready(function() {
         })
     }
     function initializePageSectionButtonsOnProgressBar() {
-        const menu = document.getElementById("menu-wrapper");
-        const about = document.getElementById("about");
         const welcomePane = document.getElementById("welcome-pane");
-        const operationHours = document.getElementById("operation-hours");
+        const about = document.getElementById("about");
+        const yelpReview = document.getElementById("yelp-review-wrapper");
+        const menu = document.getElementById("menu-wrapper");
+        const operationHours = document.getElementById("opening-hours");
         const footer = document.getElementById("contact-us");
 
-        let pageSectionList = [welcomePane, about, menu, operationHours, footer];
+        let pageSectionList = [welcomePane, about, yelpReview, menu, operationHours, footer];
         let pageSection = document.getElementById("progress-bar-section");
         let curTree = document.createDocumentFragment();
 
