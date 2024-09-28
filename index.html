@@ -89,7 +89,7 @@
 
     <!--WELCOME PANE-->
     <!--TODO: redesign text (position, font, size, color)-->
-    <section id="welcome-pane">
+    <section id="welcome-pane" class="section-on-progress-bar">
         <div style="display:grid; grid-template-columns: repeat(5, 1fr)">
             <a style="grid-column: 4/ span 2" href="tel:(949) 328-9951">
                 <h3>
@@ -106,7 +106,7 @@
     <!--end of WELCOME PANE-->
 
     <!--ABOUT-->
-    <section id="about">
+    <section id="about" class="section-on-progress-bar">
         <div>
             <h2 class="title-text">About Us</h2>
         </div>
@@ -194,13 +194,13 @@
     </div>
 
     <!--TODO: add a sliding panel that display several 5-star yelp reviews, include a progress bar, and review to change on arrow click-->
-    <section id="yelp-review-wrapper">
+    <section id="yelp-review-wrapper" class="section-on-progress-bar">
 
     </section>
 
     <!--TODO: refactor js so that bg-bubble readjust more inline with menu category icons as window resize-->
     <!--MENU-->
-    <div id="menu-wrapper" style="height: 100vh; display: flex; justify-content: center; align-items: center">
+    <div id="menu-wrapper" class="section-on-progress-bar">
         <div id="menu-container">
             <div id="menu-content"></div>
             <div id="menu-category">
@@ -362,7 +362,7 @@
     <!--OPERATION HOURS-->
     <!--TODO: Add sliding background-->
     <!--TODO: Edit table css for better visual-->
-    <section id="opening-hours">
+    <section id="opening-hours" class="section-on-progress-bar">
         <div id="opening-hours-grid">
         </div>
         <table style="background-color: rgba(255, 255, 255, 0.8);
@@ -407,9 +407,12 @@
     </section>
     <!--End of Social Icons-->
 
+    <!--TODO: fix violations when adding embed google map-->
     <!--FOOTER-->
-    <footer id="contact-us" class="footer">
-        <iframe id="embed-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13299.73606655845!2d-117.70946913629281!3d33.55509065551463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcef1b1dc33085%3A0x9374e1a036e8a380!2sAlo%20Asian%20Kitchen!5e0!3m2!1sen!2sus!4v1727479668588!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <footer id="contact-us" class="footer section-on-progress-bar">
+        <!--<div id="google-map-wrapper">-->
+        <!--    <iframe id="embed-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13299.73606655845!2d-117.70946913629281!3d33.55509065551463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcef1b1dc33085%3A0x9374e1a036e8a380!2sAlo%20Asian%20Kitchen!5e0!3m2!1sen!2sus!4v1727479668588!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
+        <!--</div>-->
         <div class="section-center">
             <p class="text">
                 &copy; <span>AAK @ 2024</span>

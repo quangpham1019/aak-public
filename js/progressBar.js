@@ -21,19 +21,15 @@ $(document).ready(function() {
         })
     }
     function initializePageSectionButtonsOnProgressBar() {
-        const welcomePane = document.getElementById("welcome-pane");
-        const about = document.getElementById("about");
-        const yelpReview = document.getElementById("yelp-review-wrapper");
-        const menu = document.getElementById("menu-wrapper");
-        const operationHours = document.getElementById("opening-hours");
-        const footer = document.getElementById("contact-us");
 
-        let pageSectionList = [welcomePane, about, yelpReview, menu, operationHours, footer];
-        let pageSection = document.getElementById("progress-bar-section");
+        // To add a section button on the progress bar, simply add class "section-on-progress-bar" to an element
+        let pageSectionList = document.getElementsByClassName("section-on-progress-bar");
+        let progressBarPageSection = document.getElementById("progress-bar-section");
         let curTree = document.createDocumentFragment();
 
-        pageSectionList.forEach((section, index) => {
-            let curPercent = Math.round((section.getBoundingClientRect().top + window.scrollY) / getMaxScrollY() * 100);
+        for (let index = 0; index < pageSectionList.length; index++) {
+            let curSection = pageSectionList[index];
+            let curPercent = Math.round((curSection.getBoundingClientRect().top + window.scrollY) / getMaxScrollY() * 100);
 
             // This solution expect there is only one section with height less than 30-50vh at the end of the page
             // If there are multiples section with such height, the page section buttons might overlap
@@ -45,8 +41,8 @@ $(document).ready(function() {
                 window.scroll(0, curPercent/100* getMaxScrollY());
             });
             curTree.appendChild(newEl);
-        });
-        pageSection.appendChild(curTree);
+        }
+        progressBarPageSection.appendChild(curTree);
     }
     function createAndAssignButtonPositionOnProgressBar(index, curPercent) {
         let newEl = document.createElement("button");

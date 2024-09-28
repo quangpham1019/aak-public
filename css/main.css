@@ -170,202 +170,209 @@ body{
 /*end of YELP REVIEW*/
 
 /*MENU*/
-#menu-container{
-    --menu-category-height: 60px;
-    --bg-bubble-diameter: 70px;
-    --bubble-diameter: 50px;
+#menu-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    width: 95%;
-    min-width: 400px;
-    height: 90%;
-    background-color: #ffcc80;
-    display: grid;
-    grid-template-rows: 1fr var(--menu-category-height);
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    #menu-container{
+        --menu-category-height: 60px;
+        --bg-bubble-diameter: 70px;
+        --bubble-diameter: 50px;
 
-    #menu-content {
-        width: 100%;
-        height: calc(100% - var(--bubble-diameter));
-        grid-row: 1;
-
-        * {
-            /*does not collapse top and bottom margin*/
-            margin-left: 10px;
-            margin-right: 10px;
-
-            /*will collapse top and bottom margin*/
-            /*margin: auto 10px;*/
-        }
-    }
-
-    .special-design-wrapper {
+        width: 95%;
+        min-width: 400px;
+        height: 90%;
+        background-color: #ffcc80;
         display: grid;
-        grid-template-rows: repeat(5, 1fr);
-        grid-template-columns: repeat(3, 1fr);
-        position: relative;
-        grid-column-gap: 5px;
-        grid-row-gap: 5px;
+        grid-template-rows: 1fr var(--menu-category-height);
         overflow: hidden;
-    }
-    .row-design-wrapper {
-        display: grid;
-        grid-template-rows: repeat(5, 1fr);
-        grid-template-columns: repeat(1, 1fr);
         position: relative;
-        grid-column-gap: 5px;
-        grid-row-gap: 5px;
-        overflow: hidden;
-    }
-    .flavor-and-price-design-wrapper {
-        display: grid;
-        grid-template-rows: repeat(5, 1fr);
-        grid-template-columns: repeat(1, 1fr);
-        position: relative;
-        grid-column-gap: 5px;
-        grid-row-gap: 5px;
-        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 
-        #price {
-            color: blue;
-            grid-row: 1/ span 3;
-            font-size: 15px;
-            display: grid;
+        #menu-content {
             width: 100%;
+            height: calc(100% - var(--bubble-diameter));
+            grid-row: 1;
 
-            grid-template-areas:
+            * {
+                /*does not collapse top and bottom margin*/
+                margin-left: 10px;
+                margin-right: 10px;
+
+                /*will collapse top and bottom margin*/
+                /*margin: auto 10px;*/
+            }
+        }
+
+        .special-design-wrapper {
+            display: grid;
+            grid-template-rows: repeat(5, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+            position: relative;
+            grid-column-gap: 5px;
+            grid-row-gap: 5px;
+            overflow: hidden;
+        }
+        .row-design-wrapper {
+            display: grid;
+            grid-template-rows: repeat(5, 1fr);
+            grid-template-columns: repeat(1, 1fr);
+            position: relative;
+            grid-column-gap: 5px;
+            grid-row-gap: 5px;
+            overflow: hidden;
+        }
+        .flavor-and-price-design-wrapper {
+            display: grid;
+            grid-template-rows: repeat(5, 1fr);
+            grid-template-columns: repeat(1, 1fr);
+            position: relative;
+            grid-column-gap: 5px;
+            grid-row-gap: 5px;
+            overflow: hidden;
+
+            #price {
+                color: blue;
+                grid-row: 1/ span 3;
+                font-size: 15px;
+                display: grid;
+                width: 100%;
+
+                grid-template-areas:
                 "a a . ."
                 ". b b ."
                 ". . c c"
                 ". . . d";
-            #price-1 {
-                grid-area: a;
+                #price-1 {
+                    grid-area: a;
+                }
+                #price-2 {
+                    grid-area: b;
+                }
+                #price-3 {
+                    grid-area: c;
+                }
+                #price-4 {
+                    grid-area: d;
+                }
             }
-            #price-2 {
-                grid-area: b;
-            }
-            #price-3 {
-                grid-area: c;
-            }
-            #price-4 {
-                grid-area: d;
-            }
-        }
-        #flavor {
-            display: flex;
-            color: black;
-            grid-row: 4 / span 2;
-            grid-column: 1 / span 2;
-            overflow: auto;
-        }
-    }
-
-    .special-item {
-        color: green;
-    }
-    .rice-item {
-        color: blue;
-    }
-    .ice-cream-item {
-        color: red;
-    }
-    .drink-item {
-        color: yellow;
-    }
-    .catering-item {
-        color: white;
-    }
-
-    #menu-category {
-        width: 100%;
-        height: var(--menu-category-height);
-        background-color: #fff;
-
-        .flex-menu-category {
-            position: absolute;
-            display: flex;
-            justify-content: space-evenly;
-        }
-
-        #menu-category-bubble-wrapper{
-            width: 100%;
-            bottom: calc(var(--menu-category-height)/2);
-
-            /*#bubble1{*/
-            /*    transform: translateY(0%);*/
-            /*    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);*/
-            /*    > span{*/
-            /*        opacity: 0.7;*/
-            /*    }*/
-            /*}*/
-
-            .bubble{
-                background-color: #fff;
-                width: var(--bubble-diameter);
-                height: var(--bubble-diameter);
-                bottom: 85px;
-                border-radius: 50%;
-                z-index: 1;
-                transform: translateY(120%);
+            #flavor {
                 display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .icon{
-                opacity: 0;
+                color: black;
+                grid-row: 4 / span 2;
+                grid-column: 1 / span 2;
+                overflow: auto;
             }
         }
-        #menu-category-icon-wrapper{
+
+        .special-item {
+            color: green;
+        }
+        .rice-item {
+            color: blue;
+        }
+        .ice-cream-item {
+            color: red;
+        }
+        .drink-item {
+            color: yellow;
+        }
+        .catering-item {
+            color: white;
+        }
+
+        #menu-category {
             width: 100%;
+            height: var(--menu-category-height);
+            background-color: #fff;
 
-            .menu-icon {
-                opacity: 0.4;
-                transform: translateY(100%);
-                cursor: pointer;
-                width: var(--bubble-diameter);
+            .flex-menu-category {
+                position: absolute;
                 display: flex;
-                justify-content: center;
-                align-items: center;
+                justify-content: space-evenly;
+            }
 
-                &:hover {
-                    opacity: 0.5;
+            #menu-category-bubble-wrapper{
+                width: 100%;
+                bottom: calc(var(--menu-category-height)/2);
+
+                /*#bubble1{*/
+                /*    transform: translateY(0%);*/
+                /*    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);*/
+                /*    > span{*/
+                /*        opacity: 0.7;*/
+                /*    }*/
+                /*}*/
+
+                .bubble{
+                    background-color: #fff;
+                    width: var(--bubble-diameter);
+                    height: var(--bubble-diameter);
+                    bottom: 85px;
+                    border-radius: 50%;
+                    z-index: 1;
+                    transform: translateY(120%);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .icon{
+                    opacity: 0;
+                }
+            }
+            #menu-category-icon-wrapper{
+                width: 100%;
+
+                .menu-icon {
+                    opacity: 0.4;
+                    transform: translateY(100%);
+                    cursor: pointer;
+                    width: var(--bubble-diameter);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    &:hover {
+                        opacity: 0.5;
+                    }
                 }
             }
         }
-    }
 
-    #bg-wrapper{
-        filter: url(#goo);
-        position: absolute;
-        box-sizing: content-box;
-        margin: 0;
-        left: 0;
-        width: 100%;
-        height: calc(var(--bubble-diameter));
-        bottom: var(--menu-category-height);
-        background-color: #ffcc80;
-        display: flex;
-        align-items: end;
-
-        #bg{
-            background-color: #ffcc80;
-            width: 120%;
-            height: 100%;
-            /*margin-left: -10%;*/
-            /*margin-right: -10%;*/
-        }
-        #bg-bubble{
+        #bg-wrapper{
+            filter: url(#goo);
             position: absolute;
+            box-sizing: content-box;
+            margin: 0;
+            left: 0;
+            width: 100%;
+            height: calc(var(--bubble-diameter));
+            bottom: var(--menu-category-height);
             background-color: #ffcc80;
-            width: var(--bg-bubble-diameter);
-            height: var(--bg-bubble-diameter);
-            border-radius: 50%;
-            z-index: 1;
-            /*bottom: -50px;*/
-            /*left: 50px;*/
-            /*transform: translateX(-50%);*/
+            display: flex;
+            align-items: end;
+
+            #bg{
+                background-color: #ffcc80;
+                width: 120%;
+                height: 100%;
+                /*margin-left: -10%;*/
+                /*margin-right: -10%;*/
+            }
+            #bg-bubble{
+                position: absolute;
+                background-color: #ffcc80;
+                width: var(--bg-bubble-diameter);
+                height: var(--bg-bubble-diameter);
+                border-radius: 50%;
+                z-index: 1;
+                /*bottom: -50px;*/
+                /*left: 50px;*/
+                /*transform: translateX(-50%);*/
+            }
         }
     }
 }
