@@ -55,6 +55,11 @@ let menuCategoryData = {
 // TODO: section into 2/5, 3/5 row layout, top for scoop and price, bottom for flavor
 
 $(document).ready(function () {
+    // const jWin = $(window);
+    // jWin.on('resize', () => {
+    //    moveBgBubble();
+    // });
+
     initializeMenuCategory();
     addEventListenerToMenuCategoryIcon();
     $("#menu-ice-cream").click();
@@ -111,11 +116,11 @@ function addEventListenerToMenuCategoryIcon() {
             let leftOffsetForCurrentMenuIcon = menuIcon.offsetLeft;
             let menuCategory = menuIcon.id.slice('-menu'.length);
 
-            move(menuCategory, menuCategoryData[menuCategory].backgroundColor, leftOffsetForCurrentMenuIcon);
+            moveBgBubbleAndCategoryBubble(menuCategory, menuCategoryData[menuCategory].backgroundColor, leftOffsetForCurrentMenuIcon);
         });
     })
 }
-function move(menuCategory, menuBackgroundColor, leftOffset) {
+function moveBgBubbleAndCategoryBubble(menuCategory, menuBackgroundColor, leftOffset) {
     let curBubble = $(`#bubble-${menuCategory}`);
     let curBubbleDiameter = curBubble.css("width");
     let percentageLeftOffset = calculateLeftOffsetOfMenuCategoryIcon(curBubbleDiameter, leftOffset);
@@ -215,7 +220,7 @@ class MenuDesign {
     _tree;
 
     constructor() {
-        if (this.constructor == MenuDesign) {
+        if (this.constructor === MenuDesign) {
             throw new Error("Abstract classes can't be instantiated.");
         }
     }
@@ -310,7 +315,7 @@ class FlavorAndPriceMenuDesign extends MenuDesign {
         Object.keys(scoopPrice).forEach((scoopSize, index) => {
             let newEl = document.createElement("div");
 
-            let scoopSizeEl = document.createElement("h1");
+            let scoopSizeEl = document.createElement("h4");
             scoopSizeEl.innerText = scoopSize;
             let scoopPriceEl = scoopPrice[scoopSize];
 
@@ -337,7 +342,7 @@ class FlavorAndPriceMenuDesign extends MenuDesign {
         // must match format of MENU-LAYOUT-CSS-STYLE or else the display might break
         let newEl = document.createElement("div");
 
-        let itemName = document.createElement("h1");
+        let itemName = document.createElement("h3");
         itemName.innerText = item;
         let itemPrice = document.createElement("p");
         itemPrice.innerText = this._menuItems[item];

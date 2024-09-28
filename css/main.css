@@ -234,28 +234,34 @@ body{
             overflow: hidden;
 
             #price {
+                --num-of-rows: 4;
+                --grid-height: 100%;
+
                 color: blue;
                 grid-row: 1/ span 3;
+                grid-column: 1;
                 font-size: 15px;
                 display: grid;
                 width: 100%;
+                height: var(--grid-height);
 
-                grid-template-areas:
-                "a a . ."
-                ". b b ."
-                ". . c c"
-                ". . . d";
+                grid-template-rows: repeat(var(--num-of-rows), calc(var(--grid-height)/var(--num-of-rows)));
+                grid-template-columns: repeat(4, 1fr);
                 #price-1 {
-                    grid-area: a;
+                    grid-row: 1;
+                    grid-column: 1 / span 2;
                 }
                 #price-2 {
-                    grid-area: b;
+                    grid-row: 2;
+                    grid-column: 2 / span 2;
                 }
                 #price-3 {
-                    grid-area: c;
+                    grid-row: 3;
+                    grid-column: 3 / span 2;
                 }
                 #price-4 {
-                    grid-area: d;
+                    grid-row: 4;
+                    grid-column: 4;
                 }
             }
             #flavor {
