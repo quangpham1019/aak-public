@@ -52,17 +52,16 @@ let menuCategoryData = {
 }
 
 // TODO: add second navigation bar for drink
-// TODO: section into 2/5, 3/5 row layout, top for scoop and price, bottom for flavor
+// TODO: consider using flexbox for bg-wrapper with placeholder, when clicking a menu icon, the bg-bubble will snap
+//  to the corresponding flex child of bg-wrapper,
+//      TODO: learn GSAP to integrate with flexbox animation
 
 $(document).ready(function () {
-    // const jWin = $(window);
-    // jWin.on('resize', () => {
-    //    moveBgBubble();
-    // });
 
     initializeMenuCategory();
     addEventListenerToMenuCategoryIcon();
     $("#menu-ice-cream").click();
+
 });
 
 function initializeMenuCategory() {
@@ -155,7 +154,7 @@ function calculateLeftOffsetOfMenuCategoryIcon(curBubbleDiameter, leftOffset){
     let totalLeftOffset = leftOffset + leftOffsetAdjustment;
 
     let bgWrapperWidth = $("#bg-wrapper").css("width");
-    return (totalLeftOffset / parseInt(bgWrapperWidth)) * 100;
+    return totalLeftOffset/ parseInt(bgWrapperWidth) * 100;
 }
 function changeMenuContent(menuCategory) {
 
