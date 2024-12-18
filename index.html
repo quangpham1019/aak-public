@@ -10,45 +10,42 @@
 
     <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2:400,700&display=swap" rel="stylesheet">
 
-    <!--MAGNIFIC POPUP-->
+    <!--*********************
+        MAGNIFIC POPUP
+    **********************-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/jquery.magnific-popup.js" integrity="sha512-tOyzsVuGuz0il5EcXFi/qA5DI4BNLna4gHbWn+HbQBP0jmRhyqMKup24fzyKnxSX0jBxt2+qStqwwHDIh5TaGA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/magnific-popup.css" integrity="sha512-UhvuUthI9VM4N3ZJ5o1lZgj2zNtANzr3zyucuZZDy67BO6Ep5+rJN2PST7kPj+fOI7M/7wVeYaSaaAICmIQ4sQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!--end of MAGNIFIC POPUP-->
 
-    <!--BOOTSTRAP-->
-    <!-- Latest compiled and minified CSS -->
+
+    <!--*********************
+        BOOTSTRAP
+    **********************-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Latest compiled JavaScript for BOOTSTRAP -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!--end of BOOTSTRAP-->
 
-    <!--FONT-AWESOME 6.6-->
+
+    <!--*********************
+        FONT-AWESOME 6.6
+    **********************-->
     <script src="./assets/fontawesome-free-6.6.0-web/js/all.min.js"></script>
     <link rel="stylesheet" href="./assets/fontawesome-free-6.6.0-web/css/fontawesome.min.css">
-    <!--end of FONT-AWESOME-->
 
-    <!--GSAP-->
+
+    <!--*********************
+        GSAP
+    **********************-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"></script>
-    <!--end of GSAP-->
+
 </head>
 <body>
 
-    <!--PROGRESS BAR-->
-    <!--TODO: add visual clue for page section & title-->
-    <!--TODO: add interactive elements to allow navigation upon click-->
-    <!--<div class="progress-bar-container">-->
-    <!--    <div id="progress-bar-wrapper">-->
-    <!--        <progress id="progress-bar"></progress>-->
-    <!--    </div>-->
-    <!--    <div id="progress-bar-section"></div>-->
-    <!--</div>-->
-    <!--end of PROGRESS BAR-->
-
-
-    <!--WELCOME PANE-->
+    <!--*********************
+        WELCOME-PANE
+    **********************-->
     <!--TODO: add current page indicator-->
     <!--TODO: separate welcome-pane-content into its own template/component-->
-    <section id="welcome-pane" class="section-on-progress-bar">
+    <section id="welcome-pane" class="">
         <div class="welcome-pane-nav">
             <div class="logo">
                 <img src="assets/img/logo.png" alt="logo for alo asian kitchen, a pho restaurant in laguna niguel"/>
@@ -90,9 +87,13 @@
         <div class="welcome-pane-content">
         </div>
     </section>
-    <!--end of WELCOME PANE-->
 
+
+    <!--*********************
+        WELCOME-PANE-CONTENT (COMPONENTS)
+    **********************-->
     <div style="display: none">
+
         <!--*********************
             WELCOME-CONTENT
         **********************-->
@@ -111,102 +112,26 @@
         <!--*********************
             ABOUT
         **********************-->
-        <section style="visibility: collapse" id="about" class="section-on-progress-bar">
+        <section id="about" class="">
             <div>
                 <h2 class="title-text">About Us</h2>
             </div>
-            <div class="about-center">
-                <!---Single item-->
-                <article class="about">
-                    <div class="about-icon"><i class="fa-solid fa-mug-hot"></i></div>
-                    <div class="about-text">
-                        <h2 class="about-subtitle">Drinks</h2>
-                        <p class="about-info">Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit. Quisquam, temporibus!</p>
-                    </div>
-                </article>
-                <!--End of single item-->
-                <!---Single item-->
-                <article class="about">
-                    <div class="about-icon"><i class="fas fa-utensils"></i></div>
-                    <div class="about-text">
-                        <h2 class="about-subtitle">Healthy Food</h2>
-                        <p class="about-info">Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit. Quisquam, temporibus!</p>
-                    </div>
-                </article>
-                <!--End of single item-->
-                <!---Single item-->
-                <article class="about">
-                    <div class="about-icon"><i class="fas fa-mortar-pestle"></i></div>
-                    <div class="about-text">
-                        <h2 class="about-subtitle">Organic Food</h2>
-                        <p class="about-info">Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit. Quisquam, temporibus!</p>
-                    </div>
-                </article>
-                <!--End of single item-->
-                <!---Single item-->
-                <article class="about">
-                    <div class="about-icon"><i class="fas fa-drumstick-bite"></i></div>
-                    <div class="about-text">
-                        <h2 class="about-subtitle">White Meat</h2>
-                        <p class="about-info">Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit. Quisquam, temporibus!</p>
-                    </div>
-                </article>
-                <!--End of single item-->
-                <!---Single item-->
-                <article class="about">
-                    <div class="about-icon"><i class="fas fa-fish"></i></div>
-                    <div class="about-text">
-                        <h2 class="about-subtitle">Sea Food</h2>
-                        <p class="about-info">Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit. Quisquam, temporibus!</p>
-                    </div>
-                </article>
-                <!--End of single item-->
-                <!---Single item-->
-                <article class="about">
-                    <div class="about-icon"><i class="fas fa-pepper-hot "></i></div>
-                    <div class="about-text">
-                        <h2 class="about-subtitle">Hot & Spicy</h2>
-                        <p class="about-info">Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit. Quisquam, temporibus!</p>
-                    </div>
-                </article>
-                <!--End of single item-->
-            </div>
         </section>
 
 
-
-        <div>
-            <!--MENU design for reference-->
-            <!--TODO: add filter function to menu buttons-->
-            <!--TODO: add menu with scrolling-->
-            <!--<section class="menu" id="menu">-->
-            <!--    <article class="menu-image"></article>-->
-            <!--    <article class="menu-text">-->
-            <!--        <div class="menu-text-center">-->
-            <!--            <h1>Our Menu</h1>-->
-            <!--            <p>Lorem ipsum dolor, sit amet consectetur adipisicing-->
-            <!--                elit. Aut omnis nam iusto praesentium inventore vitae-->
-            <!--                esse tempora repellendus.</p>-->
-            <!--            <a href="#">Explore</a>-->
-            <!--        </div>-->
-            <!--    </article>-->
-            <!--</section>-->
-        </div>
-
+        <!--*********************
+            YELP-REVIEW
+        **********************-->
         <!--TODO: add a sliding panel that display several 5-star yelp reviews, include a progress bar, and review to change on arrow click-->
-        <section id="yelp-review-wrapper" class="section-on-progress-bar">
-
+        <section id="yelp-review-wrapper" class="">
         </section>
 
+
+        <!--*********************
+            MENU
+        **********************-->
         <!--TODO: refactor js so that bg-bubble readjust more inline with menu category icons as window resize-->
-        <!--MENU-->
-        <div style="visibility: collapse" id="menu-wrapper" class="section-on-progress-bar">
+        <div id="menu-wrapper" class="">
             <div id="menu-container">
                 <div id="menu-content"></div>
                 <div id="menu-category">
@@ -228,147 +153,14 @@
                 </filter>
             </defs>
         </svg>
-        <!--end of MENU-->
-
-        <!--Misc.-->
-        <div>
-        <!--&lt;!&ndash;MENU ITEM COUNTER&ndash;&gt;-->
-        <!--<section id="numbers">-->
-        <!--    <article class="number">-->
-        <!--        <i class="fa
-        s fa-cloud-meatball"></i>-->
-        <!--        <p>50</p>-->
-        <!--        <h3> Meat dishes</h3>-->
-        <!--    </article>-->
-        <!--    <article class="number">-->
-        <!--        <i class="fas fa-cheese"></i>-->
-        <!--        <p>35</p>-->
-        <!--        <h3> Cheese Variations</h3>-->
-        <!--    </article>-->
-        <!--    <article class="number">-->
-        <!--        <i class="fas fa-pizza-slice"></i>-->
-        <!--        <p>25</p>-->
-        <!--        <h3> Pizzas</h3>-->
-        <!--    </article>-->
-        <!--    <article class="number">-->
-        <!--        <i class="fas fa-ice-cream"></i>-->
-        <!--        <p>40</p>-->
-        <!--        <h3> Desserts</h3>-->
-        <!--    </article>-->
-        <!--</section>-->
-        <!--&lt;!&ndash;end of MENU ITEM COUNTER&ndash;&gt;-->
-
-        <!--&lt;!&ndash;FOOD CARD&ndash;&gt;-->
-        <!--<section id="food">-->
-        <!--    <div>-->
-        <!--        <h2 class="title-text"> Food Fusion</h2>-->
-        <!--    </div>-->
-        <!--    <div class="food-container">-->
-        <!--        &lt;!&ndash;======Card Start &#45;&#45;&#45;&#45;============&ndash;&gt;-->
-        <!--        <article class="food-card">-->
-        <!--            <img src="https://images.pexels.com/photos/574111/pexels-photo-574111.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="food-img"alt="">-->
-        <!--            <div class="img-text">-->
-        <!--                <h1>Breakfast</h1>-->
-        <!--            </div>-->
-        <!--            <div class="img-footer">-->
-        <!--                <div class="footer-icon">-->
-        <!--                    <i class="fas fa-dollar-sign">25</i>-->
-        <!--                </div>-->
-        <!--                <div class="footer-btn">-->
-        <!--                    <button type="button"class="food-btn">Order Now</button>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--        </article>-->
-        <!--        <article class="food-card">-->
-        <!--            <img src="https://images.pexels.com/photos/14457194/pexels-photo-14457194.jpeg?auto=compress&cs=tinysrgb&w=600" class="food-img"alt="">-->
-        <!--            <div class="img-text">-->
-        <!--                <h1>Lunch</h1>-->
-        <!--            </div>-->
-        <!--            <div class="img-footer">-->
-        <!--                <div class="footer-icon">-->
-        <!--                    <i class="fas fa-dollar-sign">35</i>-->
-        <!--                </div>-->
-        <!--                <div class="footer-btn">-->
-        <!--                    <button type="button"class="food-btn">Order Now</button>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--        </article>-->
-        <!--        <article class="food-card">-->
-        <!--            <img src="https://images.pexels.com/photos/410648/pexels-photo-410648.jpeg?auto=compress&cs=tinysrgb&w=600" class="food-img"alt="">-->
-        <!--            <div class="img-text">-->
-        <!--                <h1>Dinner</h1>-->
-        <!--            </div>-->
-        <!--            <div class="img-footer">-->
-        <!--                <div class="footer-icon">-->
-        <!--                    <i class="fas fa-dollar-sign">45</i>-->
-        <!--                </div>-->
-        <!--                <div class="footer-btn">-->
-        <!--                    <button type="button"class="food-btn">Order Now</button>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--        </article>-->
-        <!--    </div>-->
 
 
-
-        <!--</section>-->
-        <!--&lt;!&ndash;end of FOOD CARD&ndash;&gt;-->
-
-        <!--&lt;!&ndash;FOOD GALLERY&ndash;&gt;-->
-        <!--<section id="gallery">-->
-        <!--    <div>-->
-        <!--        <h2 class="title-text">Main Cuisines</h2>-->
-        <!--    </div>-->
-        <!--    <div id="gallery-center">-->
-        <!--        <article class="gallery-item">-->
-        <!--            <a href="https://images.pexels.com/photos/842142/pexels-photo-842142.jpeg?auto=compress&cs=tinysrgb&w=600g">-->
-        <!--                <img src="https://images.pexels.com/photos/842142/pexels-photo-842142.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">-->
-        <!--            </a>-->
-        <!--        </article>-->
-        <!--        <article class="gallery-item">-->
-        <!--            <a href="https://images.pexels.com/photos/842545/pexels-photo-842545.jpeg?auto=compress&cs=tinysrgb&w=600">-->
-        <!--                <img src="https://images.pexels.com/photos/842545/pexels-photo-842545.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">-->
-        <!--            </a>-->
-        <!--        </article>-->
-        <!--        <article class="gallery-item">-->
-        <!--            <a href="https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&w=600">-->
-        <!--                <img src="https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">-->
-        <!--            </a>-->
-        <!--        </article>-->
-        <!--        <article class="gallery-item">-->
-        <!--            <a href="https://images.pexels.com/photos/3850838/pexels-photo-3850838.jpeg?auto=compress&cs=tinysrgb&w=600">-->
-        <!--                <img src="https://images.pexels.com/photos/3850838/pexels-photo-3850838.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">-->
-        <!--            </a>-->
-        <!--        </article>-->
-        <!--        <article class="gallery-item">-->
-        <!--            <a href="https://images.pexels.com/photos/1263870/pexels-photo-1263870.jpeg?auto=compress&cs=tinysrgb&w=600">-->
-        <!--                <img src="https://images.pexels.com/photos/1263870/pexels-photo-1263870.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">-->
-        <!--            </a>-->
-        <!--        </article>-->
-        <!--        <article class="gallery-item">-->
-        <!--            <a href="https://images.pexels.com/photos/2773940/pexels-photo-2773940.jpeg?auto=compress&cs=tinysrgb&w=600">-->
-        <!--                <img src="https://images.pexels.com/photos/2773940/pexels-photo-2773940.jpeg?auto=compress&cs=tinysrgb&w=600">-->
-        <!--            </a>-->
-        <!--        </article>-->
-        <!--        <article class="gallery-item">-->
-        <!--            <a href="https://images.pexels.com/photos/858508/pexels-photo-858508.jpeg?auto=compress&cs=tinysrgb&w=600">-->
-        <!--                <img src="https://images.pexels.com/photos/858508/pexels-photo-858508.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">-->
-        <!--            </a>-->
-        <!--        </article>-->
-        <!--        <article class="gallery-item">-->
-        <!--            <a href="https://images.pexels.com/photos/2059151/pexels-photo-2059151.jpeg?auto=compress&cs=tinysrgb&w=600">-->
-        <!--                <img src="https://images.pexels.com/photos/2059151/pexels-photo-2059151.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">-->
-        <!--            </a>-->
-        <!--        </article>-->
-        <!--    </div>-->
-        <!--</section>-->
-        <!--&lt;!&ndash;end of FOOD GALLERY&ndash;&gt;-->
-        </div>
-
-        <!--OPERATION HOURS-->
+        <!--*********************
+            OPENING-HOURS
+        **********************-->
         <!--TODO: Add sliding background-->
         <!--TODO: Edit table css for better visual-->
-        <section style="visibility: collapse" id="opening-hours" class="section-on-progress-bar">
+        <section id="opening-hours" class="">
             <div id="opening-hours-grid">
             </div>
             <table style="background-color: rgba(255, 255, 255, 0.5);
@@ -393,29 +185,13 @@
                 </tbody>
             </table>
         </section>
-        <!--end of OPERATION HOURS-->
 
-        <!--Social Icons-->
-        <section id="social-icons">
 
-            <a href="https://www.yelp.com/biz/alo-asian-kitchen-laguna-niguel">
-                <i style="color:red" class="fa-brands fa-yelp"></i>
-            </a>
-            <a href="https://www.facebook.com/ALOASIANKITCHENLN/">
-                <i class="fa-brands fa-facebook-f facebook"></i>
-            </a>
-            <!--<a href="#">-->
-            <!--    <i class="fa-brands fa-twitter twitter"></i></a>-->
-            <a href="https://www.instagram.com/aloasiankitchen/">
-                <i class="fa-brands fa-instagram instagram"></i></a>
-            <!--<a href="#">-->
-            <!--    <i class="fa-brands fa-google-plus plus"></i></a>-->
-        </section>
-        <!--End of Social Icons-->
-
+        <!--*********************
+            FOOTER
+        **********************-->
         <!--TODO: fix violations when adding embed google map-->
-        <!--FOOTER-->
-        <footer id="contact-us" class="footer section-on-progress-bar">
+        <footer id="contact-us" class="footer">
             <!--<div id="google-map-wrapper">-->
             <!--    <iframe id="embed-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13299.73606655845!2d-117.70946913629281!3d33.55509065551463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcef1b1dc33085%3A0x9374e1a036e8a380!2sAlo%20Asian%20Kitchen!5e0!3m2!1sen!2sus!4v1727479668588!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
             <!--</div>-->
@@ -425,11 +201,13 @@
                 </p>
             </div>
         </footer>
-        <!--end of FOOTER-->
+
     </div>
 
 
-    <!--SCRIPTS-->
+    <!--*********************
+        JS SCRIPTS
+    **********************-->
     <section>
         <script src="js/index.js"></script>
         <!--<script src="js/progressBar.js"></script>-->
@@ -438,7 +216,6 @@
         <!--<script src="js/onScreenRuler.js"></script>-->
         <!--<script src="js/sideNavBar.js"></script>-->
     </section>
-    <!--end of SCRIPTS-->
 
 </body>
 </html>
