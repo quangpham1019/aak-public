@@ -95,8 +95,12 @@ body{
 }
 /*end of PROGRESS BAR*/
 
-/*WELCOME PANE*/
+/**********************
+    WELCOME-PANE
+***********************/
 #welcome-pane{
+    /*background-color: #38A1F3;*/
+    height: 100vh;
     display: flex;
 
     .welcome-pane-nav {
@@ -118,6 +122,7 @@ body{
 
             img {
                 width: 80%;
+                cursor: pointer;
             }
         }
         .nav-items-wrapper {
@@ -177,8 +182,7 @@ body{
 
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 10%;
+            justify-content: space-evenly;
 
             /*.social-icon {*/
             /*    height: 30%!important;*/
@@ -188,71 +192,93 @@ body{
             /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 40%);*/
 
             a {
-                /*background-color: #cccccc;*/
-                padding: 5px 10px;
+                /*background-color: orange;*/
+                width: 23%;
+                height: 50%;
                 font-size: 40px;
-                border-radius: 5px;
+                border-radius: 10px;
+                box-shadow: -3px 3px 0 5px black;
 
                 transition: transform 0.5s ease, color 1s ease;
                 &:hover {
                     transform: translateY(-20px);
                 }
-            }
 
-            .facebook{
-                color: #3b5998;
-            }
-            .twitter{
-                color: #38A1F3;
-            }
-            .instagram{
-                color: #e1306c;
-            }
-            .plus{
-                color: #db4a39;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                & > * {
+                    height: 80%!important;
+                    width: 80%!important;
+                }
+
+                .facebook{
+                    color: #3b5998;
+                }
+                .twitter{
+                    color: #38A1F3;
+                }
+                .instagram{
+                    color: #e1306c;
+                }
+                .yelp{
+                    color: #db4a39;
+                }
             }
         }
     }
     .welcome-pane-content {
-        min-height: 100vh;
-        background: var(--welcome-pane-img);
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-
-        display: flex;
-        justify-content: end;
+        /*background-color: #3b5998;*/
+        height: 100%;
         flex-grow: 1;
-
-        .hero {
-            /*background-color: #3b5998;*/
-            padding: 0 30px;
-            display: flex;
-            flex-grow: 1;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            /*position: absolute;*/
-            /*background-attachment: fixed;*/
-            /*width: 100%;*/
-            /*height: 100%;*/
-
-            .title {
-                color: antiquewhite;
-                font-size: 50px;
-                text-align: center;
-            }
-        }
-
-        .hero-right {
-            /*background-color: #38A1F3;*/
-            width: 50%;
-            height: 100%;
-        }
+        border-radius: 50px;
+        padding: 10px;
     }
 }
 
 /*end of WELCOME PANE*/
+
+/**********************
+    WELCOME-CONTENT
+***********************/
+.welcome-content {
+    height: 100%;
+    background: var(--welcome-pane-img);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 50px;
+
+    display: flex;
+    justify-content: end;
+
+    .hero {
+        /*background-color: #3b5998;*/
+        padding: 0 30px;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        /*position: absolute;*/
+        /*background-attachment: fixed;*/
+        /*width: 100%;*/
+        /*height: 100%;*/
+
+        .title {
+            color: antiquewhite;
+            font-size: 50px;
+            text-align: center;
+        }
+    }
+
+    .hero-right {
+        /*background-color: #38A1F3;*/
+        width: 50%;
+        height: 100%;
+    }
+}
 
 /*YELP REVIEW*/
 #yelp-review-wrapper {
@@ -482,7 +508,7 @@ body{
 
     background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4)),
     var(--opening-hours-background)center/cover no-repeat fixed;
-    width: 80%;
+    width: 100%;
     height:100vh;
 
     display: flex;
