@@ -31,47 +31,66 @@
     <script src="./assets/fontawesome-free-6.6.0-web/js/all.min.js"></script>
     <link rel="stylesheet" href="./assets/fontawesome-free-6.6.0-web/css/fontawesome.min.css">
 
-
     <!--*********************
-        GSAP
+        GOOGLE FONTS
     **********************-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"></script>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+CO+Guides&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <!--*********************
-        WELCOME-PANE
+        CONTENT-WRAPPER
     **********************-->
     <!--TODO: add current page indicator-->
-    <!--TODO: separate welcome-pane-content into its own template/component-->
-    <section id="welcome-pane" class="">
-        <div class="welcome-pane-nav">
+    <!--TODO: separate content-wrapper-content into its own template/component-->
+    <section id="content-wrapper" class="">
+
+        <!--*********************
+            CONTENT-WRAPPER-NAV
+        **********************-->
+        <div class="content-wrapper-nav dancing-script-normal">
+
+            <!--*********************
+                LOGO
+            **********************-->
             <div class="logo">
-                <img src="assets/img/logo.png" alt="logo for alo asian kitchen, a pho restaurant in laguna niguel"/>
+                <a>
+                    <img alt="logo for alo asian kitchen, a pho restaurant in laguna niguel"
+                         src="assets/img/logo-removebg-preview.png"
+                    />
+                </a>
+
             </div>
-            <div class="nav-items-wrapper">
-                <div class="nav-items">
-                    <div class="nav-item">
-                        <h3 id="about-nav">About Us</h3>
-                    </div>
-                    <div class="nav-item">
-                        <h3 id="menu-wrapper-nav">Menu</h3>
-                    </div>
-                    <div class="nav-item">
-                        <h3 id="opening-hours-nav">Hours</h3>
-                    </div>
-                    <div class="nav-item">
-                        <h3 id="yelp-review-wrapper-nav">Reviews</h3>
-                    </div>
-                    <div class="nav-item">
-                        <h3>Catering</h3>
-                    </div>
-                    <div class="nav-item">
-                        <h3>Delivery</h3>
-                    </div>
+
+            <!--*********************
+                NAV-ITEMS-WRAPPER
+            **********************-->
+            <div class="nav-list">
+                <div class="nav-item">
+                    <div id="menu-wrapper-nav">Menu</div>
+                </div>
+                <div class="nav-item">
+                    <div id="opening-hours-nav">Hours</div>
+                </div>
+                <div class="nav-item">
+                    <div id="yelp-review-wrapper-nav">Reviews</div>
+                </div>
+                <div class="nav-item">
+                    <div id="catering-nav">Catering</div>
+                </div>
+                <div class="nav-item">
+                    <div id="delivery-nav">Delivery</div>
+                </div>
+                <div class="nav-item">
+                    <div id="about-nav">About Us</div>
                 </div>
             </div>
+
+            <!--*********************
+                SOCIAL-ICONS
+            **********************-->
             <div class="social-icons">
                 <a href="https://www.yelp.com/biz/alo-asian-kitchen-laguna-niguel">
                     <i class="social-icon fa-brands fa-yelp yelp"></i>
@@ -84,75 +103,76 @@
                 </a>
             </div>
         </div>
-        <div class="welcome-pane-content">
-        </div>
+
+        <!--*********************
+            CONTENT-WRAPPER-CONTENT
+        **********************-->
+        <div class="content-wrapper-content"></div>
     </section>
 
 
     <!--*********************
-        WELCOME-PANE-CONTENT (COMPONENTS)
+        CONTENT-WRAPPER-CONTENT (COMPONENTS)
     **********************-->
     <div style="display: none">
 
         <!--*********************
-            WELCOME-CONTENT
+            WELCOME
         **********************-->
-        <section id="welcome-content" class="welcome-content">
+        <section id="welcome" class="content-wrapper-component dancing-script-normal">
             <div class="hero">
-                <!--<h1 class="title">Alo Asian Kitchen</h1>-->
-                <h2 class="title">Hot,</h2>
-                <h2 class="title">Flavorful,</h2>
-                <h2 class="title">Delicious,</h2>
-                <h2 class="title">You know what it is</h2>
+                <div id="catch-phrase-1">Alo, Pho is here</div>
+                <div id="catch-phrase-2">Ready to warm your day</div>
             </div>
             <div class="hero-right"></div>
         </section>
 
 
         <!--*********************
-            ABOUT
-        **********************-->
-        <section id="about" class="">
-            <div>
-                <h2 class="title-text">About Us</h2>
-            </div>
-        </section>
-
-
-        <!--*********************
-            YELP-REVIEW
-        **********************-->
-        <!--TODO: add a sliding panel that display several 5-star yelp reviews, include a progress bar, and review to change on arrow click-->
-        <section id="yelp-review-wrapper" class="">
-        </section>
-
-
-        <!--*********************
             MENU
         **********************-->
-        <!--TODO: refactor js so that bg-bubble readjust more inline with menu category icons as window resize-->
-        <div id="menu-wrapper" class="">
-            <div id="menu-container">
-                <div id="menu-content"></div>
-                <div id="menu-category">
-                    <div id="menu-category-bubble-wrapper" class="flex-menu-category"></div>
-                    <div id="menu-category-icon-wrapper" class="flex-menu-category"></div>
+        <section id="menu-wrapper" class="content-wrapper-component">
+            <div class="menu hide-scrollbar">
+                <div>
+                    <div class="menu-item-img">
+                        <img src="assets/img/item-1.jpg" alt="a pho bowl"/>
+                    </div>
+                    <div class="menu-item-description">
+                        <div class="menu-item-name">Signature Pho</div>
+                        <div class="menu-item-details">Flavorful cut of filet mignon served with cilantro, jalapeno, and meatball</div>
+                    </div>
+                    <div class="menu-item-price">18</div>
                 </div>
-                <div id="bg-wrapper">
-                    <div id="bg"></div>
-                    <div id="bg-bubble"></div>
-                </div>
+                <div>Test</div>
+                <div>Test</div>
+                <div>Test</div>
+                <div>Test</div>
             </div>
-        </div>
-        <svg width="0" height="0">
-            <defs>
-                <filter id="goo">
-                    <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur" id="blurFilter"></feGaussianBlur>
-                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 30 -15" result="goo"></feColorMatrix>
-                    <feComposite in="SourceGraphic" in2="goo" operator="atop"></feComposite>
-                </filter>
-            </defs>
-        </svg>
+
+            <!--<div class="menu-category-wrapper">-->
+            <!--    <div id="menu-category-special" class="menu-category">-->
+            <!--        <i class="fa-solid fa-star"></i>-->
+            <!--        Special-->
+            <!--    </div>-->
+            <!--    <div id="menu-category-rice" class="menu-category">-->
+            <!--        <i class="fa-solid fa-bowl-food"></i>-->
+            <!--        Rice-->
+            <!--    </div>-->
+            <!--    <div id="menu-category-ice-cream" class="menu-category">-->
+            <!--        <i class="fa-solid fa-ice-cream"></i>-->
+            <!--        Ice-Cream-->
+            <!--    </div>-->
+            <!--    <div id="menu-category-drink" class="menu-category">-->
+            <!--        <i class="fa-solid fa-glass-water"></i>-->
+            <!--        Drink-->
+            <!--    </div>-->
+            <!--    <div id="menu-category-catering" class="menu-category">-->
+            <!--        <i class="fa-solid fa-bell-concierge"></i>-->
+            <!--        Catering-->
+            <!--    </div>-->
+            <!--</div>-->
+            <!--<div class="menu-items-wrapper"></div>-->
+        </section>
 
 
         <!--*********************
@@ -160,11 +180,10 @@
         **********************-->
         <!--TODO: Add sliding background-->
         <!--TODO: Edit table css for better visual-->
-        <section id="opening-hours" class="">
+        <section id="opening-hours" class="content-wrapper-component">
             <div id="opening-hours-grid">
             </div>
-            <table style="background-color: rgba(255, 255, 255, 0.5);
-                        font-style: oblique; font-weight: bold; font-size: x-large;">
+            <table style="background-color: rgba(255, 255, 255, 0.5); font-style: oblique; font-weight: bold; font-size: x-large;">
                 <thead>
                     <tr>
                         <td>Monday</td>
@@ -184,6 +203,23 @@
                     </tr>
                 </tbody>
             </table>
+        </section>
+
+
+        <!--*********************
+            YELP-REVIEW
+        **********************-->
+        <!--TODO: add a sliding panel that display several 5-star yelp reviews, include a progress bar, and review to change on arrow click-->
+        <section id="yelp-review-wrapper" class="content-wrapper-component">
+            <h2 class="title-text">Reviews</h2>
+        </section>
+
+
+        <!--*********************
+            ABOUT
+        **********************-->
+        <section id="about" class="content-wrapper-component">
+            <h2 class="title-text">About Us</h2>
         </section>
 
 
@@ -211,7 +247,7 @@
     <section>
         <script src="js/index.js"></script>
         <!--<script src="js/progressBar.js"></script>-->
-        <script src="js/menuByCategory.js"></script>
+        <!--<script src="js/unused/menuByCategory.js"></script>-->
         <!--<script src="js/dragElementsOnScreen.js"></script>-->
         <!--<script src="js/onScreenRuler.js"></script>-->
         <!--<script src="js/sideNavBar.js"></script>-->
