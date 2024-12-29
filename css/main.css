@@ -239,15 +239,15 @@ body{
 ***********************/
 #menu-wrapper {
 
-    .menu {
+    #menu {
         --menu-margin: 2%;
 
         /*position: relative;*/
         /*z-index: 1;*/
 
         height: calc(100% - var(--menu-margin)*2);
-        width: 85%;
-        margin: 2%;
+        width: calc(100% - var(--menu-margin)*2);
+        margin: var(--menu-margin);
         overflow-y: auto;
 
         background-color: rgba(245, 242, 230, 0.5);
