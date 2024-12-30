@@ -1,5 +1,5 @@
 const menuCategories = {
-    'special': {
+    'alo signature': {
         'items': {
             'Signature Pho': {
                 'imgSrc': 'assets/img/item-1.jpg',

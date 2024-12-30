@@ -7,15 +7,36 @@
     <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.ico" />
     <link rel="stylesheet" href="css/main.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
     <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2:400,700&display=swap" rel="stylesheet">
 
+    <!--*********************
+        SCRIPT TO HANDLE JAVASCRIPT-DISABLED BROWSERS
+    **********************-->
+    <script>
+        $(document).ready(function() {
+            document.querySelector("#content-wrapper").style.visibility = "initial";
+        });
+    </script>
     <noscript>
         <div id="no-javascript">
+            <div class="logo">
+                <a href="./index.html"
+                aria-label="link on logo to redirect to our no-javascript website for browsers that do not have javascript enabled">
+                    <img alt="logo for alo asian kitchen, a pho restaurant in laguna niguel"
+                         src="assets/img/logo-removebg-preview.png"
+                    />
+                </a>
+            </div>
             <h1>JavaScript is required for this website.</h1>
             <p>Please enable JavaScript in your browser settings to view this page correctly.</p>
+            <br>
+            <a href="./index-no-javascript.html"
+               aria-label="button to redirect to our no-javascript website for browsers that do not have javascript enabled">
+                <button style="font-weight: bold; font-size: large">View our no-javascript website</button>
+            </a>
         </div>
     </noscript>
+
 
     <!--*********************
         MAGNIFIC POPUP
@@ -52,7 +73,7 @@
     **********************-->
     <!--TODO: add current page indicator-->
     <!--TODO: separate content-wrapper-content into its own template/component-->
-    <section id="content-wrapper" class="">
+    <section style="visibility: hidden" id="content-wrapper" class="">
 
         <!--*********************
             CONTENT-WRAPPER-NAV
@@ -63,12 +84,9 @@
                 LOGO
             **********************-->
             <div class="logo">
-                <a>
-                    <img alt="logo for alo asian kitchen, a pho restaurant in laguna niguel"
-                         src="assets/img/logo-removebg-preview.png"
-                    />
-                </a>
-
+                <img alt="logo for alo asian kitchen, a pho restaurant in laguna niguel"
+                     src="assets/img/logo-removebg-preview.png"
+                />
             </div>
 
             <!--*********************
@@ -85,13 +103,13 @@
                     <div id="yelp-review-wrapper-nav">Reviews</div>
                 </div>
                 <div class="nav-item">
-                    <div id="catering-nav">Catering</div>
+                    <div id="catering-wrapper-nav">Catering</div>
                 </div>
                 <div class="nav-item">
-                    <div id="delivery-nav">Delivery</div>
+                    <div id="delivery-wrapper-nav">Delivery</div>
                 </div>
                 <div class="nav-item">
-                    <div id="about-nav">About Us</div>
+                    <div id="about-wrapper-nav">About Us</div>
                 </div>
             </div>
 
@@ -114,7 +132,7 @@
         <!--*********************
             CONTENT-WRAPPER-CONTENT
         **********************-->
-        <div class="content-wrapper-content"></div>
+        <div class="content-wrapper-content dancing-script-normal"></div>
     </section>
 
 
@@ -126,7 +144,7 @@
         <!--*********************
             WELCOME
         **********************-->
-        <section id="welcome" class="content-wrapper-component dancing-script-normal">
+        <section id="welcome" class="content-wrapper-component">
             <div class="hero">
                 <div id="catch-phrase-1">Alo, Pho is here</div>
                 <div id="catch-phrase-2">Ready to warm your day</div>
@@ -151,30 +169,6 @@
                 <!--    <div class="menu-item-price">18</div>-->
                 <!--</div>-->
             </div>
-
-            <!--<div class="menu-category-wrapper">-->
-            <!--    <div id="menu-category-special" class="menu-category">-->
-            <!--        <i class="fa-solid fa-star"></i>-->
-            <!--        Special-->
-            <!--    </div>-->
-            <!--    <div id="menu-category-rice" class="menu-category">-->
-            <!--        <i class="fa-solid fa-bowl-food"></i>-->
-            <!--        Rice-->
-            <!--    </div>-->
-            <!--    <div id="menu-category-ice-cream" class="menu-category">-->
-            <!--        <i class="fa-solid fa-ice-cream"></i>-->
-            <!--        Ice-Cream-->
-            <!--    </div>-->
-            <!--    <div id="menu-category-drink" class="menu-category">-->
-            <!--        <i class="fa-solid fa-glass-water"></i>-->
-            <!--        Drink-->
-            <!--    </div>-->
-            <!--    <div id="menu-category-catering" class="menu-category">-->
-            <!--        <i class="fa-solid fa-bell-concierge"></i>-->
-            <!--        Catering-->
-            <!--    </div>-->
-            <!--</div>-->
-            <!--<div class="menu-items-wrapper"></div>-->
         </section>
 
 
@@ -184,10 +178,11 @@
         <!--TODO: Add sliding background-->
         <!--TODO: Edit table css for better visual-->
         <section id="opening-hours" class="content-wrapper-component">
-            <div id="opening-hours-grid">
-            </div>
-            <table style="background-color: rgba(255, 255, 255, 0.5); font-style: oblique; font-weight: bold; font-size: x-large;">
-                <thead>
+            <!--<div id="opening-hours-grid">-->
+            <!--</div>-->
+
+            <table id="opening-hours-table">
+                <tbody>
                     <tr>
                         <td>Monday</td>
                         <td>Tuesday</td>
@@ -197,12 +192,14 @@
                         <td>Saturday</td>
                         <td>Sunday</td>
                     </tr>
-                </thead>
-                <tbody>
                     <tr>
-                        <td colspan="2" style="text-align: center">11-9</td>
-                        <td colspan="1" style="background-color: orange">closed</td>
-                        <td colspan="4" style="text-align: center">11-9</td>
+                        <td style="text-align: center">11:00am - 9:00pm</td>
+                        <td style="text-align: center">11:00am - 9:00pm</td>
+                        <td style="text-align: center; background-color: orange">closed</td>
+                        <td style="text-align: center">11:00am - 9:00pm</td>
+                        <td style="text-align: center">11:00am - 9:00pm</td>
+                        <td style="text-align: center">11:00am - 9:00pm</td>
+                        <td style="text-align: center">11:00am - 9:00pm</td>
                     </tr>
                 </tbody>
             </table>
@@ -213,16 +210,50 @@
             YELP-REVIEW
         **********************-->
         <!--TODO: add a sliding panel that display several 5-star yelp reviews, include a progress bar, and review to change on arrow click-->
+        <!--TODO: add yelp badge-->
         <section id="yelp-review-wrapper" class="content-wrapper-component">
-            <h2 class="title-text">Reviews</h2>
+            <div id="review-panel">
+                <h2 class="title-text">Reviews</h2>
+
+            </div>
+        </section>
+
+
+        <!--*********************
+            CATERING
+        **********************-->
+        <!--TODO: add catering menu-->
+        <section id="catering-wrapper" class="content-wrapper-component">
+            <div id="catering-menu">
+                <h2 class="title-text">Catering</h2>
+
+            </div>
+        </section>
+
+
+        <!--*********************
+            DELIVERY
+        **********************-->
+        <!--TODO: add delivery options-->
+        <section id="delivery-wrapper" class="content-wrapper-component">
+            <div id="delivery-options">
+                <h2 class="title-text">Delivery</h2>
+
+            </div>
         </section>
 
 
         <!--*********************
             ABOUT
         **********************-->
-        <section id="about" class="content-wrapper-component">
-            <h2 class="title-text">About Us</h2>
+        <!--TODO: add embed google map-->
+        <!--TODO: add brief description of business-->
+        <!--TODO: add contact info like email, phone number-->
+        <section id="about-wrapper" class="content-wrapper-component">
+            <div id="about-info">
+                <h2 class="title-text">About Us</h2>
+
+            </div>
         </section>
 
 
@@ -249,13 +280,7 @@
     **********************-->
     <section>
         <script type="module" src="js/index.js"></script>
-        <!--<script type="module" src="js/menuCategoryData.js"></script>-->
 
-        <!--<script src="js/progressBar.js"></script>-->
-        <!--<script src="js/unused/menuByCategory.js"></script>-->
-        <!--<script src="js/dragElementsOnScreen.js"></script>-->
-        <!--<script src="js/onScreenRuler.js"></script>-->
-        <!--<script src="js/sideNavBar.js"></script>-->
     </section>
 
 </body>

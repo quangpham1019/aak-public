@@ -42,7 +42,7 @@ class MenuDesignFactory {
             case "ice-cream":
             default:
                 this._menuDesign = new SpecialMenuDesign(menuCategory);
-                console.log("using SpecialMenuDesign");
+                // console.log("using SpecialMenuDesign");
                 break;
         }
     }
@@ -71,6 +71,8 @@ class MenuDesign {
 
         let categoryTitle = document.createElement("h2");
         categoryTitle.innerText = this._menuCategory;
+        categoryTitle.style.textAlign = "center";
+        categoryTitle.style.textTransform = "uppercase";
         this._tree.appendChild(categoryTitle);
 
         Object.keys(this._menuItems).forEach(item => {

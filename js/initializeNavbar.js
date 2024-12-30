@@ -12,13 +12,15 @@ function initializeNavbarItems() {
     });
 }
 function swapContent(curItem) {
+
+    // Nav items must have id in the format of "{id-of-section-to-display}-nav"
+
     let content = document.querySelector('.content-wrapper-content');
     let toSwap = curItem.id.slice(0, -'-nav'.length);
     let toSwapEl = document.querySelector(`#${toSwap}`);
 
     if (toSwapEl != null) {
         let clone = toSwapEl.cloneNode(true);
-        clone.style.visibility = "initial";
         content.replaceChildren(clone);
     } else {
         console.log("cannot find content to substitute");
