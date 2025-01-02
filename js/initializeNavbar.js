@@ -36,12 +36,22 @@ function updateNavbarIndicator(curItem) {
 }
 
 function initializeLogo() {
-    let content = document.querySelector('.content-wrapper-content');
+
+    let contentComponents = document.querySelector("#content-wrapper-components");
+
+    let content = document.querySelector('#content-wrapper-content');
     let welcomeContent = document.querySelector('#welcome')
     let logo = document.querySelector('.logo');
+
     logo.addEventListener('click', function(event) {
-        let curClone = welcomeContent.cloneNode(true);
-        content.replaceChildren(curClone);
+
+        let curElDisplay = content.children[0];
+
+        if (curElDisplay != null) {
+            contentComponents.appendChild(curElDisplay);
+        }
+
+        content.replaceChildren(welcomeContent);
 
         let selected = $(".selected");
         selected.removeClass("selected");

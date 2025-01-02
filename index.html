@@ -69,20 +69,18 @@
 
 </head>
 <body>
-    <!-- TODO: remve about us section, integrate with welcome section, replace about us nav item with phone -->
+    <!-- TODO: integrate about us into welcome section -->
     <!-- TODO: add scroll to navigate -->
 
     <!--*********************
         CONTENT-WRAPPER
     **********************-->
-    <!--TODO: add current page indicator-->
-    <!--TODO: separate content-wrapper-content into its own template/component-->
     <section style="visibility: hidden" id="content-wrapper" class="">
 
         <!--*********************
             CONTENT-WRAPPER-NAV
         **********************-->
-        <div class="content-wrapper-nav lora-normal">
+        <div id="content-wrapper-nav" class="lora-normal">
 
             <!--*********************
                 LOGO
@@ -110,7 +108,7 @@
                     <div id="catering-wrapper-nav">Catering</div>
                 </div> -->
                 <div class="nav-item">
-                    <div id="delivery-wrapper-nav">Delivery</div>
+                    <div id="delivery-nav">Delivery</div>
                 </div>
                 <!-- <div class="nav-item">
                     <div id="about-wrapper-nav">About Us</div>
@@ -142,7 +140,7 @@
         <!--*********************
             CONTENT-WRAPPER-CONTENT
         **********************-->
-        <div id="content-wrapper-content" class="content-wrapper-content lora-normal"></div>
+        <div id="content-wrapper-content" class="lora-normal"></div>
     </section>
 
 
@@ -150,6 +148,7 @@
         CONTENT-WRAPPER-CONTENT (COMPONENTS)
     **********************-->
     <div id="content-wrapper-components" style="display: none">
+
 
         <!--*********************
             WELCOME
@@ -174,7 +173,28 @@
             <div id="menu" class="hide-scrollbar">
 
                 <!--*********************
-                    MENU ITEM LAYOUT 
+                    #menu LAYOUT
+                **********************-->
+                <!--<div id="menu">-->
+                <!--    <div class="menu-category-wrapper"></div>-->
+                <!--    <div class="menu-category-wrapper"></div>-->
+                <!--    <div class="menu-category-wrapper"></div>-->
+                <!--</div>-->
+
+                <!--*********************
+                    .menu-category-wrapper LAYOUT
+                **********************-->
+                <!--<div class="menu-category-wrapper">-->
+                <!--    <h2 class="menu-category-title"></h2>-->
+                <!--    <div class="menu-category-items">-->
+                <!--        <div class="menu-item"></div>-->
+                <!--        <div class="menu-item"></div>-->
+                <!--        <div class="menu-item"></div>-->
+                <!--    </div>-->
+                <!--</div>-->
+
+                <!--*********************
+                    .menu-item LAYOUT
                 **********************-->
                 <!--<div class="menu-item">-->
                 <!--    <div class="menu-item-img">-->
@@ -186,6 +206,7 @@
                 <!--    </div>-->
                 <!--    <div class="menu-item-price">18</div>-->
                 <!--</div>-->
+
             </div>
         </section>
 
@@ -197,7 +218,7 @@
         <!--TODO: display date for current week-->
         <!--TODO: update closed date indicator based on predetermined closing dates (input from json)-->
         <!--TODO: add date picker-->
-        <section id="opening-hours" class="content-wrapper-component">
+        <section id="opening-hours" class="content-wrapper-component lora-normal">
             <!--<div id="opening-hours-grid">-->
             <!--</div>-->
 
@@ -233,22 +254,11 @@
         <!--TODO: add yelp reviews, mixed 4 & 5 stars-->
         <!--TODO: add yelp badge-->
         <!--TODO: add google reviews, mixed 4 & 5 stars-->
-        <section id="yelp-review-wrapper" class="content-wrapper-component">
+        <section id="yelp-review-wrapper" class="content-wrapper-component lora-normal">
             <div id="review-panel">
-                <h2 class="title-text">Reviews</h2>
-
-            </div>
-        </section>
-
-
-        <!--*********************
-            CATERING
-        **********************-->
-        <!--TODO: add catering menu-->
-        <section id="catering-wrapper" class="content-wrapper-component">
-            <div id="catering-menu">
-                <h2 class="title-text">Catering</h2>
-
+                <h1 class="title-text">
+                    Reviews
+                </h1>
             </div>
         </section>
 
@@ -256,74 +266,81 @@
         <!--*********************
             DELIVERY
         **********************-->
-        <!--TODO: check brand guildlines for appropriate usage-->
-        <section id="delivery-wrapper" class="content-wrapper-component">
-            <div id="delivery-options">
+        <section id="delivery" class="content-wrapper-component lora-normal">
+            <div id="delivery-content-wrapper">
+                <div id="delivery-section-title-text">
+                <h2>Order online <br/> and have our soul-warming food delivered to you!</h2>
+            </div>
+                <div id="delivery-options" class="hide-scrollbar">
+                <a href="https://www.doordash.com/store/alo-asian-kitchen-laguna-niguel-2860831/"
+                   aria-label="logo with link to doordash website for order deliver for alo asian kitchen"
+                   target="_blank"
+                   rel="noopener noreferrer">
 
-                <div class="title-text">
-                    <h2>Order online <br/> and have our soul-warming food delivered to you!</h2>                    
-                </div>
-                <div class="delivery-services-wrapper">
-                    <a href="https://www.doordash.com/store/alo-asian-kitchen-laguna-niguel-2860831/"
-                        aria-label="logo with link to doordash website for order deliver for alo asian kitchen"
-                        target="_blank"
-                        rel="noopener noreferrer">
+                    <img src="assets/img/doordash-seeklogo.png"
+                         alt="logo of doordash food delivery service"/>
+                </a>
+                <a href="https://www.ubereats.com/store/alo-asian-kitchen/ImfQSv5STdGfdW-plxZmeQ"
+                   aria-label="logo with link to uber eats website for order deliver for alo asian kitchen"
+                   target="_blank"
+                   rel="noopener noreferrer">
 
-                        <img src="assets/img/doordash-logo.png" 
-                            alt="logo of doordash food delivery service"/>
-                    </a>
+                    <img src="assets/img/EN_order%20with_horizontal_black%20on%20green_left%20aligned@2x.png"
+                         alt="logo of uber eats food delivery service"/>
+                </a>
+                <a href="https://www.grubhub.com/restaurant/alo-asian-kitchen-28083-moulton-pkwy-laguna-niguel/6611656"
+                   aria-label="logo with link to grubhub website for order deliver for alo asian kitchen"
+                   target="_blank"
+                   rel="noopener noreferrer">
 
-                    <a href="https://www.ubereats.com/store/alo-asian-kitchen/ImfQSv5STdGfdW-plxZmeQ"
-                        aria-label="logo with link to uber eats website for order deliver for alo asian kitchen"
-                        target="_blank"
-                        rel="noopener noreferrer">
-
-                        <img src="assets/img/ubereats-logo.png" 
-                        alt="logo of uber eats food delivery service"/>
-                    </a>
-
-                    <a href="https://www.grubhub.com/restaurant/alo-asian-kitchen-28083-moulton-pkwy-laguna-niguel/6611656"
-                        aria-label="logo with link to grubhub website for order deliver for alo asian kitchen"
-                        target="_blank"
-                        rel="noopener noreferrer">
-
-                        <img src="assets/img/grubhub-logo.png" 
-                        alt="logo of grubhub food delivery service"/>
-                    </a> 
-                </div>
-
+                    <img src="assets/img/grubhub-logo-2.png"
+                         alt="logo of grubhub food delivery service"/>
+                </a>
+            </div>
             </div>
         </section>
 
 
-        <!--*********************
-            ABOUT
-        **********************-->
-        <!--TODO: add embed google map-->
-        <!--TODO: add brief description of business-->
-        <!--TODO: add contact info like email, phone number-->
-        <section id="about-wrapper" class="content-wrapper-component">
-            <div id="about-info">
-                <h2 class="title-text">About Us</h2>
+        <!--&lt;!&ndash;*********************-->
+        <!--    CATERING-->
+        <!--**********************&ndash;&gt;-->
+        <!--&lt;!&ndash;TODO: add catering menu&ndash;&gt;-->
+        <!--<section id="catering-wrapper" class="content-wrapper-component">-->
+        <!--    <div id="catering-menu">-->
+        <!--        <h2 class="title-text">Catering</h2>-->
 
-            </div>
-        </section>
+        <!--    </div>-->
+        <!--</section>-->
 
 
-        <!--*********************
-            FOOTER
-        **********************-->
-        <!--TODO: fix violations when adding embed google map-->
-        <footer id="contact-us" class="footer">
-            <!--<div id="google-map-wrapper">-->
-            <!--    <iframe id="embed-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13299.73606655845!2d-117.70946913629281!3d33.55509065551463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcef1b1dc33085%3A0x9374e1a036e8a380!2sAlo%20Asian%20Kitchen!5e0!3m2!1sen!2sus!4v1727479668588!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
-            <!--</div>-->
-            <div class="section-center">
-                <p class="text">
-                    &copy; <span>AAK @ 2024</span>
-                </p>
-            </div>
-        </footer>
+        <!--&lt;!&ndash;*********************-->
+        <!--    ABOUT-->
+        <!--**********************&ndash;&gt;-->
+        <!--&lt;!&ndash;TODO: add embed google map&ndash;&gt;-->
+        <!--&lt;!&ndash;TODO: add brief description of business&ndash;&gt;-->
+        <!--&lt;!&ndash;TODO: add contact info like email, phone number&ndash;&gt;-->
+        <!--<section id="about-wrapper" class="content-wrapper-component">-->
+        <!--    <div id="about-info">-->
+        <!--        <h2 class="title-text">About Us</h2>-->
+
+        <!--    </div>-->
+        <!--</section>-->
+
+
+        <!--&lt;!&ndash;*********************-->
+        <!--    FOOTER-->
+        <!--**********************&ndash;&gt;-->
+        <!--&lt;!&ndash;TODO: fix violations when adding embed google map&ndash;&gt;-->
+        <!--<footer id="contact-us" class="footer">-->
+        <!--    &lt;!&ndash;<div id="google-map-wrapper">&ndash;&gt;-->
+        <!--    &lt;!&ndash;    <iframe id="embed-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13299.73606655845!2d-117.70946913629281!3d33.55509065551463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcef1b1dc33085%3A0x9374e1a036e8a380!2sAlo%20Asian%20Kitchen!5e0!3m2!1sen!2sus!4v1727479668588!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>&ndash;&gt;-->
+        <!--    &lt;!&ndash;</div>&ndash;&gt;-->
+        <!--    <div class="section-center">-->
+        <!--        <p class="text">-->
+        <!--            &copy; <span>AAK @ 2024</span>-->
+        <!--        </p>-->
+        <!--    </div>-->
+        <!--</footer>-->
 
     </div>
 
