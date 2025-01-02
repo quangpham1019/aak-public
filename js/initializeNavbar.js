@@ -15,13 +15,16 @@ function swapContent(curItem) {
 
     // Nav items must have id in the format of "{id-of-section-to-display}-nav"
 
-    let content = document.querySelector('.content-wrapper-content');
+    let contentComponents = document.querySelector("#content-wrapper-components");
+    let content = document.querySelector('#content-wrapper-content');
     let toSwap = curItem.id.slice(0, -'-nav'.length);
     let toSwapEl = document.querySelector(`#${toSwap}`);
+    let curElDisplay = content.children[0];
 
     if (toSwapEl != null) {
-        let clone = toSwapEl.cloneNode(true);
-        content.replaceChildren(clone);
+        // let clone = toSwapEl.cloneNode(true);
+        contentComponents.appendChild(curElDisplay);
+        content.replaceChildren(toSwapEl);
     } else {
         console.log("cannot find content to substitute");
     }

@@ -276,13 +276,8 @@ export function initializeMenuItems() {
         // categoryTitle.style.backgroundColor = "black";
         // console.log(categoryTitle);
 
-        categoryTitle.addEventListener('click', function() {
-            console.log("title clicked");
-            // if (categoryItems.classList.contains("toggled-on")) {
-            //     categoryItems.classList.add("toggled-on");
-            // } else {
-            //     categoryItems.classList.remove("toggled-on");
-            // }
+        categoryTitle.addEventListener('click', function(event) {
+            categoryItems.classList.toggle("toggled-on");
         });
 
         menu.appendChild(categoryWrapper);
