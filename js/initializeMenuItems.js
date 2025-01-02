@@ -73,11 +73,18 @@ class MenuDesign {
         categoryTitle.innerText = this._menuCategory;
         categoryTitle.style.textAlign = "center";
         categoryTitle.style.textTransform = "uppercase";
+        categoryTitle.style.textDecoration = "underline";
+        categoryTitle.classList.add("menu-category-title");
         this._tree.appendChild(categoryTitle);
 
+        let menuItemsWrapper = document.createElement("div");
         Object.keys(this._menuItems).forEach(item => {
-            this.createItemLayout(item);
+            menuItemsWrapper.appendChild(this.createItemLayout(item));
         })
+
+        menuItemsWrapper.classList.add("menu-category-items");
+        this._tree.appendChild(menuItemsWrapper);
+
     }
     createItemLayout() {
         throw new Error("Method createItemLayout() must be implemented.");
@@ -137,9 +144,10 @@ class SpecialMenuDesign extends MenuDesign {
         itemPrice.innerText = curItem.price;
 
         newEl.replaceChildren(itemImg, itemDescription, itemPrice);
+        newEl.classList.add("menu-item");
         // newEl.className = `${this._menuCategory}-item`;
 
-        this._tree.appendChild(newEl);
+        return newEl;
     }
 }
 class FlavorAndPriceMenuDesign extends MenuDesign {
@@ -256,6 +264,27 @@ export function initializeMenuItems() {
         if (menuCategories[category].items == null) continue;
 
         let categoryElement = populateCategoryLayoutWithMenuItems(category);
-        menu.appendChild(categoryElement);
+
+        let categoryWrapper = document.createElement("div");
+        categoryWrapper.appendChild(categoryElement);
+        categoryWrapper.classList.add("menu-category-wrapper");
+
+        // add event listener to menu category title to expand/collapse category items on click
+        let categoryTitle = categoryWrapper.querySelector(".menu-category-title");
+        let categoryItems = categoryWrapper.querySelector(".menu-category-items");
+        
+        // categoryTitle.style.backgroundColor = "black";
+        // console.log(categoryTitle);
+
+        categoryTitle.addEventListener('click', function() {
+            console.log("title clicked");
+            // if (categoryItems.classList.contains("toggled-on")) {
+            //     categoryItems.classList.add("toggled-on");
+            // } else {
+            //     categoryItems.classList.remove("toggled-on");
+            // }
+        });
+
+        menu.appendChild(categoryWrapper);
     }
 }

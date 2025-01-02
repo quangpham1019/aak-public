@@ -7,7 +7,6 @@
     <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.ico" />
     <link rel="stylesheet" href="css/main.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2:400,700&display=swap" rel="stylesheet">
 
     <!--*********************
         SCRIPT TO HANDLE JAVASCRIPT-DISABLED BROWSERS
@@ -65,8 +64,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+CO+Guides&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2:400,700&display=swap" rel="stylesheet">
+
 </head>
 <body>
+    <!-- TODO: remve about us section, integrate with welcome section, replace about us nav item with phone -->
+    <!-- TODO: add scroll to navigate -->
 
     <!--*********************
         CONTENT-WRAPPER
@@ -78,7 +82,7 @@
         <!--*********************
             CONTENT-WRAPPER-NAV
         **********************-->
-        <div class="content-wrapper-nav dancing-script-normal">
+        <div class="content-wrapper-nav lora-normal">
 
             <!--*********************
                 LOGO
@@ -102,14 +106,20 @@
                 <div class="nav-item">
                     <div id="yelp-review-wrapper-nav">Reviews</div>
                 </div>
-                <div class="nav-item">
+                <!-- <div class="nav-item">
                     <div id="catering-wrapper-nav">Catering</div>
-                </div>
+                </div> -->
                 <div class="nav-item">
                     <div id="delivery-wrapper-nav">Delivery</div>
                 </div>
-                <div class="nav-item">
+                <!-- <div class="nav-item">
                     <div id="about-wrapper-nav">About Us</div>
+                </div> -->
+                <div class="nav-item">
+                    <a id="phone-link" href="tel:+19493289951"
+                        aria-label="business telephone number for alo asian kitchen">
+                        <i class="fa-solid fa-phone"></i> +1 (949) 328-9951
+                    </a>
                 </div>
             </div>
 
@@ -132,7 +142,7 @@
         <!--*********************
             CONTENT-WRAPPER-CONTENT
         **********************-->
-        <div class="content-wrapper-content dancing-script-normal"></div>
+        <div class="content-wrapper-content lora-normal"></div>
     </section>
 
 
@@ -144,21 +154,29 @@
         <!--*********************
             WELCOME
         **********************-->
-        <section id="welcome" class="content-wrapper-component">
-            <div class="hero">
-                <div id="catch-phrase-1">Alo, Pho is here</div>
-                <div id="catch-phrase-2">Ready to warm your day</div>
+        <section id="welcome" class="content-wrapper-component dancing-script-normal">
+            <div class="hero-wrapper">
+                <div class="hero">
+                    <div id="catch-phrase-1">Alo, Pho is here</div>
+                    <div id="catch-phrase-2">Ready to warm your day</div>
+                </div>
+                <div class="about-us"></div>
             </div>
-            <div class="hero-right"></div>
+
         </section>
 
 
         <!--*********************
             MENU
         **********************-->
+        <!-- TODO: add menu items to menuCategoryData.js -->
         <section id="menu-wrapper" class="content-wrapper-component">
             <div id="menu" class="hide-scrollbar">
-                <!--<div>-->
+
+                <!--*********************
+                    MENU ITEM LAYOUT 
+                **********************-->
+                <!--<div class="menu-item">-->
                 <!--    <div class="menu-item-img">-->
                 <!--        <img src="assets/img/item-1.jpg" alt="a pho bowl"/>-->
                 <!--    </div>-->
@@ -175,8 +193,10 @@
         <!--*********************
             OPENING-HOURS
         **********************-->
-        <!--TODO: Add sliding background-->
-        <!--TODO: Edit table css for better visual-->
+        <!--TODO: add banner that persists across the sections to display holiday hours/closing days-->
+        <!--TODO: display date for current week-->
+        <!--TODO: update closed date indicator based on predetermined closing dates (input from json)-->
+        <!--TODO: add date picker-->
         <section id="opening-hours" class="content-wrapper-component">
             <!--<div id="opening-hours-grid">-->
             <!--</div>-->
@@ -209,8 +229,10 @@
         <!--*********************
             YELP-REVIEW
         **********************-->
-        <!--TODO: add a sliding panel that display several 5-star yelp reviews, include a progress bar, and review to change on arrow click-->
+        <!--TODO: add a sliding panel to display reviews-->
+        <!--TODO: add yelp reviews, mixed 4 & 5 stars-->
         <!--TODO: add yelp badge-->
+        <!--TODO: add google reviews, mixed 4 & 5 stars-->
         <section id="yelp-review-wrapper" class="content-wrapper-component">
             <div id="review-panel">
                 <h2 class="title-text">Reviews</h2>
@@ -234,10 +256,41 @@
         <!--*********************
             DELIVERY
         **********************-->
-        <!--TODO: add delivery options-->
+        <!--TODO: check brand guildlines for appropriate usage-->
         <section id="delivery-wrapper" class="content-wrapper-component">
             <div id="delivery-options">
-                <h2 class="title-text">Delivery</h2>
+
+                <div class="title-text">
+                    <h2>Order online <br/> and have our soul-warming food delivered to you!</h2>                    
+                </div>
+                <div class="delivery-services-wrapper">
+                    <a href="https://www.doordash.com/store/alo-asian-kitchen-laguna-niguel-2860831/"
+                        aria-label="logo with link to doordash website for order deliver for alo asian kitchen"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        <img src="assets/img/doordash-logo.png" 
+                            alt="logo of doordash food delivery service"/>
+                    </a>
+
+                    <a href="https://www.ubereats.com/store/alo-asian-kitchen/ImfQSv5STdGfdW-plxZmeQ"
+                        aria-label="logo with link to uber eats website for order deliver for alo asian kitchen"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        <img src="assets/img/ubereats-logo.png" 
+                        alt="logo of uber eats food delivery service"/>
+                    </a>
+
+                    <a href="https://www.grubhub.com/restaurant/alo-asian-kitchen-28083-moulton-pkwy-laguna-niguel/6611656"
+                        aria-label="logo with link to grubhub website for order deliver for alo asian kitchen"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        <img src="assets/img/grubhub-logo.png" 
+                        alt="logo of grubhub food delivery service"/>
+                    </a> 
+                </div>
 
             </div>
         </section>
