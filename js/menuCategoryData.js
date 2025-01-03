@@ -37,7 +37,9 @@ const menuCategories = {
             'chicken wings': {
                 'imgSrc': '',
                 'imgAlt': '',
-                'details': '(garlic butter / sweet & spicy)',
+                'details': 'pick a sauce:' +
+                    '\n + garlic butter' +
+                    '\n + sweet & spicy',
                 'price': 13.95,
             },
             'garlic butter fries': {

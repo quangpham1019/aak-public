@@ -333,7 +333,7 @@ sup             { vertical-align: super; line-height: 1.0; }
                 width: var(--menu-category-content-width);
                 height: 0;
 
-                transition: height 0.3s ease 0s, transform 0.3s ease 0s;
+                transition: height 1s ease 0s, transform 0.5s ease 0s;
                 transform-origin: top;
                 transform: rotateX(90deg);
 
@@ -351,6 +351,7 @@ sup             { vertical-align: super; line-height: 1.0; }
                     width: calc(100% - var(--menu-item-margin)*2);
                     height: 20%;
                     margin: 1%;
+                    padding: 1%;
 
                     display: flex;
                     /* align-items: center; */
