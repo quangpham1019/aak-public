@@ -35,6 +35,9 @@ small, sub, sup { font-size: .83em; }
 sub             { vertical-align: sub; line-height: 1.0; }
 sup             { vertical-align: super; line-height: 1.0; }
 
+/**********************
+    ANIMATIONS
+***********************/
 @keyframes slide-in-left {
     from {
         translate: 100vw 0;
@@ -85,6 +88,7 @@ sup             { vertical-align: super; line-height: 1.0; }
     }
 }
 
+
 /**********************
     GOOGLE FONTS
 ***********************/
@@ -100,6 +104,7 @@ sup             { vertical-align: super; line-height: 1.0; }
     font-weight: normal;
     font-style: normal;
 }
+
 
 /**********************
     CONTENT-WRAPPER
@@ -175,7 +180,6 @@ sup             { vertical-align: super; line-height: 1.0; }
                         height: 100%!important;
                     }
                 }
-                
                 div {
                     /*background-color: black;*/
 
@@ -193,7 +197,7 @@ sup             { vertical-align: super; line-height: 1.0; }
                     transition: text-decoration 0.5s ease;
                 }
 
-                div:hover, div .selected {
+                div:hover, .selected {
                     text-decoration: underline;
                 }
             }
@@ -394,6 +398,7 @@ sup             { vertical-align: super; line-height: 1.0; }
             .menu-category-heading {
                 display: flex;
                 align-items: center;
+                gap: 1%;
                 /*justify-content: center;*/
 
                 /*padding-left: calc((100% - var(--menu-category-content-width))/2);*/
@@ -413,7 +418,6 @@ sup             { vertical-align: super; line-height: 1.0; }
 
                 .category-indicator {
                     /*background-color: blue;*/
-                    margin-left: 1%;
                     font-weight: bolder;
                     font-size: medium;
                 }

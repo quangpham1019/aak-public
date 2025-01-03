@@ -94,7 +94,7 @@ class MenuDesign {
         categorySelectedIndicator.innerHTML = menuCategoryClosedIndicator;
         categorySelectedIndicator.classList.add("category-indicator");
 
-        categoryHeading.replaceChildren(categoryTitle, categorySelectedIndicator);
+        categoryHeading.replaceChildren(categorySelectedIndicator, categoryTitle);
         categoryHeading.classList.add("menu-category-heading");
         this._tree.appendChild(categoryHeading);
 
