@@ -299,6 +299,7 @@ export function initializeMenuItems() {
 
         categoryHeading.addEventListener('click', function() {
             categoryItems.classList.toggle("toggled-on");
+            categoryHeading.classList.toggle("toggled-on-indicator");
             let categorySelected = categoryItems.classList.contains("toggled-on");
             categorySelectedIndicator.innerHTML = categorySelected ? menuCategoryOpenIndicator : menuCategoryClosedIndicator;
         });

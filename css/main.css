@@ -299,7 +299,7 @@ sup             { vertical-align: super; line-height: 1.0; }
             }
             .toggled-on-indicator {
                 /*font-weight: bold;*/
-                color: black;
+                color: darkorange;
             }
 
             .menu-category-heading {
@@ -319,6 +319,7 @@ sup             { vertical-align: super; line-height: 1.0; }
                     /*background-color: red;*/
                     cursor: pointer;
                     /*text-decoration: underline;*/
+                    /*text-transform: capitalize;*/
                 }
 
                 .category-indicator {
