@@ -1,6 +1,8 @@
 import { getData } from "./menuCategoryData.js";
 
 const menuCategories = getData();
+const menuCategoryClosedIndicator = "<i id=\"indicator-collapse\" class=\"fa-solid fa-greater-than\"></i>";
+const menuCategoryOpenIndicator = "<i id=\"indicator-open\" class=\"fa-solid fa-v\"></i>\n";
 
 function populateCategoryLayoutWithMenuItems(menuCategory) {
 
@@ -89,7 +91,7 @@ class MenuDesign {
         categoryTitle.classList.add("menu-category-title");
 
         let categorySelectedIndicator = document.createElement("h2");
-        categorySelectedIndicator.innerText = ">";
+        categorySelectedIndicator.innerHTML = menuCategoryClosedIndicator;
         categorySelectedIndicator.classList.add("category-indicator");
 
         categoryHeading.replaceChildren(categoryTitle, categorySelectedIndicator);
@@ -298,7 +300,7 @@ export function initializeMenuItems() {
         categoryHeading.addEventListener('click', function() {
             categoryItems.classList.toggle("toggled-on");
             let categorySelected = categoryItems.classList.contains("toggled-on");
-            categorySelectedIndicator.innerText = categorySelected ? "v" : ">";
+            categorySelectedIndicator.innerHTML = categorySelected ? menuCategoryOpenIndicator : menuCategoryClosedIndicator;
         });
 
         menu.appendChild(categoryWrapper);

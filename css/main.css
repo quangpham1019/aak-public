@@ -18,34 +18,41 @@
     --lg: 1200px;
     --xl: 1536px;
 }
-
-.title-text {
-    align-items: center;
-    width: 100%;
-
-}
-small, sub, sup { font-size: .83em; }
-sub             { vertical-align: sub; line-height: 1.0; }
-sup             { vertical-align: super; line-height: 1.0; }
-
 body {
     font-family: 'Baloo Chettan 2', cursive;
     line-height: 1.5;
 }
 
+.title-text {
+    align-items: center;
+    width: 100%;
+}
+
+/**********************
+    MISC.
+***********************/
+small, sub, sup { font-size: .83em; }
+sub             { vertical-align: sub; line-height: 1.0; }
+sup             { vertical-align: super; line-height: 1.0; }
+
+
+
+/**********************
+    GOOGLE FONTS
+***********************/
 .dancing-script-normal {
     font-family: "Dancing Script", serif;
     font-optical-sizing: auto;
     font-weight: bolder;
     font-style: normal;
 }
-
 .lora-normal {
     font-family: "Lora", serif;
     font-optical-sizing: auto;
     font-weight: normal;
     font-style: normal;
 }
+
 /**********************
     CONTENT-WRAPPER
 ***********************/
@@ -231,6 +238,7 @@ body {
     background-size: 100% 100%;
 }
 
+
 /**********************
     WELCOME
 ***********************/
@@ -315,12 +323,14 @@ body {
                 /*opacity: 1!important;*/
             }
             .toggled-on-indicator {
-                font-weight: bold;
+                /*font-weight: bold;*/
+                color: black;
             }
 
             .menu-category-heading {
                 display: flex;
                 align-items: center;
+                /*justify-content: center;*/
 
                 /*padding-left: calc((100% - var(--menu-category-content-width))/2);*/
                 width: var(--menu-category-content-width);
@@ -340,7 +350,7 @@ body {
                     /*background-color: blue;*/
                     margin-left: 1%;
                     font-weight: bolder;
-
+                    font-size: medium;
                 }
             }
             .menu-category-items {
@@ -436,14 +446,6 @@ body {
     OPENING-HOURS
 ***********************/
 #opening-hours {
-    /*--opening-hours-background: url('https://captainkimo.s3.amazonaws.com/wp-content/uploads/2015/04/WPB-City-Skyline-Sunset-at-Palm-Beach-Marina.jpg');*/
-    /*height: 97%;*/
-    /*width: 97%;*/
-    /*margin: 1.5%;*/
-
-    /*background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4)),*/
-    /*var(--opening-hours-background)center/cover no-repeat fixed;*/
-    /*border-radius: 50px;*/
 
     display: flex;
     align-items: center;
@@ -456,7 +458,6 @@ body {
         border-spacing: 1rem;
 
         font-style: oblique;
-        /*font-weight: bolder;*/
         font-size: x-large;
 
         tbody {
