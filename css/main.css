@@ -289,7 +289,7 @@ sup             { vertical-align: super; line-height: 1.0; }
             justify-content: center;
             flex-direction: column;
 
-            .toggled-on{
+            .toggled-on {
                 height: auto!important;
                 transform: rotateX(0)!important;
 
@@ -309,10 +309,10 @@ sup             { vertical-align: super; line-height: 1.0; }
 
                 /*padding-left: calc((100% - var(--menu-category-content-width))/2);*/
                 width: var(--menu-category-content-width);
+                transition: color 0.3s ease;
 
                 &:hover {
                     color: darkorange;
-                    transition: color 0.3s ease;
                 }
 
                 .menu-category-title {
