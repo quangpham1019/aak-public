@@ -110,18 +110,17 @@ sup             { vertical-align: super; line-height: 1.0; }
 
                 #phone-link {
                     height: 30%!important;
-                    /* width: 60%!important; */
-                    /* background-color: green; */
-                    
-                    color: black;
 
-                    text-decoration: none;
                     display: flex;
                     justify-content: center;
-                  
+
+                    color: black;
+                    text-decoration: none;
+
+                    transition: color 0.5s ease;
+
                     &:hover {
                         color: darkorange;
-                        transition: color 0.5s ease;
                     }
 
                     svg {
@@ -144,22 +143,9 @@ sup             { vertical-align: super; line-height: 1.0; }
 
                     text-decoration: underline solid transparent;
                     transition: text-decoration 0.5s ease;
-
-                    &:hover {
-                        /* background-color: white;
-                        border-radius: 5px 0;
-                        box-shadow: -3px 3px 2px 1px black; */
-
-                        text-decoration: underline;
-                    }
                 }
 
-                .selected {
-                    /* background-color: white;
-                    color: black;
-                    border-radius: 5px 0;
-                    box-shadow: -3px 3px 2px 1px black; */
-
+                div:hover, div .selected {
                     text-decoration: underline;
                 }
             }
@@ -179,39 +165,28 @@ sup             { vertical-align: super; line-height: 1.0; }
                 height: 50%;
 
                 color: black;
-
-                /* border-radius: 5px 0; */
-                /* box-shadow: -3px 3px 2px 1px black; */
-                &:hover {
-                    /* transform: translate(-2px, 2px);
-                    box-shadow: -1px 1px 1px 0 black; */
-
-                    .facebook{
-                        color: #3b5998;
-                        transition: color 0.5s ease;
-                    }
-                    .instagram{
-                        color: deeppink;
-                        transition: color 0.5s ease;
-                    }
-                    .yelp{
-                        color: red;
-                        transition: color 0.5s ease;
-                    }
-                }
-
                 font-size: 40px;
 
                 display: flex;
                 align-items: center;
                 justify-content: center;
 
+                transition: color 0.5s ease;
+
                 & > * {
                     height: 80%!important;
                     width: 80%!important;
                 }
+            }
 
-
+            .instagram:hover {
+                color: deeppink;
+            }
+            .facebook:hover {
+                color: #3b5998;
+            }
+            .yelp:hover {
+                color: red;
             }
         }
     }
