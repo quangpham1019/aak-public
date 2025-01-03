@@ -31,7 +31,10 @@ const menuCategories = {
             'egg rolls platter (4)': {
                 'imgSrc': '',
                 'imgAlt': '',
-                'details': '(seafood / vegan) \n lettuce, pickled carrots, daikon, and mint leaves',
+                'details': 'lettuce, pickled carrots, daikon, and mint leaves' +
+                    '\n pick a filling:' +
+                    '\n + seafood' +
+                    '\n + vegan',
                 'price': 10.95,
             },
             'chicken wings': {

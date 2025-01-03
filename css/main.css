@@ -35,7 +35,55 @@ small, sub, sup { font-size: .83em; }
 sub             { vertical-align: sub; line-height: 1.0; }
 sup             { vertical-align: super; line-height: 1.0; }
 
+@keyframes slide-in-left {
+    from {
+        translate: 100vw 0;
+        scale: 200% 1;
+        opacity: 0;
+    }
 
+    to {
+        translate: 0 0;
+        scale: 100% 1;
+        opacity: 1;
+    }
+}
+@keyframes slide-in-right {
+    from {
+        translate: -100vw 0;
+        scale: 200% 1;
+        opacity: 0;
+    }
+
+    to {
+        translate: 0 0;
+        scale: 100% 1;
+        opacity: 1;
+    }
+}
+
+@keyframes expand-menu-category {
+    0% {
+        transform: rotateX(90deg);
+        display: none;
+    }
+
+    100% {
+        transform: rotateX(0);
+        display: block;
+    }
+}
+@keyframes collapse-menu-category {
+    0% {
+            transform: rotateX(0);
+            display: block;
+    }
+
+    100% {
+        transform: rotateX(90deg);
+        display: none;
+    }
+}
 
 /**********************
     GOOGLE FONTS
@@ -240,14 +288,59 @@ sup             { vertical-align: super; line-height: 1.0; }
             div {
                 color: black;
             }
-    
+
+            overflow: hidden;
+
             #catch-phrase-1 {
                 font-size: 9em;
-    
+                animation-duration: 2s;
+                animation-name: slide-in-left;
+                animation-fill-mode: forwards;
+
+                /*@-moz-keyframes slideIn {*/
+                /*    0% {*/
+                /*        transform: translateX(-20%);*/
+                /*    }*/
+                /*    100% {*/
+                /*        transform: translateX(0);*/
+                /*    }*/
+                /*}*/
+
+                /*@-webkit-keyframes slideIn {*/
+                /*    0% {*/
+                /*        transform: translateX(-20%);*/
+                /*    }*/
+                /*    100% {*/
+                /*        transform: translateX(0);*/
+                /*    }*/
+                /*}*/
+
+                /*@-o-keyframes slideIn {*/
+                /*    0% {*/
+                /*        transform: translateX(-20%);*/
+                /*    }*/
+                /*    100% {*/
+                /*        transform: translateX(0);*/
+                /*    }*/
+                /*}*/
+
+                /*@-ms-keyframes slideIn {*/
+                /*    0% {*/
+                /*        transform: translateX(-20%);*/
+                /*    }*/
+                /*    100% {*/
+                /*        transform: translateX(0);*/
+                /*    }*/
+                /*}*/
             }
             #catch-phrase-2 {
                 font-size: 5em;
-    
+                animation-duration: 2s;
+                animation-name: slide-in-right;
+                animation-delay: 1s;
+                animation-fill-mode: forwards;
+
+                opacity: 0;
             }
         }
     
@@ -289,15 +382,11 @@ sup             { vertical-align: super; line-height: 1.0; }
             justify-content: center;
             flex-direction: column;
 
-            .toggled-on {
-                height: auto!important;
-                transform: rotateX(0)!important;
-
-                color: black!important;
-                /*visibility: initial!important;*/
-                /*opacity: 1!important;*/
+            .menu-category-expand {
+                display: block!important;
+                animation: expand-menu-category 0.5s ease-in forwards!important;
             }
-            .toggled-on-indicator {
+            .menu-category-indicator-expand {
                 /*font-weight: bold;*/
                 color: darkorange;
             }
@@ -331,15 +420,16 @@ sup             { vertical-align: super; line-height: 1.0; }
             }
             .menu-category-items {
                 width: var(--menu-category-content-width);
-                height: 0;
 
-                transition: height 1s ease 0s, transform 0.5s ease 0s;
+                /**********************
+                    expand/collapse animation for menu category
+                    will be overridden by .menu-category-expand once selected
+                ***********************/
+                animation: collapse-menu-category 0.5s ease-out forwards;
+                display: none;
                 transform-origin: top;
                 transform: rotateX(90deg);
 
-                color: transparent;
-                /*opacity: 0;*/
-                /*visibility: collapse;*/
 
                 .menu-item {
 

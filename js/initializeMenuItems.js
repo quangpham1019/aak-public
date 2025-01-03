@@ -298,9 +298,11 @@ export function initializeMenuItems() {
         let categoryHeading = categoryWrapper.querySelector(".menu-category-heading");
 
         categoryHeading.addEventListener('click', function() {
-            categoryItems.classList.toggle("toggled-on");
-            categoryHeading.classList.toggle("toggled-on-indicator");
-            let categorySelected = categoryItems.classList.contains("toggled-on");
+
+            categoryItems.classList.toggle("menu-category-expand");
+            categoryHeading.classList.toggle("menu-category-indicator-expand");
+
+            let categorySelected = categoryItems.classList.contains("menu-category-expand");
             categorySelectedIndicator.innerHTML = categorySelected ? menuCategoryOpenIndicator : menuCategoryClosedIndicator;
         });
 
