@@ -10,7 +10,7 @@ function populateCategoryLayoutWithMenuItems(menuCategory) {
     //      this could be a good place to apply Singleton pattern
     let menuDesignFactory = new MenuDesignFactory(menuCategory);
     let curMenuDesign = menuDesignFactory.getMenuDesign();
-    curMenuDesign.createMenuLayout();
+    curMenuDesign.createMenuCategoryLayout();
 
     // menuContent.className = curMenuDesign.getMenuDesignClasses();
     // menuContent.replaceChildren(curMenuDesign.getTree());
@@ -64,18 +64,37 @@ class MenuDesign {
         }
     }
 
-    // createMenuLayout(): default creation of menu items, can be overridden
+    // createMenuCategoryLayout(): default creation of menu items, can be overridden
     // each child must implement createItemLayout()
-    createMenuLayout() {
+    createMenuCategoryLayout() {
+
+        // <!--*********************
+        //     .menu-category-wrapper LAYOUT
+        // **********************-->
+        // <!--<div class="menu-category-wrapper">-->
+        // <!--    <h2 class="menu-category-title"></h2>-->
+        // <!--    <div class="menu-category-items">-->
+        // <!--        <div class="menu-item"></div>-->
+        // <!--        <div class="menu-item"></div>-->
+        // <!--        <div class="menu-item"></div>-->
+        // <!--    </div>-->
+        // <!--</div>-->
+
         this._tree = document.createDocumentFragment();
+
+        let categoryHeading = document.createElement("div");
 
         let categoryTitle = document.createElement("h2");
         categoryTitle.innerText = this._menuCategory;
-        categoryTitle.style.textAlign = "center";
-        categoryTitle.style.textTransform = "uppercase";
-        categoryTitle.style.textDecoration = "underline";
         categoryTitle.classList.add("menu-category-title");
-        this._tree.appendChild(categoryTitle);
+
+        let categorySelectedIndicator = document.createElement("h2");
+        categorySelectedIndicator.innerText = ">";
+        categorySelectedIndicator.classList.add("category-indicator");
+
+        categoryHeading.replaceChildren(categoryTitle, categorySelectedIndicator);
+        categoryHeading.classList.add("menu-category-heading");
+        this._tree.appendChild(categoryHeading);
 
         let menuItemsWrapper = document.createElement("div");
         Object.keys(this._menuItems).forEach(item => {
@@ -84,7 +103,6 @@ class MenuDesign {
 
         menuItemsWrapper.classList.add("menu-category-items");
         this._tree.appendChild(menuItemsWrapper);
-
     }
     createItemLayout() {
         throw new Error("Method createItemLayout() must be implemented.");
@@ -106,18 +124,19 @@ class SpecialMenuDesign extends MenuDesign {
     }
 
     createItemLayout(item) {
-        // <div>
-        //     <div className="menu-item-img">
-        //         <img src="assets/img/item-1.jpg" alt="a pho bowl"/>
-        //     </div>
-        //     <div className="menu-item-description">
-        //         <div className="menu-item-name">Signature Pho</div>
-        //         <div className="menu-item-details">Flavorful cut of filet mignon served with cilantro, jalapeno, and
-        //             meatball
-        //         </div>
-        //     </div>
-        //     <div className="menu-item-price">18</div>
-        // </div>
+        // <!--*********************
+        //     .menu-item LAYOUT
+        // **********************-->
+        // <!--<div class="menu-item">-->
+        // <!--    <div class="menu-item-img">-->
+        // <!--        <img src="assets/img/item-1.jpg" alt="a pho bowl"/>-->
+        // <!--    </div>-->
+        // <!--    <div class="menu-item-description">-->
+        // <!--        <div class="menu-item-name">Signature Pho</div>-->
+        // <!--        <div class="menu-item-details">Flavorful cut of filet mignon served with cilantro, jalapeno, and meatball</div>-->
+        // <!--    </div>-->
+        // <!--    <div class="menu-item-price">18</div>-->
+        // <!--</div>-->
 
         let curItem = this._menuItems[item];
         let newEl = document.createElement("div");
@@ -145,7 +164,6 @@ class SpecialMenuDesign extends MenuDesign {
 
         newEl.replaceChildren(itemImg, itemDescription, itemPrice);
         newEl.classList.add("menu-item");
-        // newEl.className = `${this._menuCategory}-item`;
 
         return newEl;
     }
@@ -166,7 +184,7 @@ class FlavorAndPriceMenuDesign extends MenuDesign {
     }
 
     // override default implementation of base class
-    createMenuLayout() {
+    createMenuCategoryLayout() {
         this._tree = document.createDocumentFragment();
 
         // create first section with id "price"
@@ -252,32 +270,35 @@ class RowMenuDesign extends MenuDesign {
 
 export function initializeMenuItems() {
     // traverse menuCategories, for each category
-    // create category layout
-    // traverse items, for each item
-    // create item layout, populate data
-    // add item to category element
-    // append category to menu
+        // create category layout
+        // traverse items, for each item
+            // create item layout, populate data
+            // add item to category element
+        // append category to menu
 
     let menu = document.querySelector("#menu");
 
     for (const category in menuCategories) {
         if (menuCategories[category].items == null) continue;
 
-        let categoryElement = populateCategoryLayoutWithMenuItems(category);
 
+        let categoryElement = populateCategoryLayoutWithMenuItems(category);
         let categoryWrapper = document.createElement("div");
         categoryWrapper.appendChild(categoryElement);
         categoryWrapper.classList.add("menu-category-wrapper");
 
+
         // add event listener to menu category title to expand/collapse category items on click
+        let categorySelectedIndicator = categoryWrapper.querySelector(".category-indicator");
         let categoryTitle = categoryWrapper.querySelector(".menu-category-title");
         let categoryItems = categoryWrapper.querySelector(".menu-category-items");
-        
-        // categoryTitle.style.backgroundColor = "black";
-        // console.log(categoryTitle);
 
-        categoryTitle.addEventListener('click', function(event) {
+        let categoryHeading = categoryWrapper.querySelector(".menu-category-heading");
+
+        categoryHeading.addEventListener('click', function() {
             categoryItems.classList.toggle("toggled-on");
+            let categorySelected = categoryItems.classList.contains("toggled-on");
+            categorySelectedIndicator.innerText = categorySelected ? "v" : ">";
         });
 
         menu.appendChild(categoryWrapper);

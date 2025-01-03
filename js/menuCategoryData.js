@@ -397,16 +397,188 @@ const menuCategories = {
         }
     },
     'vegan & vegetarian': {
-        'items': {}
+        'items': {
+            'vegan egg rolls': {
+                'imgSrc': '',
+                'imgAlt': '',
+                'details': 'sweet and sour sauce',
+                'price': 5.50,
+            },
+            'tofu spring rolls (2)': {
+                'imgSrc': '',
+                'imgAlt': '',
+                'details': 'lettuce, vermicelli noodle, mint leaves' +
+                    '\n roasted peanut, peanut sauce',
+                'price': 8.95,
+            },
+            'vegan fried tofu (GF)': {
+                'imgSrc': '',
+                'imgAlt': '',
+                'details': 'deep fried tofu, jalapeno, green onion' +
+                    '\n sweet and sour sauce',
+                'price': 13.95,
+            },
+            'tofu baguette': {
+                'imgSrc': '',
+                'imgAlt': '',
+                'details': 'pickled carrots and daikon, cucumber, cilantro, jalapeno',
+                'price': 9.95,
+            },
+            'vegan pho (GF)': {
+                'imgSrc': '',
+                'imgAlt': '',
+                'details': 'vegan broth, bok choy, cabbage, fried tofu' +
+                    '\n rice noodle, green onion, white onion, cilantro' +
+                    '\n side: bean sprout, basil, jalapeno, and lime',
+                'price': 14.95,
+            },
+            'vegan fried rice': {
+                'imgSrc': '',
+                'imgAlt': '',
+                'details': 'green peas, carrot, white onion, tofu',
+                'price': 14.95,
+            },
+            'grilled tofu steamed rice': {
+                'imgSrc': '',
+                'imgAlt': '',
+                'details': 'lettuce, cucumber, pickled carrots, daikon, and fried egg',
+                'price': 15.95,
+            },
+            'vegan vermicelli noodle': {
+                'imgSrc': '',
+                'imgAlt': '',
+                'details': 'lettuce, bean sprout, cucumber, mint, pickled carrots, daikon, and scallion oil' +
+                    '\n vegan egg roll, roasted peanut, homemade soy sauce',
+                'price': 15.95,
+            },
+            'vegetable stir-fry noodle': {
+                'imgSrc': '',
+                'imgAlt': '',
+                'details': 'egg noodle, mix vegetables, tofu',
+                'price': 15.95,
+            }
+        }
 
     },
     'drinks': {
-        'items': {}
-
+        'categories': {
+            'house drinks': {
+                'items': {
+                    'brown sugar milk boba': 6.00,
+                    'fresh passion fruit': 5.50,
+                    'spicy mango': 5.50,
+                    'strawberry lemonade': 5.50,
+                    'strawberry matcha': 5.50,
+                    'strawberry milk jelly': 6.00,
+                    'peach orange lemongrass tea': 6.00,
+                }
+            },
+            'tea': {
+                'items': {
+                    'thai tea': 5.50,
+                    'taro milk tea': 5.50,
+                    'green milk tea': 5.50,
+                    'black milk tea': 5.50,
+                    'matcha latte': 5.50,
+                    'mango lemonade tea': 5.50,
+                    'peach lemonade tea': 5.50,
+                }
+            },
+            'smoothies': {
+                'items': {
+                    'mango': 5.50,
+                    'mango pineapple': 6.00,
+                    'mango strawberry': 6.00,
+                    'strawberry': 5.50,
+                    'strawberry banana': 6.00,
+                    'pina colada': 5.50,
+                    'avocado': 6.50,
+                }
+            },
+            'milkshake': {
+                'items': {
+                    'taro': 5.50,
+                    'bubble gum': 5.50,
+                    'caramel': 5.50,
+                    'chocolate': 5.50,
+                    'cookie & cream': 5.50,
+                    'cotton candy': 5.50,
+                    'honey dew': 5.50,
+                    'matcha': 5.50
+                }
+            },
+            'coffee': {
+                'items': {
+                    'iced vietnamese coffee': 5.50,
+                    'cafe frapp': 5.50,
+                    'caramel frapp': 5.50,
+                    'mocha frapp': 5.50,
+                    'coconut cafe frapp': 5.50,
+                    'hot vietnamese coffee': 5.00
+                }
+            },
+            'beverages': {
+                'items': {
+                    'coke': 3.00,
+                    'diet coke': 3.00,
+                    'sprite': 3.00,
+                    'hot tea': 3.00,
+                    'iced tea': 4.00
+                }
+            },
+            'topping': {
+                'items': {
+                    'honey boba': 1.00,
+                    'crystal boba': 1.00,
+                    'rainbow jelly': 1.00,
+                    'lychee jelly': 1.00,
+                    'coffee jelly': 1.00
+                }
+            }
+        }
     },
     'desserts': {
-        'items': {}
+        'items': {
+            'macaron': {
+                'imgSrc': '',
+                'imgAlt': '',
+                'flavors':
+                    ['caramel', 'chocolate', 'coconut', 'coffee',
+                        'green tea', 'hazelnut', 'pistachio', 'raspberry',
+                        'rose petal', 'strawberry', 'taro', 'vanilla'],
+                'details': '',
+                'price': 0,
+            },
+            'shaved ice': {
+                'imgSrc': '',
+                'imgAlt': '',
+                'flavors':
+                    ['blue raspberry', 'cherry', 'coconut', 'cotton candy',
+                        'fruit punch', 'grape', 'lemon-lime', 'orange',
+                        'pina colada', 'pink lemonade', 'strawberry', 'watermelon'],
+                'details': '',
+                'price': 0,
+            },
+            'macaron sandwich': {
+                'imgSrc': '',
+                'imgAlt': '',
+                'details': '',
+                'price': 0
+            },
+            'tiramisu cake': {
+                'imgSrc': '',
+                'imgAlt': '',
+                'details': '',
+                'price': 0
+            },
+            'strawberry cheesecake': {
+                'imgSrc': '',
+                'imgAlt': '',
+                'details': '',
+                'price': 0
+            }
 
+        }
     }
 }
 

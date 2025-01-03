@@ -164,7 +164,7 @@ function changeMenuContent(menuCategory) {
     //      this could be a good place to apply Singleton pattern
     let menuDesignFactory = new MenuDesignFactory(menuCategory);
     let curMenuDesign = menuDesignFactory.getMenuDesign();
-    curMenuDesign.createMenuLayout();
+    curMenuDesign.createMenuCategoryLayout();
     menuContent.className = curMenuDesign.getMenuDesignClasses();
     menuContent.replaceChildren(curMenuDesign.getTree());
 }
@@ -224,9 +224,9 @@ class MenuDesign {
         }
     }
 
-    // createMenuLayout(): default creation of menu items, can be overridden
+    // createMenuCategoryLayout(): default creation of menu items, can be overridden
     // each child must implement createItemLayout()
-    createMenuLayout() {
+    createMenuCategoryLayout() {
         this._tree = document.createDocumentFragment();
 
         Object.keys(this._menuItems).forEach(item => {
@@ -298,7 +298,7 @@ class FlavorAndPriceMenuDesign extends MenuDesign {
     }
 
     // override default implementation of base class
-    createMenuLayout() {
+    createMenuCategoryLayout() {
         this._tree = document.createDocumentFragment();
 
         // create first section with id "price"

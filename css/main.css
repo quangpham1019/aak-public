@@ -9,6 +9,7 @@
     --menu-img: url("https://images.unsplash.com/photo-1715925717150-2a6d181d8846?q=80&w=3772&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
 
     --navbar-background-color: #F3EAD3;
+    /*--navbar-background-color: darkorange;*/
     --content-background-color: rgba(255, 255, 255, 0.8);
 
     --text-color: black;
@@ -78,8 +79,6 @@ body {
             }
 
         }
-
-
         .nav-list {
             /*background-color: #38A1F3;*/
             flex-grow: 1;
@@ -99,6 +98,8 @@ body {
                 align-items: center;
                 justify-content: center;
 
+                /*text-transform: lowercase;*/
+                /*font-size: medium;*/
 
                 #phone-link {
                     height: 30%!important;
@@ -112,9 +113,8 @@ body {
                     justify-content: center;
                   
                     &:hover {
-                        color: #a85d0c;
+                        color: darkorange;
                         transition: color 0.5s ease;
-
                     }
 
                     svg {
@@ -184,11 +184,11 @@ body {
                         transition: color 0.5s ease;
                     }
                     .instagram{
-                        color: #e1306c;
+                        color: deeppink;
                         transition: color 0.5s ease;
                     }
                     .yelp{
-                        color: #db4a39;
+                        color: red;
                         transition: color 0.5s ease;
                     }
                 }
@@ -208,7 +208,6 @@ body {
             }
         }
     }
-
     #content-wrapper-content {
         /*background-color: #3b5998;*/
         height: 100%;
@@ -288,7 +287,6 @@ body {
     justify-content: center;
 
     #menu {
-
         --menu-margin: 2%;
 
         height: calc(100% - var(--menu-margin)*2);
@@ -297,33 +295,67 @@ body {
 
         overflow-y: auto; /* ALLOW SCROLLABLE MENU */
 
-        /*background-color: rgba(245, 242, 230, 0.5);*/
         background-color: var(--content-background-color);
 
         .menu-category-wrapper {
+
+            --menu-category-content-width: 80%;
 
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
 
-            .toggled-on {
-                visibility: initial!important;
+            .toggled-on{
                 height: auto!important;
-                transition: visibility 0s linear 300ms, height 0s linear 300ms;
+                transform: rotateX(0)!important;
+
+                color: black!important;
+                /*visibility: initial!important;*/
+                /*opacity: 1!important;*/
+            }
+            .toggled-on-indicator {
+                font-weight: bold;
             }
 
-            .menu-category-title {
-                cursor: pointer;
+            .menu-category-heading {
+                display: flex;
+                align-items: center;
+
+                /*padding-left: calc((100% - var(--menu-category-content-width))/2);*/
+                width: var(--menu-category-content-width);
+
+                &:hover {
+                    color: darkorange;
+                    transition: color 0.3s ease;
+                }
+
+                .menu-category-title {
+                    /*background-color: red;*/
+                    cursor: pointer;
+                    /*text-decoration: underline;*/
+                }
+
+                .category-indicator {
+                    /*background-color: blue;*/
+                    margin-left: 1%;
+                    font-weight: bolder;
+
+                }
             }
             .menu-category-items {
-
-                width: 80%;
-                visibility: hidden;
+                width: var(--menu-category-content-width);
                 height: 0;
 
-                .menu-item {
+                transition: height 0.3s ease 0s, transform 0.3s ease 0s;
+                transform-origin: top;
+                transform: rotateX(90deg);
 
+                color: transparent;
+                /*opacity: 0;*/
+                /*visibility: collapse;*/
+
+                .menu-item {
 
                     /* background-color: black; */
                     --menu-item-margin: 1%;
@@ -424,7 +456,7 @@ body {
         border-spacing: 1rem;
 
         font-style: oblique;
-        font-weight: bolder;
+        /*font-weight: bolder;*/
         font-size: x-large;
 
         tbody {
