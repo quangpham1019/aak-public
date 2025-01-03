@@ -295,7 +295,7 @@ sup             { vertical-align: super; line-height: 1.0; }
     justify-content: center;
 
     #menu {
-        --menu-margin: 2%;
+        --menu-margin: 3%;
 
         height: calc(100% - var(--menu-margin)*2);
         width: calc(100% - var(--menu-margin)*2);
@@ -543,9 +543,10 @@ sup             { vertical-align: super; line-height: 1.0; }
             background-color: white;
 
             height: calc(100% - var(--delivery-options-margin)*2);
-            width: calc(100% - var(--delivery-options-margin)*2);
-            padding-top: 1%;
-            margin: var(--delivery-options-margin);
+            /*width: calc(100% - var(--delivery-options-margin)*2);*/
+            width: 100%;
+            padding: 1%;
+            /*margin: var(--delivery-options-margin);*/
 
             display: flex;
             align-items: center;
@@ -613,7 +614,7 @@ sup             { vertical-align: super; line-height: 1.0; }
     justify-content: center;
 
     #about-info {
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: var(--content-background-color);
 
         height: 85%;
         width: 85%;
