@@ -94,7 +94,11 @@ class MenuDesign {
         categorySelectedIndicator.innerHTML = menuCategoryClosedIndicator;
         categorySelectedIndicator.classList.add("category-indicator");
 
-        categoryHeading.replaceChildren(categorySelectedIndicator, categoryTitle);
+        let categoryHeadingClicker = document.createElement("div");
+        categoryHeadingClicker.classList.add("category-heading-clicker");
+        categoryHeadingClicker.replaceChildren(categorySelectedIndicator, categoryTitle);
+
+        categoryHeading.replaceChildren(categoryHeadingClicker);
         categoryHeading.classList.add("menu-category-heading");
         this._tree.appendChild(categoryHeading);
 
@@ -294,10 +298,10 @@ export default function initializeMenuItems() {
         let categorySelectedIndicator = categoryWrapper.querySelector(".category-indicator");
         let categoryTitle = categoryWrapper.querySelector(".menu-category-title");
         let categoryItems = categoryWrapper.querySelector(".menu-category-items");
-
+        let categoryHeadingClicker = categoryWrapper.querySelector(".category-heading-clicker");
         let categoryHeading = categoryWrapper.querySelector(".menu-category-heading");
 
-        categoryHeading.addEventListener('click', function() {
+        categoryHeadingClicker.addEventListener('click', function() {
 
             categoryItems.classList.toggle("menu-category-expand");
             categoryHeading.classList.toggle("menu-category-indicator-expand");
