@@ -60,7 +60,7 @@ function initializeLogo() {
     logo.click();
 }
 
-export function initializeNavbar() {
+export default function initializeNavbar() {
     initializeNavbarItems();
     initializeLogo();
 }

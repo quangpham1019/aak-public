@@ -587,6 +587,6 @@ const menuCategories = {
     }
 }
 
-export function getData() {
+export default function getData() {
     return menuCategories;
 }

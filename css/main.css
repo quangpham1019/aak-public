@@ -388,7 +388,7 @@ sup             { vertical-align: super; line-height: 1.0; }
 
             .menu-category-expand {
                 display: block!important;
-                animation: expand-menu-category 0.5s ease-in forwards!important;
+                animation: expand-menu-category 0.4s ease-in forwards!important;
             }
             .menu-category-indicator-expand {
                 /*font-weight: bold;*/
@@ -429,7 +429,7 @@ sup             { vertical-align: super; line-height: 1.0; }
                     expand/collapse animation for menu category
                     will be overridden by .menu-category-expand once selected
                 ***********************/
-                animation: collapse-menu-category 0.5s ease-out forwards;
+                animation: collapse-menu-category 0.4s ease-out forwards;
                 display: none;
                 transform-origin: top;
                 transform: rotateX(90deg);
@@ -546,15 +546,15 @@ sup             { vertical-align: super; line-height: 1.0; }
 
 
 /**********************
-    YELP-REVIEW
+    REVIEWS
 ***********************/
-#yelp-review-wrapper {
+#reviews-wrapper {
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    #review-panel {
+    #reviews {
         background-color: var(--content-background-color);
 
         height: 85%;
@@ -563,10 +563,97 @@ sup             { vertical-align: super; line-height: 1.0; }
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
 
         overflow-y: auto; /* ALLOW SCROLLABLE MENU */
 
+        #reviews-heading {
+            width: 100%;
+            height: 20%;
+            text-align: center;
 
+        }
+
+        #reviews-content-wrapper {
+            /*background-color: darkorange;*/
+            width: 100%;
+            height: 80%;
+            padding-bottom: 1%;
+
+            display: flex;
+            justify-content: center;
+
+            overflow: auto;
+
+            #reviews-content {
+                /*background-color: blue;*/
+                height: 100%;
+                width: 80%;
+
+                /*display: flex;*/
+                /*flex-direction: column;*/
+                /*align-items: center;*/
+                /*justify-content: center;*/
+
+                .carousel-wrapper {
+                    /*background-color: pink;*/
+                    position: relative;
+                    height: 60%;
+                    width: 100%;
+
+                    /* padding-top: 75%; */
+                    filter: drop-shadow(0 0 10px #0003);
+
+                    .carousel {
+                        /*background-color: black;*/
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+
+                        display: flex;
+                        align-items: center;
+
+                        overflow-x: scroll;
+                        scroll-behavior: smooth;
+                        scroll-snap-type: x mandatory;
+
+                        counter-reset: item;
+
+                        .carousel-slide {
+                            --carousel-slide-side-margin: 2%;
+
+                            background-color: #f99;
+                            height: 100%;
+                            width: 100%;
+
+                            border: thin solid black;
+                            margin: 0 var(--carousel-slide-side-margin);
+
+                            position: relative;
+                            flex: 0 0 calc(100% /3 - var(--carousel-slide-side-margin)*2);
+
+                            counter-increment: item;
+                            scroll-snap-align: center;
+
+                            &:nth-child(even) {
+                                background-color: #99f;
+                            }
+                            &:before {
+                                content: counter(item);
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate3d(-50%,-40%,70px);
+                                color: #fff;
+                                font-size: 2em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
 }

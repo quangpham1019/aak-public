@@ -1,4 +1,4 @@
-import { getData } from "./menuCategoryData.js";
+import getData from "./menuCategoryData.js";
 
 const menuCategories = getData();
 const menuCategoryClosedIndicator = "<i id=\"indicator-collapse\" class=\"fa-solid fa-greater-than\"></i>";
@@ -270,7 +270,7 @@ class RowMenuDesign extends MenuDesign {
     }
 }
 
-export function initializeMenuItems() {
+export default function initializeMenuItems() {
     // traverse menuCategories, for each category
         // create category layout
         // traverse items, for each item
