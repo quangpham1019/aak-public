@@ -1,8 +1,11 @@
 // Set up 2 things
     // horizontal scrolling for carousel
     // prevent page scrolling while scrolling through carousel
+import getReviews from "./data/reviewsData.js";
 
-export default function initializeCarousel() {
+const reviews = getReviews();
+
+export default function initializeReviewsCarousels() {
 
     let carouselWrapperList = document.querySelectorAll(".carousel");
     let scrollAmount;

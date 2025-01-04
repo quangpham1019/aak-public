@@ -1,4 +1,4 @@
-import getData from "./menuCategoryData.js";
+import getData from "./data/menuCategoryData.js";
 
 const menuCategories = getData();
 const menuCategoryClosedIndicator = "<i id=\"indicator-collapse\" class=\"fa-solid fa-greater-than\"></i>";
@@ -6,16 +6,11 @@ const menuCategoryOpenIndicator = "<i id=\"indicator-open\" class=\"fa-solid fa-
 
 function populateCategoryLayoutWithMenuItems(menuCategory) {
 
-    // let menuContent = document.querySelector("#menu-content");
-
     // TODO: it seems I only need one instance of MenuDesignFactory,
     //      this could be a good place to apply Singleton pattern
     let menuDesignFactory = new MenuDesignFactory(menuCategory);
     let curMenuDesign = menuDesignFactory.getMenuDesign();
     curMenuDesign.createMenuCategoryLayout();
-
-    // menuContent.className = curMenuDesign.getMenuDesignClasses();
-    // menuContent.replaceChildren(curMenuDesign.getTree());
 
     return curMenuDesign.getTree();
 }
@@ -28,14 +23,6 @@ class MenuDesignFactory {
     }
 
     initializeMenuDesign(menuCategory) {
-
-        // This is where the object creation happens\
-        // MENU-DESIGN = MENU-LAYOUT-CSS-STYLE + ITEM-LAYOUT + ITEM-CSS-STYLE
-        // ITEM-LAYOUT & ITEM-CSS-STYLE are decoupled here
-        // ITEM-LAYOUT & MENU-LAYOUT-CSS-STYLE are coupled
-        // ITEM-LAYOUT & MENU-LAYOUT-CSS-STYLE must match in format
-        // To decouple these two, assuming ITEM-LAYOUT & ITEM-CSS-STYLE have limited variants
-        // extend the class of ITEM-LAYOUT & ITEM-CSS-STYLE then alter the MENU-LAYOUT-CSS-STYLE
         switch (menuCategory) {
             case "special":
             case "rice":
@@ -67,14 +54,41 @@ class MenuDesign {
     }
 
     // createMenuCategoryLayout(): default creation of menu items, can be overridden
-    // each child must implement createItemLayout()
+    // each child must implement createMenuCategoryLayout(), createItemLayout()
+    createMenuCategoryLayout() {
+        throw new Error("Method createMenuCategoryLayout() must be implemented.");
+    }
+    createItemLayout() {
+        throw new Error("Method createItemLayout() must be implemented.");
+    }
+
+    getTree() {
+        return this._tree;
+    }
+    getMenuDesignClasses() {
+        return this._menuDesignClasses;
+    }
+}
+class SpecialMenuDesign extends MenuDesign {
+    constructor(menuCategory) {
+        super();
+        this._menuCategory = menuCategory;
+        this._menuItems = menuCategories[this._menuCategory].items;
+        this._menuDesignClasses = `special-design-wrapper`;
+    }
+
     createMenuCategoryLayout() {
 
         // <!--*********************
         //     .menu-category-wrapper LAYOUT
         // **********************-->
         // <!--<div class="menu-category-wrapper">-->
-        // <!--    <h2 class="menu-category-title"></h2>-->
+        // <!--    <div class="menu-category-heading">-->
+        // <!--        <div class="category-heading-clicker">-->
+        // <!--            <h2 class="category-indicator"></h2>-->
+        // <!--            <h2 class="menu-category-title"></h2>-->
+        // <!--        </div>-->
+        // <!--    </div>-->
         // <!--    <div class="menu-category-items">-->
         // <!--        <div class="menu-item"></div>-->
         // <!--        <div class="menu-item"></div>-->
@@ -106,30 +120,11 @@ class MenuDesign {
         Object.keys(this._menuItems).forEach(item => {
             menuItemsWrapper.appendChild(this.createItemLayout(item));
         })
-
         menuItemsWrapper.classList.add("menu-category-items");
         this._tree.appendChild(menuItemsWrapper);
     }
-    createItemLayout() {
-        throw new Error("Method createItemLayout() must be implemented.");
-    }
-
-    getTree() {
-        return this._tree;
-    }
-    getMenuDesignClasses() {
-        return this._menuDesignClasses;
-    }
-}
-class SpecialMenuDesign extends MenuDesign {
-    constructor(menuCategory) {
-        super();
-        this._menuCategory = menuCategory;
-        this._menuItems = menuCategories[this._menuCategory].items;
-        this._menuDesignClasses = `special-design-wrapper`;
-    }
-
     createItemLayout(item) {
+
         // <!--*********************
         //     .menu-item LAYOUT
         // **********************-->

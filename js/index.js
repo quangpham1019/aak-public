@@ -1,10 +1,10 @@
 import initializeNavbar from "./initializeNavbar.js";
 import initializeMenuItems from "./initializeMenuItems.js";
-import initializeCarousel from "./initializeCarousel.js";
+import initializeReviewsCarousels from "./initializeReviewsCarousels.js";
 
 $(document).ready(function() {
 
     initializeNavbar();
     initializeMenuItems();
-    initializeCarousel();
+    initializeReviewsCarousels();
 });
