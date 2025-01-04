@@ -5,23 +5,21 @@
 export default function initializeCarousel() {
 
     let carouselWrapperList = document.querySelectorAll(".carousel");
-
-    let carouselWidth = carouselWrapperList[0].offsetWidth;
-    let scrollAmount = carouselWidth/3;
+    let scrollAmount;
 
     function scrollHorizontally(e) {
         e.preventDefault();
 
-
         let curCarousel = e.currentTarget;
+
+        scrollAmount = curCarousel.offsetWidth / 3;
 
         if (e.deltaY > 0) curCarousel.scrollLeft += scrollAmount;
         else curCarousel.scrollLeft -= scrollAmount;
     }
 
     onresize = (event) => {
-        carouselWidth = carouselWrapperList[0].offsetWidth;
-        scrollAmount = carouselWidth/3;
+        scrollAmount = carouselWrapperList[0].offsetWidth/3;
     };
 
     carouselWrapperList.forEach(carousel => {
