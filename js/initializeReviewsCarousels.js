@@ -15,7 +15,7 @@ export default function initializeReviewsCarousels() {
 
         let curCarousel = e.currentTarget;
 
-        scrollAmount = curCarousel.offsetWidth / 3;
+        scrollAmount = curCarousel.offsetWidth;
 
         if (e.deltaY > 0) curCarousel.scrollLeft += scrollAmount;
         else curCarousel.scrollLeft -= scrollAmount;

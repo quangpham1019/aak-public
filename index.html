@@ -112,7 +112,7 @@
                     <div id="menu-wrapper-nav">Menu</div>
                 </div>
                 <div class="nav-item">
-                    <div id="opening-hours-nav">Hours</div>
+                    <div id="opening-hours-wrapper-nav">Hours</div>
                 </div>
                 <div class="nav-item">
                     <div id="reviews-wrapper-nav">Reviews</div>
@@ -174,7 +174,7 @@
         <section id="welcome" class="content-wrapper-component dancing-script-normal">
             <div class="hero-wrapper">
                 <div class="hero">
-                    <div id="catch-phrase-1">alo, Pho is here</div>
+                    <div id="catch-phrase-1">alo, Pho's here</div>
                     <div id="catch-phrase-2">let it warm your day!</div>
                 </div>
                 <div class="about-us"></div>
@@ -242,32 +242,38 @@
         <!--TODO: display date for current week-->
         <!--TODO: update closed date indicator based on predetermined closing dates (input from json)-->
         <!--TODO: add date picker-->
-        <section id="opening-hours" class="content-wrapper-component lora-normal">
-            <!--<div id="opening-hours-grid">-->
-            <!--</div>-->
+        <section id="opening-hours-wrapper" class="content-wrapper-component lora-normal">
+            <div id="opening-hours">
+                <div id="opening-hours-heading">
+                    <div id="opening-hours-heading-text">
+                        come visit us during these hours
+                    </div>
+                </div>
+                <div id="opening-hours-divider"></div>
+                <table id="opening-hours-table">
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td>Tuesday</td>
+                            <td style="background-color: darkorange">Wednesday</td>
+                            <td>Thursday</td>
+                            <td>Friday</td>
+                            <td>Saturday</td>
+                            <td>Sunday</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center">11:00am - 9:00pm</td>
+                            <td style="text-align: center">11:00am - 9:00pm</td>
+                            <td style="text-align: center; background-color: darkorange">closed</td>
+                            <td style="text-align: center">11:00am - 9:00pm</td>
+                            <td style="text-align: center">11:00am - 9:00pm</td>
+                            <td style="text-align: center">11:00am - 9:00pm</td>
+                            <td style="text-align: center">11:00am - 9:00pm</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-            <table id="opening-hours-table">
-                <tbody>
-                    <tr>
-                        <td>Monday</td>
-                        <td>Tuesday</td>
-                        <td style="background-color: darkorange">Wednesday</td>
-                        <td>Thursday</td>
-                        <td>Friday</td>
-                        <td>Saturday</td>
-                        <td>Sunday</td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: center">11:00am - 9:00pm</td>
-                        <td style="text-align: center">11:00am - 9:00pm</td>
-                        <td style="text-align: center; background-color: darkorange">closed</td>
-                        <td style="text-align: center">11:00am - 9:00pm</td>
-                        <td style="text-align: center">11:00am - 9:00pm</td>
-                        <td style="text-align: center">11:00am - 9:00pm</td>
-                        <td style="text-align: center">11:00am - 9:00pm</td>
-                    </tr>
-                </tbody>
-            </table>
         </section>
 
 
@@ -281,13 +287,13 @@
         <section id="reviews-wrapper" class="content-wrapper-component lora-normal">
             <div id="reviews">
                 <div id="reviews-heading">
-                    <h1 class="title-text">
+                    <div id="reviews-heading-text">
                         what people say about us
-                    </h1>
+                    </div>
                 </div>
                 <div id="reviews-content-wrapper" class="hide-scrollbar">
                     <div id="reviews-content">
-                        <h3>on Google</h3>
+                        <h4>on Google</h4>
                         <section id="google-reviews-carousel-wrapper" class="carousel-wrapper"
                                  aria-label="carousel to display google reviews">
                             <div id="google-reviews-carousel"
@@ -325,31 +331,48 @@
                                      class="carousel-slide">
                                 </div>
                             </div>
-                            <!-- <aside class="carousel__navigation">
-                              <ol class="carousel__navigation-list">
-                                <li class="carousel__navigation-item">
-                                  <a href="#carousel-slide1"
-                                     class="carousel__navigation-button">Go to slide 1</a>
-                                </li>
-                                <li class="carousel__navigation-item">
-                                  <a href="#carousel-slide2"
-                                     class="carousel__navigation-button">Go to slide 2</a>
-                                </li>
-                                <li class="carousel__navigation-item">
-                                  <a href="#carousel-slide3"
-                                     class="carousel__navigation-button">Go to slide 3</a>
-                                </li>
-                                <li class="carousel__navigation-item">
-                                  <a href="#carousel-slide4"
-                                     class="carousel__navigation-button">Go to slide 4</a>
-                                </li>
-                              </ol>
-                            </aside> -->
+                            <aside class="carousel-navigation">
+                                <ol class="carousel-navigation-list">
+                                    <li class="carousel-navigation-item">
+                                        <a href="#carousel-slide1"
+                                           class="carousel-navigation-button">1</a>
+                                    </li>
+                                    <li class="carousel-navigation-item">
+                                        <a href="#carousel-slide2"
+                                           class="carousel-navigation-button">2</a>
+                                    </li>
+                                    <li class="carousel-navigation-item">
+                                        <a href="#carousel-slide3"
+                                           class="carousel-navigation-button">3</a>
+                                    </li>
+                                    <li class="carousel-navigation-item">
+                                        <a href="#carousel-slide4"
+                                           class="carousel-navigation-button">4</a>
+                                    </li>
+                                    <li class="carousel-navigation-item">
+                                        <a href="#carousel-slide5"
+                                           class="carousel-navigation-button">5</a>
+                                    </li>
+                                    <li class="carousel-navigation-item">
+                                        <a href="#carousel-slide6"
+                                           class="carousel-navigation-button">6</a>
+                                    </li>
+                                    <li class="carousel-navigation-item">
+                                        <a href="#carousel-slide7"
+                                           class="carousel-navigation-button">7</a>
+                                    </li>
+                                    <li class="carousel-navigation-item">
+                                        <a href="#carousel-slide8"
+                                           class="carousel-navigation-button">8</a>
+                                    </li>
+                                </ol>
+                            </aside>
+
                         </section>
 
                         <br/>
 
-                        <h3>on Yelp</h3>
+                        <h4>on Yelp</h4>
                         <section id="yelp-reviews-carousel-wrapper" class="carousel-wrapper"
                                  aria-label="carousel to display yelp reviews">
                             <div id="yelp-reviews-carousel"
@@ -387,23 +410,23 @@
                                      class="carousel-slide">
                                 </div>
                             </div>
-                            <!-- <aside class="carousel__navigation">
-                              <ol class="carousel__navigation-list">
-                                <li class="carousel__navigation-item">
+                            <!-- <aside class="carousel-navigation">
+                              <ol class="carousel-navigation-list">
+                                <li class="carousel-navigation-item">
                                   <a href="#carousel-slide1"
-                                     class="carousel__navigation-button">Go to slide 1</a>
+                                     class="carousel-navigation-button">Go to slide 1</a>
                                 </li>
-                                <li class="carousel__navigation-item">
+                                <li class="carousel-navigation-item">
                                   <a href="#carousel-slide2"
-                                     class="carousel__navigation-button">Go to slide 2</a>
+                                     class="carousel-navigation-button">Go to slide 2</a>
                                 </li>
-                                <li class="carousel__navigation-item">
+                                <li class="carousel-navigation-item">
                                   <a href="#carousel-slide3"
-                                     class="carousel__navigation-button">Go to slide 3</a>
+                                     class="carousel-navigation-button">Go to slide 3</a>
                                 </li>
-                                <li class="carousel__navigation-item">
+                                <li class="carousel-navigation-item">
                                   <a href="#carousel-slide4"
-                                     class="carousel__navigation-button">Go to slide 4</a>
+                                     class="carousel-navigation-button">Go to slide 4</a>
                                 </li>
                               </ol>
                             </aside> -->
@@ -428,37 +451,38 @@
         <!--TODO: resize brand logo to fit within the panel-->
         <section id="delivery" class="content-wrapper-component lora-normal">
             <div id="delivery-content-wrapper">
-                <div id="delivery-section-title-text">
-                <h2>Order online <br/> and have our soul-warming food delivered to you!</h2>
-            </div>
+                <div id="delivery-heading">
+                    <div id="delivery-heading-text">order online</div>
+                    <div id="delivery-heading-subtext">and have our soul-warming food delivered to you!</div>
+                </div>
                 <div id="delivery-options" class="hide-scrollbar">
-                <a href="https://www.doordash.com/store/alo-asian-kitchen-laguna-niguel-2860831/"
-                   aria-label="logo with link to doordash website for order deliver for alo asian kitchen"
-                   target="_blank"
-                   rel="noopener noreferrer">
+                    <a href="https://www.doordash.com/store/alo-asian-kitchen-laguna-niguel-2860831/"
+                       aria-label="logo with link to doordash website for order deliver for alo asian kitchen"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <img src="assets/img/doordash-seeklogo.png"
+                             alt="logo of doordash food delivery service"/>
+                    </a>
+                    <a href="https://www.ubereats.com/store/alo-asian-kitchen/ImfQSv5STdGfdW-plxZmeQ"
+                       aria-label="logo with link to uber eats website for order deliver for alo asian kitchen"
+                       target="_blank"
+                       rel="noopener noreferrer">
 
-                    <img src="assets/img/doordash-seeklogo.png"
-                         alt="logo of doordash food delivery service"/>
-                </a>
-                <a href="https://www.ubereats.com/store/alo-asian-kitchen/ImfQSv5STdGfdW-plxZmeQ"
-                   aria-label="logo with link to uber eats website for order deliver for alo asian kitchen"
-                   target="_blank"
-                   rel="noopener noreferrer">
+                        <img src="assets/img/EN_order%20with_horizontal_black%20on%20green_left%20aligned@2x.png"
+                             alt="logo of uber eats food delivery service"/>
+                    </a>
+                    <a href="https://www.grubhub.com/restaurant/alo-asian-kitchen-28083-moulton-pkwy-laguna-niguel/6611656"
+                       aria-label="logo with link to grubhub website for order deliver for alo asian kitchen"
+                       target="_blank"
+                       rel="noopener noreferrer">
 
-                    <img src="assets/img/EN_order%20with_horizontal_black%20on%20green_left%20aligned@2x.png"
-                         alt="logo of uber eats food delivery service"/>
-                </a>
-                <a href="https://www.grubhub.com/restaurant/alo-asian-kitchen-28083-moulton-pkwy-laguna-niguel/6611656"
-                   aria-label="logo with link to grubhub website for order deliver for alo asian kitchen"
-                   target="_blank"
-                   rel="noopener noreferrer">
-
-                    <img src="assets/img/grubhub-logo-2.png"
-                         alt="logo of grubhub food delivery service"/>
-                </a>
-            </div>
+                        <img src="assets/img/grubhub-logo-2.png"
+                             alt="logo of grubhub food delivery service"/>
+                    </a>
+                </div>
             </div>
         </section>
+
 
         <i id="indicator-open" class="fa-solid fa-v"></i>
         <i id="indicator-collapse" class="fa-solid fa-greater-than"></i>
