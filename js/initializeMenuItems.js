@@ -100,11 +100,11 @@ class SpecialMenuDesign extends MenuDesign {
 
         let categoryHeading = document.createElement("div");
 
-        let categoryTitle = document.createElement("h2");
+        let categoryTitle = document.createElement("div");
         categoryTitle.innerText = this._menuCategory;
         categoryTitle.classList.add("menu-category-title");
 
-        let categorySelectedIndicator = document.createElement("h2");
+        let categorySelectedIndicator = document.createElement("div");
         categorySelectedIndicator.innerHTML = menuCategoryClosedIndicator;
         categorySelectedIndicator.classList.add("category-indicator");
 

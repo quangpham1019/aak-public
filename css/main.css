@@ -8,6 +8,8 @@
     --content-wrapper-img: url("https://images.pexels.com/photos/6646034/pexels-photo-6646034.jpeg");
     --menu-img: url("https://images.unsplash.com/photo-1715925717150-2a6d181d8846?q=80&w=3772&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
 
+    --navbar-small-screen-height: 10vh;
+
     --navbar-background-color: #F3EAD3;
     /*--navbar-background-color: darkorange;*/
     --content-background-color: rgba(255, 255, 255, 0.8);
@@ -168,8 +170,6 @@ sup             { vertical-align: super; line-height: 1.0; }
     flex-direction: column;
 
     #content-wrapper-nav {
-
-        --navbar-small-screen-height: 10vh;
 
         background-color: var(--navbar-background-color);
         width: 100%;
@@ -351,6 +351,9 @@ sup             { vertical-align: super; line-height: 1.0; }
                 align-items: center;
                 justify-content: space-evenly;
 
+                /*&:focus {*/
+                /*    background-color: green;*/
+                /*}*/
                 > span {
                     width: 25px;
                     height: 1px;
@@ -378,7 +381,7 @@ sup             { vertical-align: super; line-height: 1.0; }
     CONTENT-WRAPPER-COMPONENT
 ***********************/
 .content-wrapper-component {
-    height: 100%;
+    height: calc(100vh - var(--navbar-small-screen-height));
     width: 100%;
     background: var(--content-wrapper-img);
     background-size: 100% 100%;
@@ -516,12 +519,13 @@ sup             { vertical-align: super; line-height: 1.0; }
             }
 
             .menu-category-heading {
+                width: var(--menu-category-content-width);
+                margin: 4% 0;
+
                 display: flex;
                 align-items: center;
 
-                width: var(--menu-category-content-width);
                 transition: color 0.3s ease;
-
                 animation-duration: 1.3s;
                 animation-name: slide-in-from-close-left;
 
@@ -529,6 +533,7 @@ sup             { vertical-align: super; line-height: 1.0; }
                     /*background-color: cadetblue;*/
                     display: flex;
                     align-items: center;
+
                     cursor: pointer;
 
                     &:hover {
@@ -544,6 +549,7 @@ sup             { vertical-align: super; line-height: 1.0; }
                     .menu-category-title {
                         /*background-color: red;*/
                         flex: 1;
+                        font-size: x-large;
                         /*text-decoration: underline;*/
                         /*text-transform: capitalize;*/
 
@@ -1026,6 +1032,7 @@ sup             { vertical-align: super; line-height: 1.0; }
             .social-icons {
                 /*background-color: blue;*/
                 height: 12%;
+                flex-grow: 0;
 
                 position: relative;
 

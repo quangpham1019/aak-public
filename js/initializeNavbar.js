@@ -33,6 +33,10 @@ function updateNavbarIndicator(curItem) {
     let selected = $(".selected");
     selected.removeClass("selected");
     curItem.classList.add("selected");
+
+    // auto close navbar for small screen
+    // let navLabel = document.querySelector("#nav-toggle label");
+    // navLabel.click();
 }
 
 function initializeLogo() {
@@ -60,7 +64,43 @@ function initializeLogo() {
     logo.click();
 }
 
+function initializeNavbarToggle() {
+    let navbarToggle = document.querySelector("#nav-btn");
+
+    navbarToggle.addEventListener('click', openNavbar);
+}
+function openNavbar(event) {
+    // console.log("opening navbar");
+
+    let navbarCheckbox = document.querySelector("#nav-check");
+    let html = document.documentElement;
+
+    if (!navbarCheckbox.checked) {
+        event.stopImmediatePropagation();
+
+        // console.log("adding listener to html");
+        document.onclick = closeNavbar;
+    }
+}
+function closeNavbar(event) {
+
+    let clickedElement = event.target;
+    if (clickedElement.id === "nav-check" || clickedElement.id === "nav-toggle-label") {
+        return;
+    }
+
+    // console.log(clickedElement);
+
+    let navbarCheckbox = document.querySelector("#nav-check");
+    navbarCheckbox.checked = false;
+    // console.log("closing navbar");
+    // console.log("removing document onclick listener");
+
+    document.onclick = null;
+}
+
 export default function initializeNavbar() {
     initializeNavbarItems();
     initializeLogo();
+    initializeNavbarToggle();
 }
