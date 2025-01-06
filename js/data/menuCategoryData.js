@@ -10,31 +10,37 @@
 //         'price': 0,
 //     }
 // }
+
+const spacingBeforeOptions = '\u00A0\u00A0\u00A0--------';
 const menuCategories = {
     'appetizers': {
         'items': {
             'seafood egg rolls (2) ': {
-                'imgSrc': '',
+                'imgSrc': 'https://www.seriouseats.com/thmb/U-hWLnDmSZ8_6v07v0yc-8uYxrE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2012__06__20120629-pho-food-lab-19-c94bfd465387441f83ee8939fdf67dbe.jpg',
                 'imgAlt': '',
                 'details': 'sweet chili sauce',
                 'price': 5.50,
             },
             'grilled pork skewer': {
-                'imgSrc': '',
+                'imgSrc': 'https://www.seriouseats.com/thmb/U-hWLnDmSZ8_6v07v0yc-8uYxrE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2012__06__20120629-pho-food-lab-19-c94bfd465387441f83ee8939fdf67dbe.jpg',
                 'imgAlt': '',
                 'details': 'pickled carrots, daikon, and parsley',
                 'price': 3.85,
             },
             'pork bao': {
-                'imgSrc': '',
+                'imgSrc': 'https://www.seriouseats.com/thmb/U-hWLnDmSZ8_6v07v0yc-8uYxrE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2012__06__20120629-pho-food-lab-19-c94bfd465387441f83ee8939fdf67dbe.jpg',
                 'imgAlt': '',
-                'details': '(steam / fried)',
+                'details': spacingBeforeOptions +
+                    '\n pick an option:' +
+                    '\n + steam' +
+                    '\n + fried',
                 'price': 4.50,
             },
             'egg rolls platter (4)': {
-                'imgSrc': '',
+                'imgSrc': 'https://www.seriouseats.com/thmb/U-hWLnDmSZ8_6v07v0yc-8uYxrE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2012__06__20120629-pho-food-lab-19-c94bfd465387441f83ee8939fdf67dbe.jpg',
                 'imgAlt': '',
                 'details': 'lettuce, pickled carrots, daikon, and mint leaves' +
+                    '\n' + spacingBeforeOptions +
                     '\n pick a filling:' +
                     '\n + seafood' +
                     '\n + vegan',
@@ -43,7 +49,8 @@ const menuCategories = {
             'chicken wings': {
                 'imgSrc': '',
                 'imgAlt': '',
-                'details': 'pick a sauce:' +
+                'details': spacingBeforeOptions +
+                    '\n pick a sauce:' +
                     '\n + garlic butter' +
                     '\n + sweet & spicy',
                 'price': 13.95,
@@ -65,22 +72,25 @@ const menuCategories = {
                 'imgAlt': '',
                 'details': 'rice paper, lettuce, vermicelli noodle, mint leaves' +
                     '\n roasted peanut, peanut sauce' +
-                    '\n pork and shrimp (GF) 9.95' +
-                    '\n shrimp (GF) 8.95' +
-                    '\n chicken 8.95' +
-                    '\n grilled pork 8.95',
-                'price': 0,
+                    '\n' + spacingBeforeOptions +
+                    '\n pick your protein:' +
+                    '\n + pork and shrimp (GF) +1' +
+                    '\n + shrimp (GF)' +
+                    '\n + chicken' +
+                    '\n + grilled pork',
+                'price': 8.95,
             },
-            'salad': {
+            'asian-style salad': {
                 'imgSrc': '',
                 'imgAlt': '',
-                'details': 'lettuce, cucumber, picked carrots, and daikon' +
-                    '\n homemade sesame dressing' +
-                    '\n plain asian salad (GF) 9.95' +
-                    '\n add cube filet mignon +7' +
-                    '\n add chicken +5' +
-                    '\n add tofu +5',
-                'price': 0,
+                'details': 'lettuce, cucumber, picked carrots, and daikon, served with homemade sesame dressing' +
+                    '\n' + spacingBeforeOptions +
+                    '\n pick one or many:' +
+                    '\n + plain (GF)' +
+                    '\n + cube filet mignon +7' +
+                    '\n + chicken +5' +
+                    '\n + tofu +5',
+                'price': 9.95,
             }
         }
     },
@@ -89,32 +99,36 @@ const menuCategories = {
             'house crispy noodle': {
                 'imgSrc': '',
                 'imgAlt': '',
-                'details': 'jumbo shrimp, cube filet mignon, mix vegetables' +
-                    '\n crispy egg noodle',
+                'details': 'jumbo shrimp, cube filet mignon, mix vegetables served with crispy egg noodle',
                 'price': 19.95,
             },
             'filet mignon platter (dine-in only)': {
                 'imgSrc': '',
                 'imgAlt': '',
-                'details': 'cube filet mignon, fried egg' +
-                    '\n steamed rice' +
-                    '\n baguette' +
-                    '\n tomato fried rice +2',
+                'details': 'cube filet mignon and fried egg, served with your choice of carb' +
+                    '\n' + spacingBeforeOptions +
+                    '\n pick your carb' +
+                    '\n + steamed rice' +
+                    '\n + baguette' +
+                    '\n + tomato fried rice +2',
                 'price': 19.95,
             },
             'vietnamese chicken curry (mild spicy)': {
                 'imgSrc': '',
                 'imgAlt': '',
-                'details': 'bone-in dark meat chicken, potato, carrot, white onion' +
-                    '\n coconut cream, lemongrass in yellow curry' +
-                    '\n steamed rice / baguette / rice noodle / vermicelli noodle',
+                'details': 'bone-in dark meat chicken, coconut cream, potato, carrot, white onion, lemongrass in yellow curry, and your choice of carb' +
+                    '\n' + spacingBeforeOptions +
+                    '\n pick your carb' +
+                    '\n + steamed rice' +
+                    '\n + baguette' +
+                    '\n + rice noodle' +
+                    '\n + vermicelli noodle',
                 'price': 16.95,
             },
             'shaken filet mignon fries': {
                 'imgSrc': '',
                 'imgAlt': '',
-                'details': 'cube filet mignon, garlic butter fries' +
-                    '\n ranch and ketchup',
+                'details': 'cube filet mignon, garlic butter fries, served with ranch and ketchup',
                 'price': 17.95,
             }
         }

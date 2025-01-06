@@ -453,7 +453,7 @@ sup             { vertical-align: super; line-height: 1.0; }
     }
     #cta-phone-link {
         /*background-color: var(--content-background-color);*/
-        --distance-from-device-bottom-right-corner: 2.5%;
+        --distance-from-device-bottom-right-corner: 30px;
         position: absolute;
         bottom: var(--distance-from-device-bottom-right-corner);
         right: var(--distance-from-device-bottom-right-corner);
@@ -741,7 +741,7 @@ sup             { vertical-align: super; line-height: 1.0; }
 
                     /* background-color: black; */
                     --menu-item-margin: 1%;
-                    --menu-item-price-width: 10%;
+                    --menu-item-price-width: 16%;
                     --menu-item-img-width: 25%;
 
                     width: calc(100% - var(--menu-item-margin)*2);
@@ -750,8 +750,8 @@ sup             { vertical-align: super; line-height: 1.0; }
                     padding: 1%;
 
                     display: flex;
-                    /* align-items: center; */
-                    /* justify-content: space-between; */
+                    justify-content: center;
+                    flex-wrap: wrap;
 
                     &:nth-child(odd) {
                         background-color: rgba(243, 234, 211, 0.8);
@@ -759,18 +759,22 @@ sup             { vertical-align: super; line-height: 1.0; }
 
                     .menu-item-img {
                         /* background-color: black; */
-                        height: 100%;
-                        width: var(--menu-item-img-width);
+                        /*display: none;*/
+                        height: 100px;
+                        /*width: var(--menu-item-img-width);*/
+
+                        order: 3;
 
                         img {
                             height: 100%;
-                            width: 100%;
+                            /*width: 100%;*/
+                            object-fit: contain;
                         }
                     }
                     .menu-item-description {
                         /* background-color: green; */
                         height: 100%;
-                        flex-grow: 1;
+                        width: calc(100% - var(--menu-item-price-width));
 
                         display: flex;
                         justify-content: start;
@@ -785,7 +789,8 @@ sup             { vertical-align: super; line-height: 1.0; }
                             display: flex;
                             align-items: center;
 
-                            font-size: x-large;
+                            font-size: large;
+                            font-weight: bold;
                         }
 
                         .menu-item-details {
@@ -802,9 +807,10 @@ sup             { vertical-align: super; line-height: 1.0; }
 
                         display: flex;
                         /*align-items: center;*/
-                        justify-content: center;
+                        justify-content: right;
 
-                        font-size: x-large;
+                        font-weight: bold;
+                        font-size: medium;
                     }
 
                 }
@@ -1200,6 +1206,7 @@ sup             { vertical-align: super; line-height: 1.0; }
                 }
 
             }
+
             .nav-list {
                 /*background-color: #38A1F3;*/
 
@@ -1209,7 +1216,7 @@ sup             { vertical-align: super; line-height: 1.0; }
 
                 flex-grow: 1;
 
-                display: flex!important;
+                display: flex !important;
                 align-items: center;
                 justify-content: center;
                 flex-direction: column;
@@ -1228,7 +1235,7 @@ sup             { vertical-align: super; line-height: 1.0; }
                     /*font-size: medium;*/
 
                     #phone-link {
-                        height: 30%!important;
+                        height: 30% !important;
 
                         display: flex;
                         justify-content: center;
@@ -1243,9 +1250,10 @@ sup             { vertical-align: super; line-height: 1.0; }
                         }
 
                         svg {
-                            height: 100%!important;
+                            height: 100% !important;
                         }
                     }
+
                     div {
                         /*background-color: black;*/
 
@@ -1269,6 +1277,7 @@ sup             { vertical-align: super; line-height: 1.0; }
                 }
 
             }
+
             .social-icons {
                 /*background-color: blue;*/
                 height: 12%;
@@ -1276,7 +1285,7 @@ sup             { vertical-align: super; line-height: 1.0; }
 
                 position: relative;
 
-                display: flex!important;
+                display: flex !important;
                 align-items: center;
                 justify-content: space-evenly;
 
@@ -1295,24 +1304,28 @@ sup             { vertical-align: super; line-height: 1.0; }
                     transition: color 0.5s ease;
 
                     & > * {
-                        height: 80%!important;
-                        width: 80%!important;
+                        height: 80% !important;
+                        width: 80% !important;
                     }
                 }
 
                 .instagram:hover {
                     color: deeppink;
                 }
+
                 .facebook:hover {
                     color: #3b5998;
                 }
+
                 .yelp:hover {
                     color: red;
                 }
             }
+
             #nav-check {
                 display: none;
             }
+
             #nav-btn {
                 display: none;
             }
@@ -1327,11 +1340,10 @@ sup             { vertical-align: super; line-height: 1.0; }
             align-items: center;
             justify-content: center;
         }
-        #cta-phone-link-wrapper {
+        #cta-phone-link {
             display: none;
         }
     }
-
 
     /**********************
         CONTENT-WRAPPER-COMPONENT
@@ -1873,7 +1885,6 @@ sup             { vertical-align: super; line-height: 1.0; }
 @media only screen and (min-width: 1200px){
 
 }
-
 
 /****************************************
     NO JAVASCRIPT

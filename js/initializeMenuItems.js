@@ -163,7 +163,13 @@ class SpecialMenuDesign extends MenuDesign {
         itemPrice.classList.add("menu-item-price");
         itemPrice.innerText = curItem.price;
 
-        newEl.replaceChildren(itemImg, itemDescription, itemPrice);
+        if (curItem.imgSrc.trim().length !== 0) {
+            newEl.replaceChildren(itemImg, itemDescription, itemPrice);
+
+        } else {
+            newEl.replaceChildren(itemDescription, itemPrice);
+        }
+
         newEl.classList.add("menu-item");
 
         return newEl;
