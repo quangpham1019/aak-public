@@ -143,6 +143,77 @@ sup             { vertical-align: super; line-height: 1.0; }
     }
 }
 
+@keyframes phone-outer {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+        box-shadow:
+                0 0 0 0 rgba(52, 152, 219, 0),
+                0 0.05em 0.1em rgba(0, 0, 0, 0.2);
+    }
+    33.3333% {
+        transform: translate3d(0, 0, 0) scale(1.1);
+        box-shadow:
+                0 0 0 0 rgba(52, 152, 219, 0.1),
+                0 0.05em 0.1em rgba(0, 0, 0, 0.5);
+    }
+    66.6666% {
+        transform: translate3d(0, 0, 0) scale(1);
+        box-shadow:
+                0 0 0 0.5em rgba(52, 152, 219, 0),
+                0 0.05em 0.1em rgba(0, 0, 0, 0.2);
+    }
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+        box-shadow:
+                0 0 0 0 rgba(52, 152, 219, 0),
+                0 0.05em 0.1em rgba(0, 0, 0, 0.2);
+    }
+}
+@keyframes phone-inner {
+    0% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(0);
+    }
+    33.3333% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(0.9);
+    }
+    66.6666% {
+        opacity: 0;
+        transform: translate3d(0, 0, 0) scale(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate3d(0, 0, 0) scale(0);
+    }
+}
+@keyframes phone-icon {
+    0% { transform: translate3d(0em, 0, 0); }
+    2% { transform: translate3d(0.01em, 0, 0); }
+    4% { transform: translate3d(-0.01em, 0, 0); }
+    6% { transform: translate3d(0.01em, 0, 0); }
+    8% { transform: translate3d(-0.01em, 0, 0); }
+    10% { transform: translate3d(0.01em, 0, 0); }
+    12% { transform: translate3d(-0.01em, 0, 0); }
+    14% { transform: translate3d(0.01em, 0, 0); }
+    16% { transform: translate3d(-0.01em, 0, 0); }
+    18% { transform: translate3d(0.01em, 0, 0); }
+    20% { transform: translate3d(-0.01em, 0, 0); }
+    22% { transform: translate3d(0.01em, 0, 0); }
+    24% { transform: translate3d(-0.01em, 0, 0); }
+    26% { transform: translate3d(0.01em, 0, 0); }
+    28% { transform: translate3d(-0.01em, 0, 0); }
+    30% { transform: translate3d(0.01em, 0, 0); }
+    32% { transform: translate3d(-0.01em, 0, 0); }
+    34% { transform: translate3d(0.01em, 0, 0); }
+    36% { transform: translate3d(-0.01em, 0, 0); }
+    38% { transform: translate3d(0.01em, 0, 0); }
+    40% { transform: translate3d(-0.01em, 0, 0); }
+    42% { transform: translate3d(0.01em, 0, 0); }
+    44% { transform: translate3d(-0.01em, 0, 0); }
+    46% { transform: translate3d(0em, 0, 0); }
+}
+
 
 /**********************
     GOOGLE FONTS
@@ -167,7 +238,7 @@ sup             { vertical-align: super; line-height: 1.0; }
 #content-wrapper {
     /*background-color: #38A1F3;*/
     height: 100vh;
-    width: 100%;
+    width: 100vw;
 
     display: flex;
     flex-direction: column;
@@ -371,13 +442,98 @@ sup             { vertical-align: super; line-height: 1.0; }
     }
     #content-wrapper-content {
         /*background-color: #3b5998;*/
-        height: 100%;
-        flex-grow: 1;
-        /*box-shadow: 0 0 2px 2px black;*/
+        /*height: 100%;*/
+        height: calc(100vh - var(--navbar-small-screen-height));
+
+        /*flex-grow: 1;*/
 
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    #cta-phone-link {
+        /*background-color: var(--content-background-color);*/
+        --distance-from-device-bottom-right-corner: 2.5%;
+        position: absolute;
+        bottom: var(--distance-from-device-bottom-right-corner);
+        right: var(--distance-from-device-bottom-right-corner);
+
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+
+        #cta-phone-before {
+            background-color: rgba(255, 255, 255, 0.1);
+            position: absolute;
+            top: 0;
+            left: 0;
+            /*content: ""; !* might be able to remove this *!*/
+
+            height: 100%;
+            width: 100%;
+            z-index: 2;
+
+            /*font-size: 25vmin; !* REQUIRED for ANIMATION to work *!*/
+
+            border-radius: 50%;
+            opacity: 1;
+            transform: translate3d(0, 0, 0) scale(0);
+
+            animation: phone-inner 4s infinite;
+
+        }
+        #cta-phone {
+            /*background-color: #3498db;*/
+            background-color: rgba(0, 0, 0, 0.5);
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+
+            display: block;
+
+            font-size: 25vmin;
+            border-radius: 0.5em;
+            box-shadow:
+                    0 0 0 0 rgba(52, 152, 219, 0),
+                    0 0.05em 0.1em rgba(0, 0, 0, 0.2);
+            transform: translate3d(0, 0, 0) scale(1);
+
+            animation: phone-outer 4s infinite;
+        }
+        #cta-phone-after {
+                position: absolute;
+                content: ""; /* might be able to remove this */
+                top: 0;
+                left: 0;
+
+                width: 100%;
+                height: 100%;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                div {
+                    height: 50%;
+                    width: 50%;
+
+                    font-size: 25vmin; /* REQUIRED for ANIMATION to work */
+
+                    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTYuNiAxMC44YzEuNCAyLjggMy44IDUuMSA2LjYgNi42bDIuMi0yLjJjLjMtLjMuNy0uNCAxLS4yIDEuMS40IDIuMy42IDMuNi42LjUgMCAxIC40IDEgMVYyMGMwIC41LS41IDEtMSAxLTkuNCAwLTE3LTcuNi0xNy0xNyAwLS42LjQtMSAxLTFoMy41Yy41IDAgMSAuNCAxIDEgMCAxLjIuMiAyLjUuNiAzLjYuMS40IDAgLjctLjIgMWwtMi4zIDIuMnoiIGZpbGw9IiNmZmZmZmYiLz48L3N2Zz4=);
+                    background-position: 50% 50%;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    transform: translate3d(0, 0, 0);
+
+                    animation: phone-icon 4s infinite;
+                }
+
+
+            }
     }
 }
 
@@ -386,7 +542,8 @@ sup             { vertical-align: super; line-height: 1.0; }
     CONTENT-WRAPPER-COMPONENT
 ***********************/
 .content-wrapper-component {
-    height: calc(100vh - var(--navbar-small-screen-height));
+    height: 100%;
+    /*height: 50%;*/
     width: 100%;
     background: var(--content-wrapper-img-small-screen);
     background-size: 100% 100%;
@@ -1169,6 +1326,9 @@ sup             { vertical-align: super; line-height: 1.0; }
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+        #cta-phone-link-wrapper {
+            display: none;
         }
     }
 
