@@ -17,10 +17,11 @@ class MenuComponent {
     _description;
     _Img;
 
-    constructor(name, description, img) {
+    constructor(name, description, img = new Img()) {
         if (this.constructor === MenuComponent) {
             throw new Error("Abstract class can't be instantiated.");
         }
+
         this._name = name;
         this._description = description;
         this._Img = img;
@@ -83,7 +84,7 @@ class MenuCategory extends MenuComponent {
 class MenuItem extends MenuComponent {
     _price;
 
-    constructor(name, description, Img, price) {
+    constructor(name, description, price, Img) {
         super(name, description, Img);
         this._price = price;
     }
@@ -100,7 +101,7 @@ class Img {
     _imgAlt;
     _ariaLabel;
 
-    constructor(imgSrc, imgAlt, ariaLabel) {
+    constructor(imgSrc = "", imgAlt = "", ariaLabel = "") {
         this._imgSrc = imgSrc;
         this._imgAlt = imgAlt;
         this._ariaLabel = ariaLabel;
@@ -127,6 +128,7 @@ class Img {
         this._ariaLabel = aria;
     }
 }
+
 class LayoutUtility {
 
     static _resultFragment;
@@ -141,7 +143,8 @@ class LayoutUtility {
 
 
         // choose LAYOUT_DESIGN_1 for current menuCategory
-        const [layoutDesign, classNames] = LayoutDesignFactory.getLayoutDesign(menuCategory);
+        const [layoutDesigns, classNames] = LayoutDesignFactory.getLayoutDesignForCategory(menuCategory);
+        const [categoryLayoutDesign, itemLayoutDesign] = layoutDesigns;
         const [itemsWrapperClass, itemsClass] = classNames;
         let categoryElement, itemsWrapper;
 
@@ -156,21 +159,22 @@ class LayoutUtility {
             categoryElement.id = `${menuCategory.name}`;
 
             // apply LAYOUT_DESIGN_1 to current menuCategory
-            layoutDesign.applyDesign(categoryElement);
-
-            itemsWrapper = categoryElement.querySelector(".menu-category-items");
+            categoryLayoutDesign.applyDesign(categoryElement);
+            itemsWrapper = categoryElement.querySelector(`.${itemsWrapperClass}`);
 
         }
 
         // choose a LAYOUT_DESIGN_2 for menuItems
         // traverse and create menu items
-
         menuCategory?.menuItems?.forEach(menuItem => {
             // apply LAYOUT_DESIGN_2 to menuItem
             // result is FRAGMENT_SUB_2
             // append FRAGMENT_SUB_2 as child to FRAGMENT_SUB_1
             let itemElement = document.createElement("div");
             itemElement.classList.add(itemsClass);
+            itemLayoutDesign.menuComponent = menuItem;
+            itemLayoutDesign.applyDesign(itemElement);
+
             itemsWrapper.appendChild(itemElement);
         });
 
@@ -180,6 +184,7 @@ class LayoutUtility {
             // add FRAGMENT_SUB_3 to FRAGMENT_SUB_1
             let newFrag = document.createDocumentFragment();
             this.#traverseMenuCategoryAndApplyDesign(menuCategory, newFrag);
+
             itemsWrapper.appendChild(newFrag);
         });
 
@@ -188,24 +193,21 @@ class LayoutUtility {
     }
 }
 class LayoutDesignFactory {
-    static getLayoutDesign(menuCategory) {
-        let layoutDesign;
+
+    static getLayoutDesignForCategory(menuCategory) {
+        let categoryLayoutDesign, itemLayoutDesign;
         let itemsWrapperClass, itemsClass;
 
         switch (menuCategory) {
-            case "special":
-            case "rice":
-            case "drink":
-            case "catering":
-            case "ice-cream":
             default:
-                layoutDesign = new SpecialCategoryLayoutDesign(menuCategory);
+                categoryLayoutDesign = new SpecialCategoryLayoutDesign(menuCategory);
+                itemLayoutDesign = new SpecialItemLayoutDesign();
                 itemsWrapperClass = "menu-category-items";
                 itemsClass = "menu-item";
                 break;
         }
 
-        return [layoutDesign, [itemsWrapperClass, itemsClass]];
+        return [[categoryLayoutDesign, itemLayoutDesign], [itemsWrapperClass, itemsClass]];
     }
 }
 class LayoutDesign {
@@ -248,7 +250,7 @@ class SpecialCategoryLayoutDesign extends LayoutDesign {
         super(menuComponent);
     }
 
-    applyDesign(treeFragment) {
+    applyDesign(designingElement) {
         // <!--*********************
         //     .menu-category-wrapper LAYOUT
         // **********************-->
@@ -266,11 +268,11 @@ class SpecialCategoryLayoutDesign extends LayoutDesign {
         // <!--    </div>-->
         // <!--</div>-->
 
-        treeFragment.classList.add("menu-category-wrapper");
+        designingElement.classList.add("menu-category-wrapper");
         let categoryHeading = document.createElement("div");
 
         let categoryTitle = document.createElement("div");
-        categoryTitle.innerText = this._menuCategory;
+        categoryTitle.innerText = this._menuComponent.name;
         categoryTitle.classList.add("menu-category-title");
 
         let categorySelectedIndicator = document.createElement("div");
@@ -283,14 +285,67 @@ class SpecialCategoryLayoutDesign extends LayoutDesign {
 
         categoryHeading.replaceChildren(categoryHeadingClicker);
         categoryHeading.classList.add("menu-category-heading");
-        treeFragment.appendChild(categoryHeading);
+        designingElement.appendChild(categoryHeading);
 
         let menuItemsWrapper = document.createElement("div");
         menuItemsWrapper.classList.add("menu-category-items");
 
-        treeFragment.appendChild(menuItemsWrapper);
+        designingElement.appendChild(menuItemsWrapper);
     }
 }
+class SpecialItemLayoutDesign extends LayoutDesign {
+
+    constructor(menuComponent) {
+        super(menuComponent);
+    }
+
+    applyDesign(designingElement) {
+        // <!--*********************
+        //     .menu-item LAYOUT
+        // **********************-->
+        // <!--<div class="menu-item">-->
+        // <!--    <div class="menu-item-img">-->
+        // <!--        <img src="assets/img/item-1.jpg" alt="a pho bowl"/>-->
+        // <!--    </div>-->
+        // <!--    <div class="menu-item-description">-->
+        // <!--        <div class="menu-item-name">Signature Pho</div>-->
+        // <!--        <div class="menu-item-details">Flavorful cut of filet mignon served with cilantro, jalapeno, and meatball</div>-->
+        // <!--    </div>-->
+        // <!--    <div class="menu-item-price">18</div>-->
+        // <!--</div>-->
+
+        let curItem = this._menuComponent;
+
+        let itemImg = document.createElement("div");
+        itemImg.classList.add("menu-item-img");
+        let img = document.createElement("img");
+        img.setAttribute("src", curItem.img.src);
+        img.setAttribute("alt", curItem.img.alt);
+        itemImg.appendChild(img);
+
+        let itemDescription = document.createElement("div");
+        itemDescription.classList.add("menu-item-description");
+        let itemName = document.createElement("div");
+        itemName.innerText = curItem.name;
+        itemName.classList.add("menu-item-name");
+        let itemDetails = document.createElement("div");
+        itemDetails.innerText = curItem.description;
+        itemDetails.classList.add("menu-item-details");
+        itemDescription.replaceChildren(itemName, itemDetails);
+
+        let itemPrice = document.createElement("div");
+        itemPrice.classList.add("menu-item-price");
+        itemPrice.innerText = curItem.price;
+
+        if (curItem.img.src.trim().length !== 0) {
+            designingElement.replaceChildren(itemImg, itemDescription, itemPrice);
+
+        } else {
+            designingElement.replaceChildren(itemDescription, itemPrice);
+        }
+    }
+}
+
 export { LayoutUtility, MenuComponent, MenuCategory, MenuItem, Img };
 
 let menu = new MenuCategory("menu", "");
