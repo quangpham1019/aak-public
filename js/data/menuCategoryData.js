@@ -617,7 +617,19 @@ export function getDataAsObjects() {
     let beveragesAndDesserts = new MenuCategory("beverages & desserts", "");
     let appetizerCategory = new MenuCategory("appetizer", "");
     let aloSignatureCategory = new MenuCategory("alo's signature", "");
-    let phoCategory = new MenuCategory("pho", "");
+    let phoCategory = new MenuCategory(
+        "pho",
+        'lettuce, cucumber, picked carrots, and daikon, served with homemade sesame dressing' +
+            '\n' + spacingBeforeOptions +
+            '\n pick your broth:' +
+            '\n + beef / chicken / vegetable' +
+            '\n' + spacingBeforeOptions +
+            '\n optional noodle substitute:' +
+            '\n + egg noodle +2' +
+            '\n + vermicelli +2' +
+            '\n + steamed rice +2' +
+            '\n + vegetables +2'
+        );
     let vermicelliCategory = new MenuCategory("vermicelli rice noodle", "");
     let vietnameseHouseBaguette = new MenuCategory("vietnamese house baguette", "");
     let friedRiceCategory = new MenuCategory("fried rice", "");
@@ -699,11 +711,84 @@ export function getDataAsObjects() {
         '\n + tofu +5',
         9.95);
 
-    let houseSpecialPho = new MenuItem("house special pho", "best pho in town", 15);
-    let chickenPho = new MenuItem("chicken pho", "best chicken pho in town", 15);
+    let houseCrispyNoodle = new MenuItem(
+        "house crispy noodle",
+        "jumbo shrimp, cube filet mignon, mix vegetables served with crispy egg noodle",
+        19.95);
+    let filetMignonPlatter = new MenuItem(
+        "filet mignon platter (dine-in only)",
+        'cube filet mignon and fried egg, served with your choice of carb' +
+        '\n' + spacingBeforeOptions +
+        '\n pick your carb' +
+        '\n + steamed rice' +
+        '\n + baguette' +
+        '\n + tomato fried rice +2',
+        19.95);
+    let vietnameseChickenCurry = new MenuItem(
+        "vietnamese chicken curry (mild spicy)",
+        'bone-in dark meat chicken, coconut cream, potato, carrot, white onion, lemongrass in yellow curry, and your choice of carb' +
+        '\n' + spacingBeforeOptions +
+        '\n pick your carb' +
+        '\n + steamed rice' +
+        '\n + baguette' +
+        '\n + rice noodle' +
+        '\n + vermicelli noodle',
+        16.95);
+    let shakenFiletMignonFries = new MenuItem(
+        "shaken filet mignon fries",
+        'cube filet mignon, garlic butter fries, served with ranch and ketchup',
+        17.95);
 
-    let water = new MenuItem("water", "", 0);
-    let soda = new MenuItem("soda", "", 3);
+
+    let houseSpecialPho = new MenuItem(
+        "house special pho (GF)",
+        "rare filet mignon & beef meatball",
+        16.95);
+    let chickenPho = new MenuItem(
+        "chicken pho (GF)",
+        "white meat chicken",
+        14.95);
+    let beefMeatballPho = new MenuItem(
+        "beef meatball pho (GF)",
+        "",
+        14.95
+    );
+    let brisketPho = new MenuItem(
+        "brisket pho (GF)",
+        "",
+        14.95
+    );
+    let rareFiletMignonPho = new MenuItem(
+        "rare filet mignon pho (GF)",
+        "",
+        15.95
+    );
+    let jumboShrimpPho = new MenuItem(
+        "jumbo shrimp pho (GF)",
+        "",
+        15.95
+    );
+    let grilledPorkPho = new MenuItem(
+        "grilled pork pho",
+        "",
+        15.95
+    );
+    let grilledBeefBackRibPho = new MenuItem(
+        "grilled beef back rib pho",
+        "",
+        17.95
+    );
+    let boilBeefBackRibPho = new MenuItem(
+        "boil beef back rib pho (GF)",
+        "",
+        16.95
+    );
+    let plainPho = new MenuItem(
+        "plain pho",
+        "",
+        11.95
+    );
+
     let thaiTea = new MenuItem("thai tea", "", 5);
     let jasmineTea = new MenuItem("jasmine tea", "", 5);
     let pineappleSmoothie = new MenuItem("pineapple smoothie", "", 5);
@@ -720,9 +805,36 @@ export function getDataAsObjects() {
         springRolls,
         asianStyleSalad
     ];
+    aloSignatureCategory.menuItems = [
+        houseCrispyNoodle,
+        filetMignonPlatter,
+        vietnameseChickenCurry,
+        shakenFiletMignonFries
+    ];
     phoCategory.menuItems = [
+        new MenuItem(
+            "",
+            'lettuce, cucumber, pickled carrots, and daikon, served with homemade sesame dressing' +
+            '\n' + spacingBeforeOptions +
+            '\n pick your broth:' +
+            '\n + beef / chicken / vegetable' +
+            '\n' + spacingBeforeOptions +
+            '\n optional noodle substitute:' +
+            '\n + egg noodle +2' +
+            '\n + vermicelli +2' +
+            '\n + steamed rice +2' +
+            '\n + vegetables +2',
+            0),
         houseSpecialPho,
-        chickenPho
+        chickenPho,
+        beefMeatballPho,
+        brisketPho,
+        rareFiletMignonPho,
+        jumboShrimpPho,
+        grilledPorkPho,
+        grilledBeefBackRibPho,
+        boilBeefBackRibPho,
+        plainPho
     ];
 
     drinksCategory.menuCategories = [

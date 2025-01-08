@@ -242,8 +242,10 @@ class SpecialItemLayoutDesign extends LayoutDesign {
         if (curItem.img.src.trim().length !== 0) {
             designingElement.replaceChildren(itemImg, itemDescription, itemPrice);
 
-        } else {
+        } else if (curItem.price !== 0) {
             designingElement.replaceChildren(itemDescription, itemPrice);
+        } else {
+            designingElement.replaceChildren(itemDescription);
         }
     }
 }
