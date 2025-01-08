@@ -816,6 +816,12 @@ sup             { vertical-align: super; line-height: 1.0; }
                 }
             }
 
+            .menu-category-wrapper {
+                align-items: end;
+                & > * {
+                    width: 95%;
+                }
+            }
         }
     }
 }

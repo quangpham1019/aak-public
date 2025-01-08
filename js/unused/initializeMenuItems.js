@@ -1,4 +1,5 @@
-import getData from "./data/menuCategoryData.js";
+import getData from "../data/menuCategoryData.js";
+
 const menuCategories = getData();
 const menuCategoryClosedIndicator = "<i id=\"indicator-collapse\" class=\"fa-solid fa-greater-than\"></i>";
 const menuCategoryOpenIndicator = "<i id=\"indicator-open\" class=\"fa-solid fa-v\"></i>\n";
@@ -274,13 +275,13 @@ class RowMenuDesign extends MenuDesign {
     }
 }
 
-export function init() {
+export default function initializeMenuItems() {
     // traverse menuCategories, for each category
-    // create category layout
-    // traverse items, for each item
-    // create item layout, populate data
-    // add item to category element
-    // append category to menu
+        // create category layout
+        // traverse items, for each item
+            // create item layout, populate data
+            // add item to category element
+        // append category to menu
 
     let menu = document.querySelector("#menu");
 
@@ -311,98 +312,5 @@ export function init() {
         });
 
         menu.appendChild(categoryWrapper);
-    }
-}
-
-export default function initializeMenuItems() {
-    let menu = document.querySelector("#menu");
-    let menuData = getData();
-
-
-}
-
-class LayoutUtility {
-
-    static execute(menuCategory) {
-        let fragmentTree = document.createDocumentFragment();
-        return this.#traverseMenuCategoryAndApplyDesign(menuCategory, fragmentTree);
-    }
-
-    #traverseMenuCategoryAndApplyDesign(menuCategory, tree) {
-        // choose and apply layout design 1 to current menuCategory
-        // result is fragment tree 1
-        console.log(`choosing layout for ${menuCategory.name}`)
-        console.log(`applying layout to ${menuCategory.name}`)
-        console.log(`RESULT: fragment_${menuCategory.name}`)
-
-        // choose a layout design 2 for menuItems
-        // traverse and create menu items
-        console.log(`choosing layout for items in ${menuCategory.name}`)
-        menuCategory.menuItems?.forEach(menuItem => {
-            // apply layout design 2 to menuItem
-            // result is fragment tree 2
-            // append fragment tree 2 as child to fragment tree 1
-            console.log(`applying layout to ${menuItem.name}`)
-            console.log(`RESULT: fragment_${menuItem.name}`)
-            console.log(`appending child fragment_${menuItem.name} to fragment_${menuCategory.name}`)
-        });
-
-        // append fragment tree 1 to tree
-        console.log(`appending child fragment_${menuCategory.name} to curTree`)
-
-        menuCategory.menuCategories?.forEach(menuCategory => {
-            this.traverseMenuCategory(menuCategory);
-        });
-
-        console.log(`RETURNING: fragment_${menuCategory.name}`);
-
-        return tree;
-    }
-}
-
-class LayoutDesign {
-
-    _menuComponent;
-    _designResult;
-
-    constructor(menuComponent) {
-        if (this.constructor === LayoutDesign) {
-            throw new Error("Abstract class can't be instantiated.");
-        }
-        this._menuComponent = menuComponent;
-    }
-
-    get menuComponent() {
-        return this._menuComponent;
-    }
-    set menuComponent(menuComponent) {
-        this._menuComponent = menuComponent;
-    }
-
-    get result() {
-        return this._designResult;
-    }
-    set result(result) {
-        this._designResult = result;
-    }
-
-    applyDesign() {
-        throw new Error("Method must be implemented by child class.")
-    }
-
-    getDesignResult() {
-        return this._designResult;
-    }
-}
-class SpecialCategoryLayoutDesign extends LayoutDesign {
-
-    constructor(menuComponent) {
-        super(menuComponent);
-    }
-
-    applyDesign() {
-        let el = document.createElement("h4");
-        el.innerText = this._menuComponent.name;
-        this._designResult.appendChild(el);
     }
 }
