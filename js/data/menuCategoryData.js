@@ -34,8 +34,8 @@ export function getDataAsJSON() {
                     'imgAlt': '',
                     'details': spacingBeforeOptions +
                         '\n pick an option:' +
-                        '\n + steam' +
-                        '\n + fried',
+                        '\n • steam' +
+                        '\n • fried',
                     'price': 4.50,
                 },
                 'egg rolls platter (4)': {
@@ -44,8 +44,8 @@ export function getDataAsJSON() {
                     'details': 'lettuce, pickled carrots, daikon, and mint leaves' +
                         '\n' + spacingBeforeOptions +
                         '\n pick a filling:' +
-                        '\n + seafood' +
-                        '\n + vegan',
+                        '\n • seafood' +
+                        '\n • vegan',
                     'price': 10.95,
                 },
                 'chicken wings': {
@@ -53,8 +53,8 @@ export function getDataAsJSON() {
                     'imgAlt': '',
                     'details': spacingBeforeOptions +
                         '\n pick a sauce:' +
-                        '\n + garlic butter' +
-                        '\n + sweet & spicy',
+                        '\n • garlic butter' +
+                        '\n • sweet & spicy',
                     'price': 13.95,
                 },
                 'garlic butter fries': {
@@ -76,10 +76,10 @@ export function getDataAsJSON() {
                         '\n roasted peanut, peanut sauce' +
                         '\n' + spacingBeforeOptions +
                         '\n pick your protein:' +
-                        '\n + pork and shrimp (GF) +1' +
-                        '\n + shrimp (GF)' +
-                        '\n + chicken' +
-                        '\n + grilled pork',
+                        '\n • pork and shrimp (GF) +1' +
+                        '\n • shrimp (GF)' +
+                        '\n • chicken' +
+                        '\n • grilled pork',
                     'price': 8.95,
                 },
                 'asian-style salad': {
@@ -88,10 +88,10 @@ export function getDataAsJSON() {
                     'details': 'lettuce, cucumber, picked carrots, and daikon, served with homemade sesame dressing' +
                         '\n' + spacingBeforeOptions +
                         '\n pick one or many:' +
-                        '\n + plain (GF)' +
-                        '\n + cube filet mignon +7' +
-                        '\n + chicken +5' +
-                        '\n + tofu +5',
+                        '\n • plain (GF)' +
+                        '\n • cube filet mignon +7' +
+                        '\n • chicken +5' +
+                        '\n • tofu +5',
                     'price': 9.95,
                 }
             }
@@ -110,9 +110,9 @@ export function getDataAsJSON() {
                     'details': 'cube filet mignon and fried egg, served with your choice of carb' +
                         '\n' + spacingBeforeOptions +
                         '\n pick your carb' +
-                        '\n + steamed rice' +
-                        '\n + baguette' +
-                        '\n + tomato fried rice +2',
+                        '\n • steamed rice' +
+                        '\n • baguette' +
+                        '\n • tomato fried rice +2',
                     'price': 19.95,
                 },
                 'vietnamese chicken curry (mild spicy)': {
@@ -121,10 +121,10 @@ export function getDataAsJSON() {
                     'details': 'bone-in dark meat chicken, coconut cream, potato, carrot, white onion, lemongrass in yellow curry, and your choice of carb' +
                         '\n' + spacingBeforeOptions +
                         '\n pick your carb' +
-                        '\n + steamed rice' +
-                        '\n + baguette' +
-                        '\n + rice noodle' +
-                        '\n + vermicelli noodle',
+                        '\n • steamed rice' +
+                        '\n • baguette' +
+                        '\n • rice noodle' +
+                        '\n • vermicelli noodle',
                     'price': 16.95,
                 },
                 'shaken filet mignon fries': {
@@ -622,13 +622,13 @@ export function getDataAsObjects() {
         'rice noodle, top with green onion, white onion, cilantro, side of bean sprout, basil, jalapeno, lime' +
             '\n' + spacingBeforeOptions +
             '\n pick your broth:' +
-            '\n + beef / chicken / vegetable' +
+            '\n • beef / chicken / vegetable' +
             '\n' + spacingBeforeOptions +
             '\n optional noodle substitute:' +
-            '\n + egg noodle +2' +
-            '\n + vermicelli +2' +
-            '\n + steamed rice +2' +
-            '\n + vegetables +2'
+            '\n • egg noodle +2' +
+            '\n • vermicelli +2' +
+            '\n • steamed rice +2' +
+            '\n • vegetables +2'
         );
     let vermicelliCategory = new MenuCategory(
         "vermicelli rice noodle",
@@ -646,9 +646,11 @@ export function getDataAsObjects() {
         'lettuce, cucumber, pickled carrots, daikon, fried egg, white rice' +
         '\n' + spacingBeforeOptions +
         '\n optional rice sub:' +
-        '\n + tomato fried rice +2'
+        '\n • tomato fried rice +2'
         );
-    let garlicNoodleCategory = new MenuCategory("garlic noodle", "");
+    let garlicNoodleCategory = new MenuCategory(
+        "garlic noodle",
+        "garlic, butter, parsley flakes");
     let veganCategory = new MenuCategory("vegan & vegetarian", "");
 
     let drinksCategory = new MenuCategory("drinks", "");
@@ -677,23 +679,23 @@ export function getDataAsObjects() {
         "pork bao",
         spacingBeforeOptions +
         '\n pick an option:' +
-        '\n + steam' +
-        '\n + fried',
+        '\n • steam' +
+        '\n • fried',
         4.50);
     let eggRollsPlatter = new MenuItem(
         "egg rolls platter (4)",
         'lettuce, pickled carrots, daikon, and mint leaves' +
         '\n' + spacingBeforeOptions +
         '\n pick a filling:' +
-        '\n + seafood' +
-        '\n + vegan',
+        '\n • seafood' +
+        '\n • vegan',
         10.95);
     let chickenWings = new MenuItem(
         "chicken wings",
         spacingBeforeOptions +
         '\n pick a sauce:' +
-        '\n + garlic butter' +
-        '\n + sweet & spicy',
+        '\n • garlic butter' +
+        '\n • sweet & spicy',
         13.95);
     let garlicButterFries = new MenuItem(
         "garlic butter fries",
@@ -709,20 +711,20 @@ export function getDataAsObjects() {
         '\n roasted peanut, peanut sauce' +
         '\n' + spacingBeforeOptions +
         '\n pick your protein:' +
-        '\n + pork and shrimp (GF) +1' +
-        '\n + shrimp (GF)' +
-        '\n + chicken' +
-        '\n + grilled pork',
+        '\n • pork and shrimp (GF) +1' +
+        '\n • shrimp (GF)' +
+        '\n • chicken' +
+        '\n • grilled pork',
         8.95);
     let asianStyleSalad = new MenuItem(
         "asian-style salad",
         'lettuce, cucumber, picked carrots, and daikon, served with homemade sesame dressing' +
         '\n' + spacingBeforeOptions +
         '\n pick one or many:' +
-        '\n + plain (GF)' +
-        '\n + cube filet mignon +7' +
-        '\n + chicken +5' +
-        '\n + tofu +5',
+        '\n • plain (GF)' +
+        '\n • cube filet mignon +7' +
+        '\n • chicken +5' +
+        '\n • tofu +5',
         9.95);
 
     let houseCrispyNoodle = new MenuItem(
@@ -734,19 +736,19 @@ export function getDataAsObjects() {
         'cube filet mignon and fried egg, served with your choice of carb' +
         '\n' + spacingBeforeOptions +
         '\n pick your carb' +
-        '\n + steamed rice' +
-        '\n + baguette' +
-        '\n + tomato fried rice +2',
+        '\n • steamed rice' +
+        '\n • baguette' +
+        '\n • tomato fried rice +2',
         19.95);
     let vietnameseChickenCurry = new MenuItem(
         "vietnamese chicken curry (mild spicy)",
         'bone-in dark meat chicken, coconut cream, potato, carrot, white onion, lemongrass in yellow curry, and your choice of carb' +
         '\n' + spacingBeforeOptions +
         '\n pick your carb' +
-        '\n + steamed rice' +
-        '\n + baguette' +
-        '\n + rice noodle' +
-        '\n + vermicelli noodle',
+        '\n • steamed rice' +
+        '\n • baguette' +
+        '\n • rice noodle' +
+        '\n • vermicelli noodle',
         16.95);
     let shakenFiletMignonFries = new MenuItem(
         "shaken filet mignon fries",
@@ -922,11 +924,382 @@ export function getDataAsObjects() {
         15.95
     );
 
+    let plainGarlicNoodle = new MenuItem(
+        "plain garlic noodle",
+        "",
+        10.95
+    );
+    let chickenGarlicNoodle = new MenuItem(
+        "chicken garlic noodle",
+        "",
+        15.95
+    );
+    let grilledPorkGarlicNoodle = new MenuItem(
+        "grilled pork garlic noodle",
+        "",
+        15.95
+    );
+    let tofuGarlicNoodle = new MenuItem(
+        "tofu garlic noodle",
+        "",
+        15.95
+    );
+    let shrimpGarlicNoodle = new MenuItem(
+        "shrimp garlic noodle",
+        "",
+        16.95
+    );
+    let cubeFiletMignonGarlicNoodle = new MenuItem(
+        "cube filet mignon garlic noodle",
+        "",
+        17.95
+    );
+    let shrimpAndChickenGarlicNoodle = new MenuItem(
+        "shrimp and chicken garlic noodle",
+        "",
+        17.95
+    );
 
-    let thaiTea = new MenuItem("thai tea", "", 5);
-    let jasmineTea = new MenuItem("jasmine tea", "", 5);
-    let pineappleSmoothie = new MenuItem("pineapple smoothie", "", 5);
-    let mangoSmoothie = new MenuItem("mango smoothie", "", 5);
+    let veganEggRolls = new MenuItem(
+        "vegan egg rolls",
+        "sweet and sour sauce",
+        5.50
+    );
+    let tofuSpringRolls = new MenuItem(
+        "tofu spring rolls (2)",
+        'lettuce, vermicelli noodle, mint leaves' +
+        '\n roasted peanut, peanut sauce',
+        8.95
+    );
+    let veganFriedTofu = new MenuItem(
+        "vegan fried tofu (GF)",
+        'deep fried tofu, jalapeno, green onion' +
+        '\n sweet and sour sauce',
+        13.95
+    );
+    let tofuBaguette = new MenuItem(
+        "tofu baguette",
+        "pickled carrots and daikon, cucumber, cilantro, jalapeno",
+        9.95
+    );
+    let veganPho = new MenuItem(
+        "vegan pho (GF)",
+        'vegan broth, bok choy, cabbage, fried tofu' +
+        '\n rice noodle, green onion, white onion, cilantro' +
+        '\n side: bean sprout, basil, jalapeno, and lime',
+        14.95
+    );
+    let veganFriedRice = new MenuItem(
+        "vegan fried rice",
+        "green peas, carrot, white onion, tofu",
+        14.95
+    );
+    let grilledTofuSteamedRice = new MenuItem(
+        "grilled tofu steamed rice",
+        "lettuce, cucumber, pickled carrots, daikon, and fried egg",
+        15.95
+    );
+    let veganVermicelliNoodle = new MenuItem(
+        "vegan vermicelli noodle",
+        'lettuce, bean sprout, cucumber, mint, pickled carrots, daikon, and scallion oil' +
+        '\n vegan egg roll, roasted peanut, homemade soy sauce',
+        15.95
+    );
+    let vegetableStirFryNoodle = new MenuItem(
+        "vegetable stir-fry noodle",
+        "egg noodle, mix vegetables, tofu",
+        15.95
+    );
+
+
+    let brownSugarMilkBoba = new MenuItem(
+        "brown sugar milk boba",
+        "",
+        6
+    );
+    let freshPassionFruit = new MenuItem(
+        "fresh passion fruit",
+        "",
+        5.5
+    );
+    let spicyMango = new MenuItem(
+        "spicy mango",
+        "",
+        5.5
+    );
+    let strawberryLemonade = new MenuItem(
+        "strawberry lemonade",
+        "",
+        5.5
+    );
+    let strawberryMatcha = new MenuItem(
+        "strawberry matcha",
+        "",
+        5.50
+    );
+    let strawberryMilkJelly = new MenuItem(
+        "strawberry milk jelly",
+        "",
+        6
+    );
+    let peachOrangeLemongrassTea = new MenuItem(
+        "peach orange lemongrass tea",
+        "",
+        6
+    );
+
+    let thaiTea = new MenuItem(
+        "thai tea",
+        "",
+        5.5
+    );
+    let taroMilkTea = new MenuItem(
+        "taro milk tea",
+        "",
+        5.5
+    );
+    let greenMilkTea = new MenuItem(
+        "green milk tea",
+        "",
+        5.5
+    );
+    let blackMilkTea = new MenuItem(
+        "black milk tea",
+        "",
+        5.5
+    );
+    let matchaLatte = new MenuItem(
+        "matcha latte",
+        "",
+        5.5
+    );
+    let mangoLemonadeTea = new MenuItem(
+        "mango lemonade tea",
+        "",
+        5.5
+    );
+    let peachLemonadeTea = new MenuItem(
+        "peach lemonade tea",
+        "",
+        5.5
+    );
+
+    let mangoSmoothie = new MenuItem(
+        "mango",
+        "",
+        5.5
+    );
+    let mangoPineappleSmoothie = new MenuItem(
+        "mango pineapple",
+        "",
+        6
+    );
+    let mangoStrawberrySmoothie = new MenuItem(
+        "mango strawberry",
+        "",
+        6
+    );
+    let strawberrySmoothie = new MenuItem(
+        "strawberry",
+        "",
+        5.5
+    );
+    let strawberryBananaSmoothie = new MenuItem(
+        "strawberry banana",
+        "",
+        6
+    );
+    let pinaColadaSmoothie = new MenuItem(
+        "pina colada",
+        "",
+        5.5
+    );
+    let avocadoSmoothie = new MenuItem(
+        "avocado",
+        "",
+        6.5
+    );
+
+    let taroMilkshake = new MenuItem(
+        "taro",
+        "",
+        5.5
+    );
+    let bubbleGumMilkshake = new MenuItem(
+        "bubble gum",
+        "",
+        5.5
+    );
+    let caramelMilkshake = new MenuItem(
+        "caramel",
+        "",
+        5.5
+    );
+    let chocolateMilkshake = new MenuItem(
+        "chocolate",
+        "",
+        5.5
+    );
+    let cookieAndCreamMilkshake = new MenuItem(
+        "cookie & cream",
+        "",
+        5.5
+    );
+    let cottonCandyMilkshake = new MenuItem(
+        "cotton candy",
+        "",
+        5.5
+    );
+    let honeydewMilkshake = new MenuItem(
+        "honeydew",
+        "",
+        5.5
+    );
+    let matchaMilkshake = new MenuItem(
+        "matcha",
+        "",
+        5.5
+    );
+
+    let iceVietnameseCoffee = new MenuItem(
+        "iced vietnamese coffee",
+        "",
+        5.5
+    );
+    let cafeFrapp = new MenuItem(
+        "cafe frapp",
+        "",
+        5.5
+    );
+    let caramelFrapp = new MenuItem(
+        "caramel frapp",
+        "",
+        5.5
+    );
+    let mochaFrapp = new MenuItem(
+        "mocha frapp",
+        "",
+        5.5
+    );
+    let coconutFrapp = new MenuItem(
+        "coconut cafe frapp",
+        "",
+        5.5
+    );
+    let hotVietnameseCoffee = new MenuItem(
+        "hot vietnamese coffee",
+        "",
+        5
+    );
+
+    let coke = new MenuItem(
+        "coke",
+        "",
+        3
+    );
+    let dietCoke = new MenuItem(
+        "diet coke",
+        "",
+        3
+    );
+    let sprite = new MenuItem(
+        "sprite",
+        "",
+        3
+    );
+    let hotTea = new MenuItem(
+        "hot tea",
+        "",
+        3
+    );
+    let icedTea = new MenuItem(
+        "iced tea",
+        "",
+        4
+    );
+
+    let honeyBoba = new MenuItem(
+        "honey boba",
+        "",
+        1
+    );
+    let crystalBoba = new MenuItem(
+        "crystal boba",
+        "",
+        1
+    );
+    let rainbowJelly = new MenuItem(
+        "rainbow jelly",
+        "",
+        1
+    );
+    let lycheeJelly = new MenuItem(
+        "lychee jelly",
+        "",
+        1
+    );
+    let coffeeJelly = new MenuItem(
+        "coffee jelly",
+        "",
+        1
+    );
+
+    let macaron = new MenuItem(
+        "macaron",
+        spacingBeforeOptions +
+        '\n pick your flavor' +
+        '\n • caramel' +
+        '\n • chocolate' +
+        '\n • coconut' +
+        '\n • coffee' +
+        '\n • green tea' +
+        '\n • hazelnut' +
+        '\n • pistachio' +
+        '\n • raspberry' +
+        '\n • rose petal' +
+        '\n • strawberry' +
+        '\n • taro' +
+        '\n • vanilla'
+        ,
+        0
+    );
+    let shavedIce = new MenuItem(
+        "shaved ice",
+        spacingBeforeOptions +
+        '\n pick your flavor' +
+        '\n • blue raspberry' +
+        '\n • cherry' +
+        '\n • coconut' +
+        '\n • cotton candy' +
+        '\n • fruit punch' +
+        '\n • grape' +
+        '\n • lemon-lime' +
+        '\n • orange' +
+        '\n • pina colada' +
+        '\n • pink lemonade' +
+        '\n • strawberry' +
+        '\n • watermelon'
+        ,
+        0
+    );
+    let macaronSandwich = new MenuItem(
+        "macaron sandwich",
+        "",
+        0
+    );
+    let tiramisuCake = new MenuItem(
+        "tiramisu cake",
+        "",
+        0
+    );
+    let strawberryCheesecake = new MenuItem(
+        "strawberryCheesecake",
+        "",
+        0
+    );
+
+
+
 
     appetizerCategory.menuItems = [
         seafoodEggRolls,
@@ -1008,6 +1381,31 @@ export function getDataAsObjects() {
         vietnameseSpicyFriedChickenWithSteamedRice,
         grilledTofuWithSteamedRice
     ];
+    garlicNoodleCategory.menuItems = [
+        new MenuItem(
+            "",
+            garlicNoodleCategory.description,
+            0
+        ),
+        plainGarlicNoodle,
+        chickenGarlicNoodle,
+        grilledPorkGarlicNoodle,
+        tofuGarlicNoodle,
+        shrimpGarlicNoodle,
+        cubeFiletMignonGarlicNoodle,
+        shrimpAndChickenGarlicNoodle
+    ];
+    veganCategory.menuItems = [
+        veganEggRolls,
+        tofuSpringRolls,
+        veganFriedTofu,
+        tofuBaguette,
+        veganPho,
+        veganFriedRice,
+        grilledTofuSteamedRice,
+        veganVermicelliNoodle,
+        vegetableStirFryNoodle
+    ];
 
     drinksCategory.menuCategories = [
         houseDrinksCategory,
@@ -1018,13 +1416,72 @@ export function getDataAsObjects() {
         beveragesCategory,
         toppingCategory
     ];
+    houseDrinksCategory.menuItems = [
+        brownSugarMilkBoba,
+        freshPassionFruit,
+        spicyMango,
+        strawberryLemonade,
+        strawberryMatcha,
+        strawberryMilkJelly,
+        peachOrangeLemongrassTea
+    ];
     teaCategory.menuItems = [
         thaiTea,
-        jasmineTea
+        taroMilkTea,
+        greenMilkTea,
+        blackMilkTea,
+        matchaLatte,
+        mangoLemonadeTea,
+        peachLemonadeTea
     ];
     smoothieCategory.menuItems = [
-        pineappleSmoothie,
-        mangoSmoothie
+        mangoSmoothie,
+        mangoPineappleSmoothie,
+        mangoStrawberrySmoothie,
+        strawberrySmoothie,
+        strawberryBananaSmoothie,
+        pinaColadaSmoothie,
+        avocadoSmoothie
+    ];
+    milkshakeCategory.menuItems = [
+        taroMilkshake,
+        bubbleGumMilkshake,
+        caramelMilkshake,
+        chocolateMilkshake,
+        cookieAndCreamMilkshake,
+        cottonCandyMilkshake,
+        honeydewMilkshake,
+        matchaMilkshake
+    ];
+    coffeeCategory.menuItems = [
+        iceVietnameseCoffee,
+        cafeFrapp,
+        caramelFrapp,
+        mochaFrapp,
+        coconutFrapp,
+        hotVietnameseCoffee
+    ];
+    beveragesCategory.menuItems = [
+        coke,
+        dietCoke,
+        sprite,
+        hotTea,
+        icedTea
+    ];
+    toppingCategory.menuItems = [
+        honeyBoba,
+        crystalBoba,
+        rainbowJelly,
+        lycheeJelly,
+        coffeeJelly
+    ];
+
+    dessertsCategory.menuItems = [
+        macaron,
+        shavedIce,
+        macaronSandwich,
+        tiramisuCake,
+        strawberryCheesecake
     ];
 
     mainMenu.menuCategories = [

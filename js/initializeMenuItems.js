@@ -237,7 +237,7 @@ class SpecialItemLayoutDesign extends LayoutDesign {
 
         let itemPrice = document.createElement("div");
         itemPrice.classList.add("menu-item-price");
-        itemPrice.innerText = curItem.price;
+        itemPrice.innerText = curItem.price.toFixed(2);
 
         if (curItem.img.src.trim().length !== 0) {
             designingElement.replaceChildren(itemImg, itemDescription, itemPrice);
