@@ -619,7 +619,7 @@ export function getDataAsObjects() {
     let aloSignatureCategory = new MenuCategory("alo's signature", "");
     let phoCategory = new MenuCategory(
         "pho",
-        'lettuce, cucumber, picked carrots, and daikon, served with homemade sesame dressing' +
+        'rice noodle, top with green onion, white onion, cilantro, side of bean sprout, basil, jalapeno, lime' +
             '\n' + spacingBeforeOptions +
             '\n pick your broth:' +
             '\n + beef / chicken / vegetable' +
@@ -630,10 +630,24 @@ export function getDataAsObjects() {
             '\n + steamed rice +2' +
             '\n + vegetables +2'
         );
-    let vermicelliCategory = new MenuCategory("vermicelli rice noodle", "");
-    let vietnameseHouseBaguette = new MenuCategory("vietnamese house baguette", "");
-    let friedRiceCategory = new MenuCategory("fried rice", "");
-    let steamedRiceCategory = new MenuCategory("steamed rice", "");
+    let vermicelliCategory = new MenuCategory(
+        "vermicelli rice noodle",
+        "seafood egg roll, roasted peanut, served with lettuce, bean sprout, cucumber, mint, pickled carrots, daikon, and scallion oil, served , roasted peanut, marinated fish sauce"
+        );
+    let vietnameseHouseBaguetteCategory = new MenuCategory(
+        "vietnamese house baguette",
+        'pickled carrots, daikon, cucumber, cilantro, and jalapeno'
+        );
+    let friedRiceCategory = new MenuCategory(
+        "fried rice",
+        "green peas, carrot, white onion, egg");
+    let steamedRiceCategory = new MenuCategory(
+        "steamed rice",
+        'lettuce, cucumber, pickled carrots, daikon, fried egg, white rice' +
+        '\n' + spacingBeforeOptions +
+        '\n optional rice sub:' +
+        '\n + tomato fried rice +2'
+        );
     let garlicNoodleCategory = new MenuCategory("garlic noodle", "");
     let veganCategory = new MenuCategory("vegan & vegetarian", "");
 
@@ -789,6 +803,126 @@ export function getDataAsObjects() {
         11.95
     );
 
+    let grilledChickenVermicelli = new MenuItem(
+        "grilled chicken vermicelli",
+        "",
+        15.95
+    );
+    let grilledPorkVermicelli = new MenuItem(
+        "grilled pork vermicelli",
+        "",
+        15.95
+    );
+    let grilledShrimpVermicelli = new MenuItem(
+        "grilled shrimp vermicelli",
+        "",
+        17.95
+    );
+    let comboPorkAndShrimpVermicelli = new MenuItem(
+        "combo pork and shrimp vermicelli",
+        "",
+        17.95
+    );
+    let lemongrassFiletMignonVermicelli = new MenuItem(
+        "lemongrass filet mignon vermicelli",
+        "",
+        17.95
+    );
+    let eggRollVermicelli = new MenuItem(
+        "egg roll vermicelli",
+        "",
+        15.95
+    );
+
+    let grilledPorkBaguette = new MenuItem(
+        "grilled pork baguette",
+        "",
+        10.95
+    );
+    let grilledChickenBaguette = new MenuItem(
+        "grilled chicken baguette",
+        "",
+        10.95
+    );
+    let friedEggBaguette = new MenuItem(
+        "fried egg baguette",
+        "",
+        10.95
+    );
+    let grilledBeefBaguette = new MenuItem(
+        "grilled beef baguette",
+        "",
+        12.45
+    );
+
+    let plainFriedRice = new MenuItem(
+        "plain fried rice",
+        "",
+        10.95
+    );
+    let chickenFriedRice = new MenuItem(
+        "chicken fried rice",
+        "",
+        15.95
+    );
+    let bbqPorkFriedRice = new MenuItem(
+        "bbq pork fried rice",
+        "",
+        15.95
+    );
+    let tofuFriedRice = new MenuItem(
+        "tofu fried rice",
+        "",
+        15.95
+    );
+    let shrimpFriedRice = new MenuItem(
+        "shrimp fried rice",
+        "",
+        16.95
+    );
+    let filetMignonFriedRice = new MenuItem(
+        "filet mignon fried rice",
+        "",
+        17.95
+    );
+    let combinationFriedRice = new MenuItem(
+        "combination fried rice",
+        "",
+        17.95
+    );
+
+    let cubeFiletMignonWithSteamedRice = new MenuItem(
+        "cube filet mignon w/ steamed rice",
+        "",
+        17.95
+    );
+    let grilledPorkWithSteamedRice = new MenuItem(
+        "grilled pork w/ steamed rice",
+        "",
+        15.95
+    );
+    let porkChopWithSteamedRice = new MenuItem(
+        "pork chop w/ steamed rice",
+        "",
+        15.95
+    );
+    let grilledChickenWithSteamedRice = new MenuItem(
+        "grilled chicken w/ steamed rice",
+        "",
+        15.95
+    );
+    let vietnameseSpicyFriedChickenWithSteamedRice = new MenuItem(
+        "vietnamese crispy fried chicken w/ steamed rice (GF) (Spicy)",
+        "",
+        15.95
+    );
+    let grilledTofuWithSteamedRice = new MenuItem(
+        "grilled tofu w/ steamed rice",
+        "",
+        15.95
+    );
+
+
     let thaiTea = new MenuItem("thai tea", "", 5);
     let jasmineTea = new MenuItem("jasmine tea", "", 5);
     let pineappleSmoothie = new MenuItem("pineapple smoothie", "", 5);
@@ -814,17 +948,9 @@ export function getDataAsObjects() {
     phoCategory.menuItems = [
         new MenuItem(
             "",
-            'lettuce, cucumber, pickled carrots, and daikon, served with homemade sesame dressing' +
-            '\n' + spacingBeforeOptions +
-            '\n pick your broth:' +
-            '\n + beef / chicken / vegetable' +
-            '\n' + spacingBeforeOptions +
-            '\n optional noodle substitute:' +
-            '\n + egg noodle +2' +
-            '\n + vermicelli +2' +
-            '\n + steamed rice +2' +
-            '\n + vegetables +2',
-            0),
+            phoCategory.description,
+        0
+        ),
         houseSpecialPho,
         chickenPho,
         beefMeatballPho,
@@ -835,6 +961,52 @@ export function getDataAsObjects() {
         grilledBeefBackRibPho,
         boilBeefBackRibPho,
         plainPho
+    ];
+    vermicelliCategory.menuItems = [
+        new MenuItem(
+            "",
+            vermicelliCategory.description,
+            0
+        ),
+        grilledChickenVermicelli,
+        grilledPorkVermicelli,
+        grilledShrimpVermicelli,
+        comboPorkAndShrimpVermicelli,
+        lemongrassFiletMignonVermicelli,
+        eggRollVermicelli
+    ];
+    vietnameseHouseBaguetteCategory.menuItems = [
+        grilledPorkBaguette,
+        grilledChickenBaguette,
+        friedEggBaguette,
+        grilledBeefBaguette
+    ];
+    friedRiceCategory.menuItems = [
+        new MenuItem(
+            "",
+            friedRiceCategory.description,
+            0
+        ),
+        plainFriedRice,
+        chickenFriedRice,
+        bbqPorkFriedRice,
+        tofuFriedRice,
+        shrimpFriedRice,
+        filetMignonFriedRice,
+        combinationFriedRice
+    ];
+    steamedRiceCategory.menuItems = [
+        new MenuItem(
+            "",
+            steamedRiceCategory.description,
+            0
+        ),
+        cubeFiletMignonWithSteamedRice,
+        grilledPorkWithSteamedRice,
+        porkChopWithSteamedRice,
+        grilledChickenWithSteamedRice,
+        vietnameseSpicyFriedChickenWithSteamedRice,
+        grilledTofuWithSteamedRice
     ];
 
     drinksCategory.menuCategories = [
@@ -860,7 +1032,7 @@ export function getDataAsObjects() {
         aloSignatureCategory,
         phoCategory,
         vermicelliCategory,
-        vietnameseHouseBaguette,
+        vietnameseHouseBaguetteCategory,
         friedRiceCategory,
         steamedRiceCategory,
         garlicNoodleCategory,
