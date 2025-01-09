@@ -986,12 +986,14 @@ sup             { vertical-align: super; line-height: 1.0; }
                         .carousel-slide {
                             --carousel-slide-side-margin: 2%;
 
-                            background-color: #f99;
+                            background-color: white;
                             height: 100%;
                             width: 100%;
+                            padding: 1rem;
+                            margin: 0 var(--carousel-slide-side-margin);
 
                             /*border: thin solid black;*/
-                            margin: 0 var(--carousel-slide-side-margin);
+                            border-radius: 5%;
 
                             position: relative;
                             flex: 0 0 calc(100% /1 - var(--carousel-slide-side-margin)*2);
@@ -999,18 +1001,108 @@ sup             { vertical-align: super; line-height: 1.0; }
                             counter-increment: item;
                             scroll-snap-align: center;
 
-                            &:nth-child(even) {
-                                background-color: #99f;
+                            display: flex;
+                            flex-direction: column;
+
+                            .review-heading {
+                                /*     background-color: green; */
+                                width: 100%;
+
+                                display: flex;
+                                align-items: center;
+                                /*     justify-content: flex-start;    */
+                                column-gap: 0.5em;
+
+                                .user-image-wrapper {
+                                    /*     background-color: black; */
+                                    height: 100%;
+                                    width: 12%;
+                                    min-width: 50px;
+                                    text-align: center;
+
+                                    #user-image{
+                                        width: 80%;
+                                    }
+                                }
+                                .review-heading-box-text{
+                                    height:100%;
+                                    flex-grow: 1;
+
+                                    #top-container-name{
+                                        margin: 0;
+                                        padding: 0;
+
+                                        font-family: Arial, sans-serif;
+                                        font-weight: bold;
+                                        font-size: 1em;
+                                    }
+                                    #top-container-date {
+                                        margin: 0;
+                                        padding: 0;
+
+                                        font-weight: lighter;
+                                        font-size: 14px;
+                                    }
+                                }
+                                .google-logo-wrapper {
+                                    background-color: white;
+                                    width: 6%;
+                                    min-width: 20px;
+                                    height: 100%;
+
+                                    #google-logo{
+                                        width: 100%;
+                                    }
+                                }
+
                             }
-                            &:before {
-                                content: counter(item);
-                                position: absolute;
-                                top: 50%;
-                                left: 50%;
-                                transform: translate3d(-50%,-40%,70px);
-                                color: #fff;
-                                font-size: 2em;
+                            .rating-wrapper{
+                                /*background-color: green;*/
+                                height: 10%;
+                                width: 100%;
+                                display: flex;
+                                align-items: center;
+                                gap: 0.5em;
+
+                                #stars{
+                                    /*background-color: blue;*/
+                                    height: 100%;
+                                    margin: 0;
+
+                                    font-size: 1em;
+                                    color: #FF9529;
+                                }
+                                #verification-badge{
+                                    height: 45%;
+                                }
                             }
+                            .review-content-wrapper{
+                                /*     background-color: yellow; */
+                                flex-grow: 1;
+                                width: 100%;
+                                overflow: hidden;
+
+                                .review-content{
+                                    margin-top: 0;
+
+                                    font-size: 1em;
+                                    font-weight: 500;
+                                    font-family: Arial, sans-serif;
+                                }
+                            }
+
+                            /*&:nth-child(even) {*/
+                            /*    background-color: #99f;*/
+                            /*}*/
+                            /*&:before {*/
+                            /*    content: counter(item);*/
+                            /*    position: absolute;*/
+                            /*    top: 50%;*/
+                            /*    left: 50%;*/
+                            /*    transform: translate3d(-50%,-40%,70px);*/
+                            /*    color: #fff;*/
+                            /*    font-size: 2em;*/
+                            /*}*/
                         }
                     }
                     .carousel-navigation {

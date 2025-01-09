@@ -608,7 +608,7 @@ export function getDataAsJSON() {
 }
 export function getDataAsObjects() {
     let menuData = new MenuCategory("menu", "");
-    let spacingBeforeOptions = '\u00A0\u00A0\u00A0--------';
+    let spacingBeforeOptions = '\u00A0\u00A0\u00A0———————';
 
     ////////////////////
     //  CATEGORY      //

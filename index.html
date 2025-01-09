@@ -38,6 +38,18 @@
 
 
     <!--*********************
+        GOOGLE API
+    **********************-->
+    <script>
+        (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+            key: "AIzaSyDhgPE-JwRSA--dLYfE29_QTySu8p6MUiQ",
+            v: "weekly",
+            // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+            // Add other bootstrap parameters as needed, using camel case.
+        });
+    </script>
+
+    <!--*********************
         MAGNIFIC POPUP
     **********************-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/jquery.magnific-popup.js" integrity="sha512-tOyzsVuGuz0il5EcXFi/qA5DI4BNLna4gHbWn+HbQBP0jmRhyqMKup24fzyKnxSX0jBxt2+qStqwwHDIh5TaGA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -70,7 +82,6 @@
 </head>
 <body>
     <!-- TODO: fix wording for dark meat, consider thigh/drumsticks-->
-    <!-- TODO: add responsive layout for mobile -->
     <!-- TODO: integrate about us into welcome section -->
     <!-- TODO: add scroll to navigate, add arrows indicator on bottom and top right of section to indicate possible navigation -->
     <!--*********************
@@ -199,8 +210,6 @@
         <!--*********************
             MENU
         **********************-->
-        <!--TODO: adjust layout for each menu category-->
-        <!--TODO: adjust JSON format & corresponding initialize js file-->
         <section id="menu-wrapper" class="content-wrapper-component">
             <div id="menu" class="hide-scrollbar">
 
@@ -314,6 +323,25 @@
                                 <div id="carousel-slide1"
                                      tabindex="0"
                                      class="carousel-slide">
+                                    <div class="review-heading">
+                                        <div class="user-image-wrapper">
+                                            <img src="https://lh3.googleusercontent.com/a-/ALV-UjW3uZq6ZrTOGjY3LZo11nJ6ZWCCFX1adXuh2bJBWIqqGpA6InIuhg=w60-h60-p-rp-mo-ba3-br100" alt="imagem de um usuário google" id = "user-image">
+                                        </div>
+                                        <div class="review-heading-box-text">
+                                            <p id= "top-container-name"> Moisés José da Silva </p>
+                                            <p id= "top-container-date"> 02-03-2005 </p>
+                                        </div>
+                                        <div class="google-logo-wrapper">
+                                            <img src="https://img.icons8.com/?size=512&id=17949&format=png" alt="google logo" id= "google-logo">
+                                        </div>
+                                    </div>
+                                    <div class="rating-wrapper">
+                                        <p id= "stars">★★★★★</p>
+                                        <img src="https://cdn-icons-png.freepik.com/256/10629/10629607.png?semt=ais_hybrid" alt=" Verified badge" id="verification-badge">
+                                    </div>
+                                    <div class="review-content-wrapper">
+                                        <p class="review-content">Muito Top! Mudou minha oficina!</p>
+                                    </div>
                                 </div>
                                 <div id="carousel-slide2"
                                      tabindex="0"
@@ -461,7 +489,6 @@
         <!--*********************
             DELIVERY
         **********************-->
-        <!--TODO: resize brand logo to fit within the panel-->
         <section id="delivery" class="content-wrapper-component lora-normal">
             <div id="delivery-content-wrapper">
                 <div id="delivery-heading">
@@ -511,18 +538,18 @@
         <!--</section>-->
 
 
-        <!--*********************
-            ABOUT
-        **********************-->
-        <!--TODO: add embed google map-->
-        <!--TODO: add brief description of business-->
-        <!--TODO: add contact info like email, phone number-->
-        <section id="about-wrapper" class="content-wrapper-component">
-            <div id="about-info">
-                <h2 class="title-text">About Us</h2>
+        <!--&lt;!&ndash;*********************-->
+        <!--    ABOUT-->
+        <!--**********************&ndash;&gt;-->
+        <!--&lt;!&ndash;TODO: add embed google map&ndash;&gt;-->
+        <!--&lt;!&ndash;TODO: add brief description of business&ndash;&gt;-->
+        <!--&lt;!&ndash;TODO: add contact info like email, phone number&ndash;&gt;-->
+        <!--<section id="about-wrapper" class="content-wrapper-component">-->
+        <!--    <div id="about-info">-->
+        <!--        <h2 class="title-text">About Us</h2>-->
 
-            </div>
-        </section>
+        <!--    </div>-->
+        <!--</section>-->
 
 
         <!--&lt;!&ndash;*********************-->
@@ -548,7 +575,6 @@
     **********************-->
     <section>
         <script type="module" src="js/index.js"></script>
-
     </section>
 
 </body>
