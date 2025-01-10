@@ -1,14 +1,6 @@
-import getData from "./data/reviewsData.js";
-// import { MenuComponent, MenuItem, MenuCategory, Img } from "./model/menuModels.js";
+import getData, { Review, SOURCE_PLATFORM } from "./data/reviewsData.js";
 
-const yelpIcon = "<i id=\"yelp-logo\" class=\"fa-brands fa-yelp\"></i>";
 const [googleReviewData, yelpReviewData] = getData();
-const SOURCE_PLATFORM = {
-    GOOGLE: "google",
-    YELP: "yelp"
-}
-const sampleReview = "<span class=\"yelp-review\" data-review-id=\"4_hCb0lM86cYn_O7zjCivw\" data-hostname=\"www.yelp.com\">Read <a href=\"https://www.yelp.com/user_details?userid=pt7iKbgPfwP2_oqre4woSg\" rel=\"nofollow noopener\">Luis D.</a>'s <a href=\"https://www.yelp.com/biz/alo-asian-kitchen-laguna-niguel?hrid=4_hCb0lM86cYn_O7zjCivw\" rel=\"nofollow noopener\">review</a> of <a href=\"https://www.yelp.com/biz/XmDOz-YQtQ30FoGT7gtaig\" rel=\"nofollow noopener\">Alo Asian Kitchen</a> on <a href=\"https://www.yelp.com\" rel=\"nofollow noopener\">Yelp</a><script src=\"https://www.yelp.com/embed/widgets.js\" type=\"text/javascript\" async></script></span>";
-
 const RATING = {
     1: "★✰✰✰✰",
     2: "★★✰✰✰",
@@ -16,6 +8,8 @@ const RATING = {
     4: "★★★★✰",
     5: "★★★★★",
 }
+const yelpIcon = "<i id=\"yelp-logo\" class=\"fa-brands fa-yelp\"></i>";
+const yelpStarImage = "assets/img/white-star.svg";
 
 export default function initializeReviews() {
     let googleReviewCarousel = document.querySelector("#google-reviews-carousel");
@@ -113,7 +107,6 @@ class LayoutDesign {
         return this._designResult;
     }
 }
-
 class GoogleReviewLayoutDesign extends LayoutDesign {
 
     constructor(review) {
@@ -205,7 +198,6 @@ class GoogleReviewLayoutDesign extends LayoutDesign {
         designingElement.replaceChildren(reviewHeading, ratingWrapper, reviewContentWrapper);
     }
 }
-
 class YelpReviewLayoutDesign extends LayoutDesign {
 
     constructor(review) {
@@ -229,15 +221,20 @@ class YelpReviewLayoutDesign extends LayoutDesign {
         //         </div>
         //         <div class="review-heading-box-text">
         //             <p class= "authour-name"> Moisés José da Silva </p>
-        //             <p class= "review-date"> 02-03-2005 </p>
+        //             <p class= "review-date">02-03-2005</p>
         //         </div>
         //         <div class="<sourcePlatform>-logo-wrapper">
-        //             <img src="https://img.icons8.com/?size=512&id=17949&format=png" alt="<sourcePlatform> logo" id= "<sourcePlatform>-logo">
+        //             <img src="" alt="<sourcePlatform> logo" id= "<sourcePlatform>-logo">
         //         </div>
         //     </div>
         //     <div class="rating-wrapper">
-        //         <p class= "stars">★★★★★</p>
-        //         <img src="https://cdn-icons-png.freepik.com/256/10629/10629607.png?semt=ais_hybrid" alt=" Verified badge" id="verification-badge">
+        //         <div class="stars">
+        //             <img class="yelp-star" />
+        //             <img class="yelp-star" />
+        //             <img class="yelp-star" />
+        //             <img class="yelp-star" />
+        //             <img class="yelp-star" />
+        //         </div>
         //     </div>
         //     <div class="review-content-wrapper">
         //         <p class="review-content">Muito Top! Mudou minha oficina!</p>
@@ -287,7 +284,7 @@ class YelpReviewLayoutDesign extends LayoutDesign {
         stars.classList.add("stars");
         for (let i = 0; i < 5; i++) {
             let star = document.createElement("img");
-            star.setAttribute("src", "assets/img/white-star.svg");
+            star.setAttribute("src", yelpStarImage);
             star.setAttribute("alt", "star rating image for yelp");
 
             star.classList.add("yelp-star");
@@ -312,12 +309,3 @@ class YelpReviewLayoutDesign extends LayoutDesign {
     }
 }
 
-class Review {
-    authorName;
-    time;
-    rating;
-    text;
-    profileImgUrl;
-    sourcePlatform;
-    reviewUrl;
-}

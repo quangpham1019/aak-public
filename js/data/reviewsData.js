@@ -154,3 +154,13 @@ const yelpReviewData = [
 export default function getReviews() {
     return [googleReviewData, yelpReviewData];
 }
+export class Review {
+    authorName;
+    time;
+    rating;
+    text;
+    profileImgUrl;
+    sourcePlatform;
+    reviewUrl;
+}
+export {SOURCE_PLATFORM};
