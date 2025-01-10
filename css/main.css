@@ -23,6 +23,7 @@
     --lg: 1200px;
     --xl: 1536px;
 }
+
 body {
     font-family: 'Baloo Chettan 2', cursive;
     line-height: 1.5;
@@ -46,7 +47,7 @@ sup             { vertical-align: super; line-height: 1.0; }
 @keyframes slide-in-from-right {
     from {
         translate: 100vw 0;
-        scale: 200% 1;
+        scale: 170% 1;
         opacity: 0;
     }
 
@@ -580,52 +581,16 @@ sup             { vertical-align: super; line-height: 1.0; }
             overflow: hidden;
 
             #catch-phrase-1 {
-                font-size: 3.5em;
-                animation-duration: 2s;
+                font-size: 6em;
+                animation-duration: 0.8s;
                 animation-name: slide-in-from-right;
                 animation-fill-mode: forwards;
-
-                /*@-moz-keyframes slideIn {*/
-                /*    0% {*/
-                /*        transform: translateX(-20%);*/
-                /*    }*/
-                /*    100% {*/
-                /*        transform: translateX(0);*/
-                /*    }*/
-                /*}*/
-
-                /*@-webkit-keyframes slideIn {*/
-                /*    0% {*/
-                /*        transform: translateX(-20%);*/
-                /*    }*/
-                /*    100% {*/
-                /*        transform: translateX(0);*/
-                /*    }*/
-                /*}*/
-
-                /*@-o-keyframes slideIn {*/
-                /*    0% {*/
-                /*        transform: translateX(-20%);*/
-                /*    }*/
-                /*    100% {*/
-                /*        transform: translateX(0);*/
-                /*    }*/
-                /*}*/
-
-                /*@-ms-keyframes slideIn {*/
-                /*    0% {*/
-                /*        transform: translateX(-20%);*/
-                /*    }*/
-                /*    100% {*/
-                /*        transform: translateX(0);*/
-                /*    }*/
-                /*}*/
             }
             #catch-phrase-2 {
-                font-size: 1.5em;
+                font-size: 3em;
                 opacity: 0;
 
-                animation-duration: 2s;
+                animation-duration: 1s;
                 animation-name: slide-in-from-left;
                 animation-delay: 1s;
                 animation-fill-mode: forwards;
@@ -955,6 +920,15 @@ sup             { vertical-align: super; line-height: 1.0; }
                 /*align-items: center;*/
                 /*justify-content: center;*/
 
+                .source-platform-heading {
+                    /*background-color: blue;*/
+                    margin-bottom: 3%;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    gap: 1%;
+                }
                 .carousel-wrapper {
                     /*background-color: pink;*/
                     position: relative;
@@ -994,6 +968,8 @@ sup             { vertical-align: super; line-height: 1.0; }
 
                             /*border: thin solid black;*/
                             border-radius: 5%;
+                            color: black;
+                            text-decoration: none;
 
                             position: relative;
                             flex: 0 0 calc(100% /1 - var(--carousel-slide-side-margin)*2);
@@ -1004,13 +980,13 @@ sup             { vertical-align: super; line-height: 1.0; }
                             display: flex;
                             flex-direction: column;
 
+
                             .review-heading {
                                 /*     background-color: green; */
                                 width: 100%;
 
                                 display: flex;
                                 align-items: center;
-                                /*     justify-content: flex-start;    */
                                 column-gap: 0.5em;
 
                                 .user-image-wrapper {
@@ -1028,23 +1004,25 @@ sup             { vertical-align: super; line-height: 1.0; }
                                     height:100%;
                                     flex-grow: 1;
 
-                                    #top-container-name{
+                                    .author-name{
                                         margin: 0;
                                         padding: 0;
 
                                         font-family: Arial, sans-serif;
                                         font-weight: bold;
-                                        font-size: 1em;
+                                        font-size: 0.7em;
+
+                                        border-radius: 2px;
                                     }
-                                    #top-container-date {
+                                    .review-date {
                                         margin: 0;
                                         padding: 0;
 
                                         font-weight: lighter;
-                                        font-size: 14px;
+                                        font-size: 0.7em;
                                     }
                                 }
-                                .google-logo-wrapper {
+                                .source-platform-logo-wrapper {
                                     background-color: white;
                                     width: 6%;
                                     min-width: 20px;
@@ -1053,6 +1031,14 @@ sup             { vertical-align: super; line-height: 1.0; }
                                     #google-logo{
                                         width: 100%;
                                     }
+
+                                    #yelp-logo {
+                                        /*background-color: black;*/
+                                        color: red;
+                                        width: 100%;
+                                        height: 50%;
+                                        max-height: 20px;
+                                    }
                                 }
 
                             }
@@ -1060,34 +1046,70 @@ sup             { vertical-align: super; line-height: 1.0; }
                                 /*background-color: green;*/
                                 height: 10%;
                                 width: 100%;
+                                margin: 0.5em 0;
                                 display: flex;
                                 align-items: center;
                                 gap: 0.5em;
 
-                                #stars{
+                                .stars{
                                     /*background-color: blue;*/
                                     height: 100%;
                                     margin: 0;
 
                                     font-size: 1em;
                                     color: #FF9529;
+
+                                    .yelp-star {
+                                        background-color: red;
+                                        height: 80%;
+                                        padding: 0.2em;
+                                        margin: 0 0.1em;
+                                        border-radius: 5px;
+
+                                        &.no-count {
+                                            background-color: lightgrey;
+                                        }
+                                    }
                                 }
-                                #verification-badge{
+                                .verification-badge{
                                     height: 45%;
                                 }
                             }
                             .review-content-wrapper{
-                                /*     background-color: yellow; */
+                                /*background-color: yellow;*/
                                 flex-grow: 1;
                                 width: 100%;
-                                overflow: hidden;
 
-                                .review-content{
-                                    margin-top: 0;
+                                padding-bottom: 1em;
 
-                                    font-size: 1em;
+                                .review-content {
+
+                                    /*background-color: green;*/
+                                    position: relative;
+                                    line-height: 1.2em;
+                                    max-height: 9.6em;
+
+                                    font-size: small;
                                     font-weight: 500;
-                                    font-family: Arial, sans-serif;
+
+                                    padding-right: 1em;
+                                    overflow: hidden;
+                                }
+                                .review-content:before {
+                                    content: '...';
+                                    position: absolute;
+                                    right: 0;
+                                    bottom: 0;
+                                }
+                                .review-content:after {
+                                    background: white;
+                                    width: 1em;
+                                    height: 1em;
+                                    content: '';
+
+                                    position: absolute;
+                                    right: 0;
+                                    margin-top: 0.2em;
                                 }
                             }
 
@@ -1106,9 +1128,10 @@ sup             { vertical-align: super; line-height: 1.0; }
                         }
                     }
                     .carousel-navigation {
-
+                        height: 10%;
+                        background-color: green;
                         .carousel-navigation-list {
-                            background-color: yellow;
+                            /*background-color: yellow;*/
                             position: absolute;
                             bottom: 0;
                             left: 0;
@@ -1860,7 +1883,7 @@ sup             { vertical-align: super; line-height: 1.0; }
                             .carousel-slide {
                                 --carousel-slide-side-margin: 2%;
 
-                                background-color: #f99;
+                                background-color: white;
                                 height: 100%;
                                 width: 100%;
 
@@ -1873,18 +1896,18 @@ sup             { vertical-align: super; line-height: 1.0; }
                                 counter-increment: item;
                                 scroll-snap-align: center;
 
-                                &:nth-child(even) {
-                                    background-color: #99f;
-                                }
-                                &:before {
-                                    content: counter(item);
-                                    position: absolute;
-                                    top: 50%;
-                                    left: 50%;
-                                    transform: translate3d(-50%,-40%,70px);
-                                    color: #fff;
-                                    font-size: 2em;
-                                }
+                                /*&:nth-child(even) {*/
+                                /*    background-color: #99f;*/
+                                /*}*/
+                                /*&:before {*/
+                                /*    content: counter(item);*/
+                                /*    position: absolute;*/
+                                /*    top: 50%;*/
+                                /*    left: 50%;*/
+                                /*    transform: translate3d(-50%,-40%,70px);*/
+                                /*    color: #fff;*/
+                                /*    font-size: 2em;*/
+                                /*}*/
                             }
                         }
 

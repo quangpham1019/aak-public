@@ -37,7 +37,7 @@ const reviewsData = {
         "nextPageToken": 'string'
     }
 }
-const reviewsData2 = [
+const googleReviewData = [
     {
         "authorName": "Ethan",
         "time": "",
@@ -94,6 +94,63 @@ const reviewsData2 = [
         "reviewUrl": "https://maps.app.goo.gl/eJnGNByzoT7SQhYT6",
     }
 ];
+const yelpReviewData = [
+    {
+        "authorName": "Luis D.",
+        "time": "Jan 2, 2025",
+        "rating": 5,
+        "text": "Amazing pho and shrimp spring rolls!!!!The service is great and dessert is good with great boba!!!!",
+        "profileImgUrl": "https://s3-media0.fl.yelpcdn.com/assets/public/default_user_avatar_120x120_v2@2x.yji-48e1eaa758eb78c47d5c.png",
+        "sourcePlatform": SOURCE_PLATFORM.YELP,
+        "reviewUrl": "https://www.yelp.com/biz/alo-asian-kitchen-laguna-niguel?hrid=4_hCb0lM86cYn_O7zjCivw&utm_campaign=www_review_share_popup&utm_medium=copy_link&utm_source=(direct)"
+    },
+    {
+        "authorName": "Rob V.",
+        "time": "Dec 20, 2024",
+        "rating": 5,
+        "text": "Best Pho around! Good service, nice clean place and everything we tried was awesome! Will definitely be back often.",
+        "profileImgUrl": "https://s3-media0.fl.yelpcdn.com/photo/ZjqKu1PgZl-cV_c_3HHr4w/ls.jpg",
+        "sourcePlatform": SOURCE_PLATFORM.YELP,
+        "reviewUrl": "https://www.yelp.com/biz/alo-asian-kitchen-laguna-niguel?hrid=sFb7IWAlMtCv-9JcuQ6wAA&utm_campaign=www_review_share_popup&utm_medium=copy_link&utm_source=(direct)",
+    },
+    {
+        "authorName": "Cindy W.",
+        "time": "Dec 20, 2024",
+        "rating": 5,
+        "text": "Delicious food and clean restaurant. Will come back! We ordered the grill ribs pho twice in a row. The pho comes with an egg on top too . I had the filet mignon with baguette.",
+        "profileImgUrl": "https://s3-media0.fl.yelpcdn.com/assets/public/default_user_avatar_120x120_v2@2x.yji-48e1eaa758eb78c47d5c.png",
+        "sourcePlatform": SOURCE_PLATFORM.YELP,
+        "reviewUrl": "https://www.yelp.com/biz/alo-asian-kitchen-laguna-niguel?hrid=GTB_9iBgX9_yqVABePx78Q&utm_campaign=www_review_share_popup&utm_medium=copy_link&utm_source=(direct)",
+    },
+    {
+        "authorName": "Vanessa V.",
+        "time": "Dec 6, 2024",
+        "rating": 4,
+        "text": "Very friendly staff and the food was tasty! Best dishes were the shaken fries and popcorn chicken ! We will be back :)",
+        "profileImgUrl": "https://s3-media0.fl.yelpcdn.com/photo/eJrloLKXBxBiOZfG4I2Rrw/ls.jpg",
+        "sourcePlatform": SOURCE_PLATFORM.YELP,
+        "reviewUrl": "https://www.yelp.com/biz/alo-asian-kitchen-laguna-niguel?hrid=_8AyojZE5RVp9Ml7K3i6cw&utm_campaign=www_review_share_popup&utm_medium=copy_link&utm_source=(direct)",
+    },
+    {
+        "authorName": "Jay K.",
+        "time": "Nov 28, 2024",
+        "rating": 5,
+        "text": "Best Vietnamese restaurant in OC! Must try them. Very clean food and great service all the time. Price is reasonable and high quality food.\n" +
+            "We recently did catering for 16 people for a small party. Everyone loved the food. Portion was very generous and pricing was very reasonable. Highly recommended!",
+        "profileImgUrl": "https://s3-media0.fl.yelpcdn.com/photo/Aw6n0T5X43HZdfxwG2DAcg/ls.jpg",
+        "sourcePlatform": SOURCE_PLATFORM.YELP,
+        "reviewUrl": "https://www.yelp.com/biz/alo-asian-kitchen-laguna-niguel?hrid=B_i71TejoYocTWGoffZc1Q&utm_campaign=www_review_share_popup&utm_medium=copy_link&utm_source=(direct)",
+    },
+    {
+        "authorName": "Alondra R.",
+        "time": "Nov 16, 2024",
+        "rating": 5,
+        "text": "The beef back rib pho is AMAZING! My bf & I love it! Always so tender, and flavorful. Service is also great!!",
+        "profileImgUrl": "https://s3-media0.fl.yelpcdn.com/photo/eOXxNTevfNI8zJ09Kj_hjg/ls.jpg",
+        "sourcePlatform": SOURCE_PLATFORM.YELP,
+        "reviewUrl": "https://www.yelp.com/biz/alo-asian-kitchen-laguna-niguel?hrid=ihXU_5_Szo8u1uqg-zlUgA&utm_campaign=www_review_share_popup&utm_medium=copy_link&utm_source=(direct)",
+    }
+];
 export default function getReviews() {
-    return reviewsData2;
+    return [googleReviewData, yelpReviewData];
 }

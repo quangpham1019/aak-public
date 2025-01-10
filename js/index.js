@@ -1,29 +1,29 @@
 import initializeNavbar from "./initializeNavbar.js";
-import { initializeMenuItems } from "./initializeMenuItems.js";
+import {initializeMenuItems} from "./initializeMenuItems.js";
 import initializeReviewsCarousels from "./initializeReviewsCarousels.js";
+import initializeReviews from "./initializeReviews.js";
 import {MenuCategory} from "./model/menuModels.js";
 
-$(document).ready(function() {
+$(document).ready(function () {
 
     initializeNavbar();
     initializeMenuItems();
     initializeReviewsCarousels();
-
+    initializeReviews();
 
     // fetch("https://jsonplaceholder.typicode.com/posts/1")
     //     .then((response) => response.json())
     //     .then((json) => console.log(json));
 
-    $.ajax({
-        type: 'GET',
-        url: 'https://localhost:7049/Edu/sample'
-    }).done(function(data) {
-       console.log(data);
-    });
-    let requestData;
+    // $.ajax({
+    //     type: 'GET',
+    //     url: 'https://localhost:7049/Edu/sample'
+    // }).done(function(data) {
+    //    console.log(data);
+    // });
     // https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJhTDDHRvv3IARgKPoNqDhdJM&key=AIzaSyDhgPE-JwRSA--dLYfE29_QTySu8p6MUiQ
 
-    let placeId = 'ChIJhTDDHRvv3IARgKPoNqDhdJM';
+    // let placeId = 'ChIJhTDDHRvv3IARgKPoNqDhdJM';
     // fetch("https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJhTDDHRvv3IARgKPoNqDhdJM&key=AIzaSyDhgPE-JwRSA--dLYfE29_QTySu8p6MUiQ")
     //     .then((response) => response.json())
     //     .then((json) => console.log(json));
@@ -42,33 +42,3 @@ $(document).ready(function() {
     //     console.log(data);
     // });
 });
-
-function getPlaceReviews(placeId) {
-
-    const request = new google.maps.places.PlaceDetailsRequest({
-
-        placeId: placeId,
-
-        fields: ['name', 'reviews']
-
-    });
-
-    const service = new google.maps.places.PlacesService(map);
-
-    service.getDetails(request, (place, status) => {
-
-        if (status === 'OK') {
-
-            const reviews = place.reviews; // Array of review objects
-
-            // Process and display reviews
-            console.log(reviews);
-        } else {
-
-            console.error('Place details request failed');
-
-        }
-
-    });
-
-}
