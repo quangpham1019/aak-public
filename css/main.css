@@ -825,7 +825,7 @@ sup             { vertical-align: super; line-height: 1.0; }
 
             #opening-hours-heading-text {
                 text-align: center;
-                font-size: 7cqmin;
+                font-size: 6cqmin;
             }
         }
         #opening-hours-divider {
@@ -1098,7 +1098,7 @@ sup             { vertical-align: super; line-height: 1.0; }
                                     font-size: small;
                                     font-weight: 500;
 
-                                    padding-right: 1em;
+                                    /*padding-right: 1em;*/
                                     overflow: hidden;
                                 }
                             }

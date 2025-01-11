@@ -1,4 +1,4 @@
-import { trimIfNeeded } from "./adjustReviewContentSizing.js";
+import {adjustReviewContentText} from "./adjustReviewContentSizing.js";
 
 function initializeNavbarItems() {
     let navItems = document.querySelectorAll('.nav-list .nav-item');
@@ -12,7 +12,7 @@ function initializeNavbarItems() {
 
             let reviewsWrapperNavId = "reviews-wrapper-nav";
             if (curItem.id === reviewsWrapperNavId) {
-                trimIfNeeded();
+                adjustReviewContentText();
             }
         })
     });
