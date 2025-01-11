@@ -22,12 +22,14 @@ export function getDataAsObjects() {
     let mainMenu = new MenuCategory("main menu", "");
     let beveragesAndDesserts = new MenuCategory("beverages & desserts", "");
     let appetizerCategory = new MenuCategory("appetizer", "");
+    let springRollCategory = new MenuCategory("spring roll", "");
+    let saladCategory = new MenuCategory("salads", "");
     let aloSignatureCategory = new MenuCategory("alo's signature", "");
     let phoCategory = new MenuCategory(
         "pho",
         'rice noodle, top with green onion, white onion, cilantro, side of bean sprout, basil, jalapeno, lime' +
             '\n' + spacingBeforeOptions +
-            '\n pick your broth:' +
+            '\n available broth options:' +
             '\n • beef / chicken / vegetable' +
             '\n' + spacingBeforeOptions +
             '\n optional noodle substitute:' +
@@ -38,7 +40,7 @@ export function getDataAsObjects() {
         );
     let vermicelliCategory = new MenuCategory(
         "vermicelli rice noodle",
-        "seafood egg roll, roasted peanut, served with lettuce, bean sprout, cucumber, mint, pickled carrots, daikon, and scallion oil, served , roasted peanut, marinated fish sauce"
+        "seafood egg roll, roasted peanut, served with lettuce, bean sprout, cucumber, mint, pickled carrots, daikon, and scallion oil , roasted peanut, marinated fish sauce"
         );
     let vietnameseHouseBaguetteCategory = new MenuCategory(
         "vietnamese house baguette",
@@ -49,8 +51,7 @@ export function getDataAsObjects() {
         "green peas, carrot, white onion, egg");
     let steamedRiceCategory = new MenuCategory(
         "steamed rice",
-        'lettuce, cucumber, pickled carrots, daikon, fried egg, white rice' +
-        '\n' + spacingBeforeOptions +
+        spacingBeforeOptions +
         '\n optional rice sub:' +
         '\n • tomato fried rice +2'
         );
@@ -75,11 +76,11 @@ export function getDataAsObjects() {
     ////////////////////
     let seafoodEggRolls = new MenuItem(
         "seafood egg rolls (2)",
-        "sweet chili sauce",
+        "two pieces of crispy fried seafood (shrimp and crab) egg roll served with sweet and sour sauce",
         5.50);
     let grilledPorkSkewer = new MenuItem(
         "grilled pork skewer",
-        "pickled carrots, daikon, and parsley",
+        "grilled pork meat on the stick, served with pickled carrots and daikon, parsley flakes for garnish",
         3.85);
     let porkBao = new MenuItem(
         "pork bao",
@@ -90,7 +91,7 @@ export function getDataAsObjects() {
         4.50);
     let eggRollsPlatter = new MenuItem(
         "egg rolls platter (4)",
-        'lettuce, pickled carrots, daikon, and mint leaves' +
+        'four pieces of crispy fried egg roll served with lettuce, mint leaves, pickled carrots, daikon, dipping sauce, and your choice of filling' +
         '\n' + spacingBeforeOptions +
         '\n pick a filling:' +
         '\n • seafood' +
@@ -105,37 +106,50 @@ export function getDataAsObjects() {
         13.95);
     let garlicButterFries = new MenuItem(
         "garlic butter fries",
-        "Crispy fries toss with house garlic butter sauce, served with ranch and ketchup dipping",
+        "crispy fries toss with house garlic butter sauce, served with ranch and ketchup dipping",
         8.25);
     let garlicButterPopcornChicken = new MenuItem(
         "garlic butter popcorn chicken",
         "crispy fried popcorn chicken, toss with garlic butter sauce, served with sweet and sour sauce",
         8.25);
-    let springRolls = new MenuItem(
-        "spring rolls (2)",
-        'rice paper, lettuce, vermicelli noodle, mint leaves' +
-        '\n roasted peanut, peanut sauce' +
-        '\n' + spacingBeforeOptions +
-        '\n pick your protein:' +
-        '\n • pork and shrimp (GF) +1' +
-        '\n • shrimp (GF)' +
-        '\n • chicken' +
-        '\n • grilled pork',
+
+    let porkAndShrimpSpringRoll = new MenuItem(
+        "pork & shrimp spring roll (GF)(2)",
+        'pork and shrimp in fresh rice paper wrap with lettuce, vermicelli rice noodle, mint leaves, served with roasted peanut and peanut dipping sauce',
+        9.95);
+    let shrimpSpringRoll = new MenuItem(
+        "shrimp spring roll (GF)(2)",
+        'shrimp in fresh rice paper wrap with lettuce, vermicelli rice noodle, mint leaves, served with roasted peanut and peanut dipping sauce',
         8.95);
-    let asianStyleSalad = new MenuItem(
-        "asian-style salad",
-        'lettuce, cucumber, picked carrots, and daikon, served with homemade sesame dressing' +
-        '\n' + spacingBeforeOptions +
-        '\n pick one or many:' +
-        '\n • plain (GF)' +
-        '\n • cube filet mignon +7' +
-        '\n • chicken +5' +
-        '\n • tofu +5',
+    let grilledChickenSpringRoll = new MenuItem(
+        "grilled chicken spring roll (2)",
+        'grilled marinated white meat chicken in fresh rice paper wrap with lettuce, vermicelli rice noodle, mint leaves, served with roasted peanut and peanut dipping sauce',
+        8.95);
+    let grilledPorkSpringRoll = new MenuItem(
+        "grilled pork spring roll",
+        'grilled marinated pork in fresh rice paper wrap with lettuce, vermicelli rice noodle, mint leaves, served with roasted peanut and peanut dipping sauce',
+        8.95);
+
+    let filetMignonSteakSalad = new MenuItem(
+        "filet mignon steak salad",
+        '6oz premium cube filet mignon stir fry in house sauce with white onion, on bed of lettuce, cucumber, served with sesame salad dressing',
+        16.95);
+    let asianChickenSalad = new MenuItem(
+        "asian chicken salad",
+        'grilled marinated white meat chicken on bed of lettuce, cucumber, served with sesame salad dressing',
+        14.95);
+    let asianTofuSalad = new MenuItem(
+        "asian tofu salad",
+        'grilled marinated premium tofu on bed of lettuce, cucumber, served with sesame salad dressing',
+        14.95);
+    let plainAsianSalad = new MenuItem(
+        "plain asian salad (GF)",
+        'lettuce, cucumber, served with sesame salad dressing',
         9.95);
 
-    let houseCrispyNoodle = new MenuItem(
-        "house crispy noodle",
-        "jumbo shrimp, cube filet mignon, mix vegetables served with crispy egg noodle",
+    let houseSpecialCrispyNoodle = new MenuItem(
+        "house special crispy noodle",
+        "five jumbo shrimp and cube filet mignon stir fry with mix vegetables in house sauce, served in crispy egg noodle",
         19.95);
     let filetMignonPlatter = new MenuItem(
         "filet mignon platter (dine-in only)",
@@ -148,7 +162,7 @@ export function getDataAsObjects() {
         19.95);
     let vietnameseChickenCurry = new MenuItem(
         "vietnamese chicken curry (mild spicy)",
-        'bone-in dark meat chicken, coconut cream, potato, carrot, white onion, lemongrass in yellow curry, and your choice of carb' +
+        'bone-in dark meat chicken marinated with house spices, cooked with carrots, potatoes, coconut cream, in curry flavored, served with your choice of carb. Garnish with cilantro, salt and pepper for dipping' +
         '\n' + spacingBeforeOptions +
         '\n pick your carb' +
         '\n • steamed rice' +
@@ -158,21 +172,21 @@ export function getDataAsObjects() {
         16.95);
     let shakenFiletMignonFries = new MenuItem(
         "shaken filet mignon fries",
-        'cube filet mignon, garlic butter fries, served with ranch and ketchup',
+        '6oz of premium cube filet mignon in house special sauce, stir fry with green and white onion, on top of garlic butter fries',
         17.95);
 
 
     let houseSpecialPho = new MenuItem(
         "house special pho (GF)",
-        "rare filet mignon & beef meatball",
+        "4oz of finely chopped premium rare filet mignon and beef meatball served with rice noodle in beef broth, garnish with white onion, green onion, cilantro, and side of bean sprout, basil, lime, jalapeno",
         16.95);
     let chickenPho = new MenuItem(
         "chicken pho (GF)",
-        "white meat chicken",
+        "white meat chicken breast served with rice noodle in chicken broth, garnish with white onion, green onion, cilantro, and side of bean sprout, basil, lime, jalapeno",
         14.95);
     let beefMeatballPho = new MenuItem(
         "beef meatball pho (GF)",
-        "",
+        "beef meatball served with rice noodle in beef broth, garnish with white onion, green onion, cilantro, and side of bean sprout, basil, lime, jalapeno",
         14.95
     );
     let brisketPho = new MenuItem(
@@ -182,22 +196,22 @@ export function getDataAsObjects() {
     );
     let rareFiletMignonPho = new MenuItem(
         "rare filet mignon pho (GF)",
-        "",
+        "4oz of finely chopped premium filet mignon served with rice noodle in beef broth, garnish with white onion, green onion, cilantro, and side of bean sprout, basil, lime, jalapeno",
         15.95
     );
     let jumboShrimpPho = new MenuItem(
         "jumbo shrimp pho (GF)",
-        "",
+        "five jumbo shrimp served with rice noodle in chicken broth, garnish with white onion, green onion, cilantro, and side of bean sprout, basil, lime, jalapeno",
         15.95
     );
     let grilledPorkPho = new MenuItem(
         "grilled pork pho",
-        "",
+        "grilled pork served with rice noodle in broth of your choice, garnish with white onion, green onion, cilantro, and side of bean sprout, basil, lime, jalapeno",
         15.95
     );
     let grilledBeefBackRibPho = new MenuItem(
         "grilled beef back rib pho",
-        "",
+        "grilled marinated beef back rib served with rice noodle in beef broth and a fried egg, garnish with white onion, green onion, cilantro, and side of bean sprout, basil, lime, jalapeno",
         17.95
     );
     let boilBeefBackRibPho = new MenuItem(
@@ -207,7 +221,7 @@ export function getDataAsObjects() {
     );
     let plainPho = new MenuItem(
         "plain pho",
-        "",
+        "rice noodle serve in broth of your choice, garnish with white onion, green onion, cilantro, and side of bean sprout, basil, lime, jalapeno",
         11.95
     );
 
@@ -301,17 +315,17 @@ export function getDataAsObjects() {
 
     let cubeFiletMignonWithSteamedRice = new MenuItem(
         "cube filet mignon w/ steamed rice",
-        "",
+        "6oz premium cube filet mignon marinated in house sauce, stir fry with white onion, green onion, bell pepper, served with steamed rice, lettuce, cucumber, pickled carrots, daikon, and a fried egg",
         17.95
     );
     let grilledPorkWithSteamedRice = new MenuItem(
         "grilled pork w/ steamed rice",
-        "",
+        "grilled pork served with steamed rice, lettuce, cucumber, pickled carrots and daikon, a fried egg and marinated fish sauce",
         15.95
     );
     let porkChopWithSteamedRice = new MenuItem(
         "pork chop w/ steamed rice",
-        "",
+        "grilled pork chop served with steamed rice, lettuce, cucumber, pickled carrots and daikon, a fried egg and marinated fish sauce",
         15.95
     );
     let grilledChickenWithSteamedRice = new MenuItem(
@@ -321,7 +335,7 @@ export function getDataAsObjects() {
     );
     let vietnameseSpicyFriedChickenWithSteamedRice = new MenuItem(
         "vietnamese crispy fried chicken w/ steamed rice (GF) (Spicy)",
-        "",
+        "half cornish hen crispy fried, dip in special spicy sauce served with steamed rice, lettuce, cucumber, pickled carrots, daikon, a fried egg",
         15.95
     );
     let grilledTofuWithSteamedRice = new MenuItem(
@@ -332,55 +346,53 @@ export function getDataAsObjects() {
 
     let plainGarlicNoodle = new MenuItem(
         "plain garlic noodle",
-        "",
+        "stir fried garlic spaghetti noodle topped with parsley flakes and garnish with cilantro",
         10.95
     );
     let chickenGarlicNoodle = new MenuItem(
         "chicken garlic noodle",
-        "",
+        "garlic butter white meat chicken breast in stir fried garlic spaghetti noodle topped with parsley flakes and garnish with cilantro",
         15.95
     );
     let grilledPorkGarlicNoodle = new MenuItem(
         "grilled pork garlic noodle",
-        "",
+        "grilled pork in stir fried garlic spaghetti noodle topped with parsley flakes and garnish with cilantro",
         15.95
     );
-    let tofuGarlicNoodle = new MenuItem(
-        "tofu garlic noodle",
-        "",
+    let grilledTofuGarlicNoodle = new MenuItem(
+        "grilled tofu garlic noodle",
+        "garlic butter tofu in stir fried garlic spaghetti noodle topped with parsley flakes and garnish with cilantro",
         15.95
     );
-    let shrimpGarlicNoodle = new MenuItem(
-        "shrimp garlic noodle",
-        "",
+    let jumboShrimpGarlicNoodle = new MenuItem(
+        "jumbo shrimp garlic noodle",
+        "five garlic butter shrimps in stir fried garlic spaghetti noodle topped with parsley flakes and garnish with cilantro",
         16.95
     );
-    let cubeFiletMignonGarlicNoodle = new MenuItem(
-        "cube filet mignon garlic noodle",
-        "",
+    let shakenFiletMignonGarlicNoodle = new MenuItem(
+        "shaken filet mignon garlic noodle",
+        "marinated cube filet mignon stir fried in garlic spaghetti noodle along with white onion, green onion",
         17.95
     );
     let shrimpAndChickenGarlicNoodle = new MenuItem(
-        "shrimp and chicken garlic noodle",
-        "",
+        "jumbo shrimp & chicken garlic noodle",
+        "garlic butter chicken and jumbo shrimp in stir fried garlic spaghetti noodle topped with parsley flakes and garnish with cilantro",
         17.95
     );
 
     let veganEggRolls = new MenuItem(
-        "vegan egg rolls",
-        "sweet and sour sauce",
+        "vegan egg rolls (2)",
+        "mushroom, carrots, glass noodle, jicama, served with sweet chilli dipping sauce",
         5.50
     );
     let tofuSpringRolls = new MenuItem(
         "tofu spring rolls (2)",
-        'lettuce, vermicelli noodle, mint leaves' +
-        '\n roasted peanut, peanut sauce',
+        'premium marinated tofu in fresh rice paper wrap with lettuce, vermicelli rice noodle, mint leaves, and peanut dipping sauce',
         8.95
     );
     let veganFriedTofu = new MenuItem(
         "vegan fried tofu (GF)",
-        'deep fried tofu, jalapeno, green onion' +
-        '\n sweet and sour sauce',
+        'premium crispy fried tofu toss with house spice, green onion, jalapeno, sweet and sour sauce for dipping',
         13.95
     );
     let grilledTofuBaguette = new MenuItem(
@@ -390,9 +402,7 @@ export function getDataAsObjects() {
     );
     let veganPho = new MenuItem(
         "vegan pho (GF)",
-        "tofu, cabbage and bok choy served with rice noodle in vegan broth, garnish with white onion, green onion, and cilantro." +
-            "\n Side: bean sprout, basil, lime, jalapeno" +
-            "\n Sauce: hoisin and sriracha",
+        "tofu, cabbage and bok choy served with rice noodle in vegan broth, garnish with white onion, green onion, cilantro, and side of bean sprout, basil, lime, jalapeno",
         14.95
     );
     let veganFriedRice = new MenuItem(
@@ -402,13 +412,12 @@ export function getDataAsObjects() {
     );
     let grilledTofuSteamedRice = new MenuItem(
         "grilled tofu steamed rice",
-        "lettuce, cucumber, pickled carrots, daikon, and fried egg",
+        "",
         15.95
     );
     let veganVermicelliNoodle = new MenuItem(
         "vegan vermicelli noodle",
-        'lettuce, bean sprout, cucumber, mint, pickled carrots, daikon, and scallion oil' +
-        '\n vegan egg roll, roasted peanut, homemade soy sauce',
+        '',
         15.95
     );
     let vegetableStirFryNoodle = new MenuItem(
@@ -714,11 +723,26 @@ export function getDataAsObjects() {
         chickenWings,
         garlicButterFries,
         garlicButterPopcornChicken,
-        springRolls,
-        asianStyleSalad
     ];
+    appetizerCategory.menuCategories = [
+        springRollCategory,
+        saladCategory
+    ];
+    springRollCategory.menuItems = [
+        porkAndShrimpSpringRoll,
+        shrimpSpringRoll,
+        grilledChickenSpringRoll,
+        grilledPorkSpringRoll
+    ];
+    saladCategory.menuItems = [
+        filetMignonSteakSalad,
+        asianChickenSalad,
+        asianTofuSalad,
+        plainAsianSalad
+    ];
+
     aloSignatureCategory.menuItems = [
-        houseCrispyNoodle,
+        houseSpecialCrispyNoodle,
         filetMignonPlatter,
         vietnameseChickenCurry,
         shakenFiletMignonFries
@@ -741,11 +765,6 @@ export function getDataAsObjects() {
         plainPho
     ];
     vermicelliCategory.menuItems = [
-        new MenuItem(
-            "",
-            vermicelliCategory.description,
-            0
-        ),
         grilledChickenVermicelli,
         grilledPorkVermicelli,
         grilledShrimpVermicelli,
@@ -760,11 +779,6 @@ export function getDataAsObjects() {
         grilledBeefBaguette
     ];
     friedRiceCategory.menuItems = [
-        new MenuItem(
-            "",
-            friedRiceCategory.description,
-            0
-        ),
         plainFriedRice,
         chickenFriedRice,
         bbqPorkFriedRice,
@@ -787,17 +801,12 @@ export function getDataAsObjects() {
         grilledTofuWithSteamedRice
     ];
     garlicNoodleCategory.menuItems = [
-        new MenuItem(
-            "",
-            garlicNoodleCategory.description,
-            0
-        ),
         plainGarlicNoodle,
         chickenGarlicNoodle,
         grilledPorkGarlicNoodle,
-        tofuGarlicNoodle,
-        shrimpGarlicNoodle,
-        cubeFiletMignonGarlicNoodle,
+        grilledTofuGarlicNoodle,
+        jumboShrimpGarlicNoodle,
+        shakenFiletMignonGarlicNoodle,
         shrimpAndChickenGarlicNoodle
     ];
     veganCategory.menuItems = [
