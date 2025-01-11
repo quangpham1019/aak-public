@@ -1,4 +1,4 @@
-import {adjustReviewContentText, trimIfNeeded} from "./index.js";
+import { trimIfNeeded } from "./adjustReviewContentSizing.js";
 
 function initializeNavbarItems() {
     let navItems = document.querySelectorAll('.nav-list .nav-item');
