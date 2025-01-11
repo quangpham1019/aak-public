@@ -817,14 +817,15 @@ sup             { vertical-align: super; line-height: 1.0; }
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        resize: both;
 
         #opening-hours-heading {
             /*background-color: blue;*/
-            padding: 3%;
+            padding: 1%;
 
             #opening-hours-heading-text {
                 text-align: center;
-                font-size: xx-large;
+                font-size: 7cqmin;
             }
         }
         #opening-hours-divider {
@@ -855,7 +856,7 @@ sup             { vertical-align: super; line-height: 1.0; }
                     float: left;
                 }
                 th, td {
-                    font-size: medium;
+                    font-size: 4cqmin;
                     display: block;
                     padding: 0.2vh 0.2vw;
                 }
