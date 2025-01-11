@@ -2,10 +2,10 @@ import getData, { Review, SOURCE_PLATFORM } from "./data/reviewsData.js";
 
 const [googleReviewData, yelpReviewData] = getData();
 const RATING = {
-    1: "★✰✰✰✰",
-    2: "★★✰✰✰",
-    3: "★★★✰✰",
-    4: "★★★★✰",
+    1: "★☆☆☆☆",
+    2: "★★☆☆☆",
+    3: "★★★☆☆",
+    4: "★★★★☆",
     5: "★★★★★",
 }
 const yelpIcon = "<i id=\"yelp-logo\" class=\"fa-brands fa-yelp\"></i>";
@@ -182,7 +182,7 @@ class GoogleReviewLayoutDesign extends LayoutDesign {
 
         let ratingWrapper = document.createElement("div");
         ratingWrapper.classList.add("rating-wrapper");
-        let stars = document.createElement("p");
+        let stars = document.createElement("div");
         stars.classList.add("stars");
         stars.innerText = RATING[this.review.rating];
         ratingWrapper.appendChild(stars);

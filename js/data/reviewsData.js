@@ -154,6 +154,7 @@ const yelpReviewData = [
 export default function getReviews() {
     return [googleReviewData, yelpReviewData];
 }
+
 export class Review {
     authorName;
     time;
@@ -163,4 +164,5 @@ export class Review {
     sourcePlatform;
     reviewUrl;
 }
+export const allData = [...googleReviewData, ... yelpReviewData];
 export {SOURCE_PLATFORM};

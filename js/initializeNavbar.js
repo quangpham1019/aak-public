@@ -1,3 +1,4 @@
+import {adjustReviewContentText, trimIfNeeded} from "./index.js";
 
 function initializeNavbarItems() {
     let navItems = document.querySelectorAll('.nav-list .nav-item');
@@ -8,6 +9,11 @@ function initializeNavbarItems() {
 
             swapContent(curItem);
             updateNavbarIndicator(curItem);
+
+            let reviewsWrapperNavId = "reviews-wrapper-nav";
+            if (curItem.id === reviewsWrapperNavId) {
+                trimIfNeeded();
+            }
         })
     });
 }
