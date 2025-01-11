@@ -15,25 +15,24 @@ export default function initializeReviews() {
     let googleReviewCarousel = document.querySelector("#google-reviews-carousel");
     let yelpReviewCarousel = document.querySelector("#yelp-reviews-carousel");
 
-    LayoutUtility._resultFragment = googleReviewCarousel;
-    LayoutUtility.execute(googleReviewData);
-
-    LayoutUtility._resultFragment = yelpReviewCarousel;
-    LayoutUtility.execute(yelpReviewData);
+    LayoutUtility.execute(googleReviewCarousel, googleReviewData);
+    LayoutUtility.execute(yelpReviewCarousel, yelpReviewData);
 }
 
 class LayoutUtility {
 
     static _resultFragment;
+    static _designingFragment;
 
-    static execute(reviewDataList) {
-        if (this._resultFragment === null) {
-            this._resultFragment = document.createElement("div");
-        }
+    static execute(reviewCarousel, reviewDataList) {
+        this._resultFragment = reviewCarousel;
+        this._designingFragment = document.createDocumentFragment();
 
         reviewDataList.forEach(reviewData => {
             this.#traverseDataAndApplyLayoutDesign(reviewData);
         })
+
+        this._resultFragment.appendChild(this._designingFragment);
     }
 
     static #traverseDataAndApplyLayoutDesign(reviewData) {
@@ -46,7 +45,7 @@ class LayoutUtility {
         layoutDesign.applyDesign(reviewElement);
 
         // append FRAGMENT_SUB_1 as child to tree
-        this._resultFragment.appendChild(reviewElement);
+        this._designingFragment.appendChild(reviewElement);
     }
 }
 
