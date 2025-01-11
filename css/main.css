@@ -957,6 +957,7 @@ sup             { vertical-align: super; line-height: 1.0; }
                         display: flex;
                         align-items: start;
 
+                        overflow-y: hidden;
                         overflow-x: scroll;
                         scroll-behavior: smooth;
                         scroll-snap-type: x mandatory;

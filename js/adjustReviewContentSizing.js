@@ -6,6 +6,8 @@ let prevWindowHeight = window.innerHeight;
 // TODO: refactor code
 // trim when overflow detected
 // restore words when window size is increasing
+
+// TODO: refactor to resolve forced reflow error
 export function adjustReviewContentText() {
     let carouselSlides = document.querySelectorAll(".carousel-slide");
 
@@ -19,7 +21,7 @@ export function adjustReviewContentText() {
         let reviewContentStyle = window.getComputedStyle(reviewContent);
 
         let carouseSlideStyle = window.getComputedStyle(carouselSlide);
-        let carouselSlideHeight = carouselSlide.offsetHeight - parseFloat(carouseSlideStyle.paddingTop) - parseFloat(carouseSlideStyle.paddingBottom);
+        let carouselSlideHeight = carouselSlide.clientHeight - parseFloat(carouseSlideStyle.paddingTop) - parseFloat(carouseSlideStyle.paddingBottom);
 
         let boxHeight = carouselSlideHeight - (reviewHeading.offsetHeight+ratingWrapper.offsetHeight);
         let lineHeight = parseInt(reviewContentStyle.getPropertyValue("line-height"));
