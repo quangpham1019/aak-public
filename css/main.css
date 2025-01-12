@@ -1338,8 +1338,14 @@ sup             { vertical-align: super; line-height: 1.0; }
 
 
 
-@supports (height: 100lvh) {
-
+@supports (height: 100svh) {
+    #content-wrapper {
+        height: 100svh;
+        
+        #content-wrapper-content {
+            height: calc(100svh - 10svh);
+        }
+    }
 }
 
 /******************************************************
