@@ -10,6 +10,7 @@ export function setUpAutoReviewContentSizing() {
     });
 }
 
+// TODO: use observer to avoid forced reflow
 export function adjustReviewContentText() {
     let carouselSlides = document.querySelectorAll(".carousel-slide");
 
