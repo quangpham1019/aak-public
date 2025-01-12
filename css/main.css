@@ -540,9 +540,8 @@ sup             { vertical-align: super; line-height: 1.0; }
     }
 
     .background-image-attribution {
-        position: absolute;
+        position: sticky;
         bottom: 0;
-        left: 0;
 
         background-color: rgba(243, 234, 211, 0.5);
         width: 100%;
