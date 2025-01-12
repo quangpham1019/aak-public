@@ -26,11 +26,17 @@ function swapContent(curItem) {
     let toSwap = curItem.id.slice(0, -'-nav'.length);
     let toSwapEl = document.querySelector(`#${toSwap}`);
     let curElDisplay = content.children[0];
+    let backgroundImageAttributions = document.querySelectorAll(".background-image-attribution");
 
     if (toSwapEl != null) {
         // let clone = toSwapEl.cloneNode(true);
         contentComponents.appendChild(curElDisplay);
         content.replaceChildren(toSwapEl);
+
+        backgroundImageAttributions.forEach(imageAttribution => {
+            content.appendChild(imageAttribution);
+        });
+
     } else {
         console.log("cannot find content to substitute");
     }
@@ -52,6 +58,7 @@ function initializeLogo() {
     let content = document.querySelector('#content-wrapper-content');
     let welcomeContent = document.querySelector('#welcome')
     let logo = document.querySelector('.logo');
+    let backgroundImageAttributions = document.querySelectorAll(".background-image-attribution");
 
     logo.addEventListener('click', function(event) {
 
@@ -62,6 +69,9 @@ function initializeLogo() {
         }
 
         content.replaceChildren(welcomeContent);
+        backgroundImageAttributions.forEach(imageAttribution => {
+            content.appendChild(imageAttribution);
+        });
 
         let selected = $(".selected");
         selected.removeClass("selected");
