@@ -1006,13 +1006,16 @@ sup             { vertical-align: super; line-height: 1.0; }
                     filter: drop-shadow(0 0 10px #0003);
 
                     .carousel-nav-button {
+
+                        --carousel-nav-button-height: 40px;
+
                         position: absolute;
-                        top: 40%;
+                        top: 50%;
+                        margin-top: -22.5px;
                         z-index: 10;
 
-                        background-color: rgba(0,0,0,0.3);
-                        width: 40px;
-                        height: 40px;
+                        width: 45px;
+                        height: 45px;
 
                         border-radius: 50%;
                         cursor: pointer;
@@ -1021,8 +1024,12 @@ sup             { vertical-align: super; line-height: 1.0; }
                         align-items: center;
                         justify-content: center;
 
+                        &:hover {
+                            background-color: rgba(0,0,0,0.3);
+                        }
+
                         * {
-                            height: 60%;
+                            height: 70%;
                             color: white;
                         }
                     }
@@ -2014,7 +2021,7 @@ sup             { vertical-align: super; line-height: 1.0; }
 
                                             /*font-family: Arial, sans-serif;*/
                                             /*font-weight: bold;*/
-                                            /*font-size: 0.7em;*/
+                                            font-size: 1.5vmax;
 
                                             /*border-radius: 2px;*/
                                         }
@@ -2191,6 +2198,14 @@ sup             { vertical-align: super; line-height: 1.0; }
     }
 
 }
+
+
+
+/**********************
+    LARGER SMARTPHONES/ SMALLER TABLETS IN PORTRAIT MODE
+***********************/
+
+
 
 /**********************
     LARGER LAPTOPS/ DESKTOPS
@@ -2708,6 +2723,10 @@ sup             { vertical-align: super; line-height: 1.0; }
                 height: 15%;
                 text-align: center;
 
+                #reviews-heading-text {
+                    font-size: calc(var(--heading-size) * 0.8);
+
+                }
             }
             #reviews-content-wrapper {
                 /*background-color: darkorange;*/
