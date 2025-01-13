@@ -8,7 +8,6 @@ const reviews = getReviews();
 export default function initializeReviewsCarouselsScrolling() {
 
     let carouselWrapperList = document.querySelectorAll(".carousel-wrapper");
-    let scrollAmount;
 
     carouselWrapperList.forEach(carouselWrapper => {
         let leftButton = carouselWrapper.querySelector(".left-button-carousel");
