@@ -1101,7 +1101,7 @@ sup             { vertical-align: super; line-height: 1.0; }
 
                                         font-family: Arial, sans-serif;
                                         font-weight: bold;
-                                        font-size: 0.7em;
+                                        font-size: 0.8em;
 
                                         border-radius: 2px;
                                     }
@@ -1149,6 +1149,9 @@ sup             { vertical-align: super; line-height: 1.0; }
 
                                     /*font-size: 2em;*/
                                     color: #FF9529;
+
+                                    display: flex;
+                                    align-items: center;
 
                                     .yelp-star {
                                         background-color: red;
@@ -1835,6 +1838,296 @@ sup             { vertical-align: super; line-height: 1.0; }
 
 
     /**********************
+        REVIEWS
+    ***********************/
+    #reviews-wrapper {
+
+        /*display: flex;*/
+        /*align-items: center;*/
+        /*justify-content: center;*/
+
+        #reviews {
+            /*background-color: var(--content-background-color);*/
+            /*height: 85%;*/
+            /*width: 85%;*/
+            /*margin-bottom: var(--image-attribution-height);*/
+
+            /*display: flex;*/
+            /*align-items: center;*/
+            /*justify-content: space-evenly;*/
+            /*flex-direction: column;*/
+
+            /*overflow-y: hidden;*/
+            /*overflow-x: hidden;*/
+
+            #reviews-heading {
+                /*width: 100%;*/
+                /*padding: 0 2%;*/
+
+                /*display: flex;*/
+                /*align-items: center;*/
+                /*justify-content: center;*/
+
+                #reviews-heading-text {
+                    /*font-size: var(--heading-size);*/
+                    /*text-align: center;*/
+                }
+            }
+
+            #reviews-content-wrapper {
+                /*background-color: darkorange;*/
+                /*width: 100%;*/
+                /*height: 80%;*/
+                /*padding-bottom: 1%;*/
+
+                /*display: flex;*/
+                /*justify-content: center;*/
+
+                /*overflow: auto;*/
+
+                /*animation-duration: 1.3s;*/
+                /*animation-name: slide-in-from-close-bottom;*/
+
+                #reviews-content {
+                    /*background-color: blue;*/
+                    /*height: 100%;*/
+                    /*width: 60%;*/
+
+                    /*display: flex;*/
+                    /*flex-direction: column;*/
+                    /*align-items: center;*/
+                    /*justify-content: center;*/
+
+                    .source-platform-heading {
+                        /*background-color: blue;*/
+                        /*margin-bottom: 3%;*/
+
+                        /*display: flex;*/
+                        /*align-items: center;*/
+                        /*justify-content: flex-start;*/
+                        /*gap: 1%;*/
+                    }
+                    .carousel-wrapper {
+
+                        /*--carousel-nav-button-offset: -50px;*/
+
+                        /*background-color: pink;*/
+                        /*position: relative;*/
+                        /*height: 60%;*/
+                        /*width: 100%;*/
+
+                        /*filter: drop-shadow(0 0 10px #0003);*/
+
+                        .carousel-nav-button {
+                            /*position: absolute;*/
+                            /*top: 40%;*/
+                            /*z-index: 10;*/
+
+                            /*background-color: rgba(0,0,0,0.3);*/
+                            /*width: 40px;*/
+                            /*height: 40px;*/
+
+                            /*border-radius: 50%;*/
+                            /*cursor: pointer;*/
+
+                            /*display: flex;*/
+                            /*align-items: center;*/
+                            /*justify-content: center;*/
+
+                            * {
+                                /*height: 60%;*/
+                                /*color: white;*/
+                            }
+                        }
+                        .left-button-carousel {
+                            /*left: var(--carousel-nav-button-offset);*/
+                        }
+                        .right-button-carousel {
+                            /*right: var(--carousel-nav-button-offset);*/
+                        }
+
+                        .carousel {
+                            /*background-color: black;*/
+                            /*position: absolute;*/
+                            /*top: 0;*/
+                            /*right: 0;*/
+                            /*bottom: 0;*/
+                            /*left: 0;*/
+
+                            /*height: 90%;*/
+                            /*width: 100%;*/
+                            /*display: flex;*/
+                            /*align-items: start;*/
+
+                            /*overflow-y: hidden;*/
+                            /*overflow-x: scroll;*/
+                            /*scroll-behavior: smooth;*/
+                            /*scroll-snap-type: x mandatory;*/
+
+                            .carousel-slide {
+                                /*--carousel-slide-side-margin: 2%;*/
+
+                                /*position: relative;*/
+                                /*flex: 0 0 calc(100% /1 - var(--carousel-slide-side-margin)*2);*/
+
+                                /*background-color: white;*/
+                                /*height: 100%;*/
+                                /*width: 100%;*/
+                                /*padding: 1rem;*/
+                                /*margin: 0 var(--carousel-slide-side-margin);*/
+
+                                /*border-radius: 10px;*/
+                                /*color: black;*/
+                                /*text-decoration: none;*/
+
+                                /*scroll-snap-align: center;*/
+
+                                /*display: flex;*/
+                                /*flex-direction: column;*/
+
+                                .review-heading {
+                                    /*     background-color: green; */
+                                    /*width: 100%;*/
+
+                                    /*display: flex;*/
+                                    /*align-items: center;*/
+                                    /*column-gap: 0.5em;*/
+
+                                    .user-image-wrapper {
+                                        /*     background-color: black; */
+                                        /*height: 100%;*/
+                                        /*width: 12%;*/
+                                        /*min-width: 50px;*/
+                                        /*text-align: center;*/
+
+                                        #user-image{
+                                            /*width: 80%;*/
+                                        }
+                                    }
+                                    .review-heading-box-text{
+                                        /*height:100%;*/
+                                        /*flex-grow: 1;*/
+
+                                        .author-name{
+                                            /*margin: 0;*/
+                                            /*padding: 0;*/
+
+                                            /*font-family: Arial, sans-serif;*/
+                                            /*font-weight: bold;*/
+                                            /*font-size: 0.7em;*/
+
+                                            /*border-radius: 2px;*/
+                                        }
+                                        .review-date {
+                                            /*margin: 0;*/
+                                            /*padding: 0;*/
+
+                                            /*font-weight: lighter;*/
+                                            /*font-size: 0.7em;*/
+                                        }
+                                    }
+                                    .source-platform-logo-wrapper {
+                                        /*background-color: white;*/
+                                        /*width: 6%;*/
+                                        /*min-width: 20px;*/
+                                        /*height: 100%;*/
+
+                                        #google-logo{
+                                            /*width: 100%;*/
+                                        }
+
+                                        #yelp-logo {
+                                            /*background-color: black;*/
+                                            /*color: red;*/
+                                            /*width: 100%;*/
+                                            /*height: 50%;*/
+                                            /*max-height: 20px;*/
+                                        }
+                                    }
+
+                                }
+                                .rating-wrapper{
+                                    /*background-color: green;*/
+                                    /*height: 10%;*/
+                                    /*width: 100%;*/
+                                    /*margin: 0.5em 0;*/
+                                    /*display: flex;*/
+                                    /*align-items: center;*/
+                                    /*gap: 0.5em;*/
+
+                                    .stars{
+                                        /*background-color: blue;*/
+                                        /*height: 100%;*/
+                                        /*margin: 0;*/
+
+                                        /*!*font-size: 2em;*!*/
+                                        /*color: #FF9529;*/
+
+                                        .yelp-star {
+                                            /*background-color: red;*/
+                                            height: 100%;
+                                            /*padding: 3%;*/
+                                            /*margin: 0 0.1em;*/
+                                            /*border-radius: 20%;*/
+
+                                            &.no-count {
+                                                /*background-color: lightgrey;*/
+                                            }
+                                        }
+                                    }
+                                    .verification-badge{
+                                        /*height: 45%;*/
+                                    }
+                                }
+                                .review-content-wrapper{
+                                    /*background-color: yellow;*/
+                                    /*flex-grow: 1;*/
+                                    /*width: 100%;*/
+
+                                    /*padding-bottom: 1em;*/
+
+                                    .review-content {
+
+                                        /*background-color: green;*/
+                                        /*position: relative;*/
+
+                                        /*font-size: var(--font-size);*/
+                                        /*font-weight: 500;*/
+
+                                        /*overflow: hidden;*/
+                                    }
+                                }
+
+                            }
+                        }
+                        .carousel-navigation {
+                            /*height: 10%;*/
+                            /*background-color: green;*/
+                            .carousel-navigation-list {
+                                /*background-color: yellow;*/
+                                /*position: absolute;*/
+                                /*bottom: 0;*/
+                                /*left: 0;*/
+
+                                /*width: 100%;*/
+                                /*height: 10%;*/
+
+                                /*display: flex;*/
+                                /*align-items: center;*/
+                                /*justify-content: space-evenly;*/
+
+                                /*list-style: none;*/
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+
+    /**********************
         DELIVERY
     ***********************/
     #delivery {
@@ -2379,7 +2672,7 @@ sup             { vertical-align: super; line-height: 1.0; }
                     justify-content: center;
 
                     tr { display: block; float: left; }
-                    th, td { display: block; padding: 15px;}
+                    th, td { display: block; padding: 10px;}
                 }
             }
 
@@ -2487,21 +2780,121 @@ sup             { vertical-align: super; line-height: 1.0; }
                                 position: relative;
                                 flex: 0 0 calc(100% /3 - var(--carousel-slide-side-margin)*2);
 
-                                counter-increment: item;
                                 scroll-snap-align: center;
 
-                                /*&:nth-child(even) {*/
-                                /*    background-color: #99f;*/
-                                /*}*/
-                                /*&:before {*/
-                                /*    content: counter(item);*/
-                                /*    position: absolute;*/
-                                /*    top: 50%;*/
-                                /*    left: 50%;*/
-                                /*    transform: translate3d(-50%,-40%,70px);*/
-                                /*    color: #fff;*/
-                                /*    font-size: 2em;*/
-                                /*}*/
+                                .review-heading {
+                                    /*     background-color: green; */
+                                    /*width: 100%;*/
+
+                                    /*display: flex;*/
+                                    /*align-items: center;*/
+                                    /*column-gap: 0.5em;*/
+
+                                    .user-image-wrapper {
+                                        /*     background-color: black; */
+                                        /*height: 100%;*/
+                                        /*width: 12%;*/
+                                        /*min-width: 50px;*/
+                                        /*text-align: center;*/
+
+                                        #user-image{
+                                            /*width: 80%;*/
+                                        }
+                                    }
+                                    .review-heading-box-text{
+                                        /*height:100%;*/
+                                        /*flex-grow: 1;*/
+
+                                        .author-name{
+                                            /*margin: 0;*/
+                                            /*padding: 0;*/
+
+                                            /*font-family: Arial, sans-serif;*/
+                                            /*font-weight: bold;*/
+                                            font-size: calc(var(--font-size) - 2vmin);
+
+                                            /*border-radius: 2px;*/
+                                        }
+                                        .review-date {
+                                            /*margin: 0;*/
+                                            /*padding: 0;*/
+
+                                            /*font-weight: lighter;*/
+                                            font-size: calc(var(--font-size) - 2vmin);
+                                        }
+                                    }
+                                    .source-platform-logo-wrapper {
+                                        /*background-color: white;*/
+                                        /*width: 6%;*/
+                                        /*min-width: 20px;*/
+                                        /*height: 100%;*/
+
+                                        #google-logo{
+                                            /*width: 100%;*/
+                                        }
+
+                                        #yelp-logo {
+                                            /*background-color: black;*/
+                                            /*color: red;*/
+                                            /*width: 100%;*/
+                                            /*height: 50%;*/
+                                            /*max-height: 20px;*/
+                                        }
+                                    }
+
+                                }
+                                .rating-wrapper{
+                                    /*background-color: green;*/
+                                    /*height: 10%;*/
+                                    /*width: 100%;*/
+                                    /*margin: 0.5em 0;*/
+                                    /*display: flex;*/
+                                    /*align-items: center;*/
+                                    /*gap: 0.5em;*/
+
+                                    .stars{
+                                        /*background-color: blue;*/
+                                        /*height: 100%;*/
+                                        /*margin: 0;*/
+
+                                        /*!*font-size: 2em;*!*/
+                                        /*color: #FF9529;*/
+
+                                        .yelp-star {
+                                            /*background-color: red;*/
+                                            height: 100%;
+                                            /*padding: 3%;*/
+                                            /*margin: 0 0.1em;*/
+                                            /*border-radius: 20%;*/
+
+                                            &.no-count {
+                                                /*background-color: lightgrey;*/
+                                            }
+                                        }
+                                    }
+                                    .verification-badge{
+                                        /*height: 45%;*/
+                                    }
+                                }
+                                .review-content-wrapper{
+                                    /*background-color: yellow;*/
+                                    /*flex-grow: 1;*/
+                                    /*width: 100%;*/
+
+                                    /*padding-bottom: 1em;*/
+
+                                    .review-content {
+
+                                        /*background-color: green;*/
+                                        /*position: relative;*/
+
+                                        font-size: calc(var(--font-size) - 1vmin);
+                                        /*font-weight: 500;*/
+
+                                        /*overflow: hidden;*/
+                                    }
+                                }
+
                             }
                         }
 
