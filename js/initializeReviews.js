@@ -9,7 +9,7 @@ const RATING = {
     5: "★★★★★",
 }
 const yelpIcon = "<i id=\"yelp-logo\" class=\"fa-brands fa-yelp\"></i>";
-const yelpStarImage = "assets/img/white-star.svg";
+const yelpStarImage = "assets/img/red-star.svg";
 
 export default function initializeReviews() {
     let googleReviewCarousel = document.querySelector("#google-reviews-carousel");
@@ -167,7 +167,10 @@ class GoogleReviewLayoutDesign extends LayoutDesign {
         let authorName = document.createElement("p");
         authorName.classList.add("author-name");
         authorName.innerText = this.review.authorName;
-        reviewHeadingBoxText.appendChild(authorName);
+        let reviewDate = document.createElement("p");
+        reviewDate.classList.add("review-date");
+        reviewDate.innerText = this.review.time;
+        reviewHeadingBoxText.replaceChildren(authorName, reviewDate);
 
         let googleLogoWrapper = document.createElement("div");
         googleLogoWrapper.classList.add("source-platform-logo-wrapper");

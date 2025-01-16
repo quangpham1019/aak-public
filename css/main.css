@@ -1162,11 +1162,11 @@ sup             { vertical-align: super; line-height: 1.0; }
                                     align-items: center;
 
                                     .yelp-star {
-                                        background-color: red;
-                                        height: 80%;
-                                        padding: 3%;
+                                        /*background-color: red;*/
+                                        /*height: 80%;*/
+                                        /*padding: 3%;*/
                                         margin: 0 0.1em;
-                                        border-radius: 20%;
+                                        /*border-radius: 20%;*/
 
                                         &.no-count {
                                             background-color: lightgrey;
