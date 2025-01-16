@@ -10,6 +10,7 @@ const RATING = {
 }
 const yelpIcon = "<i id=\"yelp-logo\" class=\"fa-brands fa-yelp\"></i>";
 const yelpStarImage = "assets/img/red-star.svg";
+const notCountYelpStarImage = "assets/img/grey-star.svg";
 
 export default function initializeReviews() {
     let googleReviewCarousel = document.querySelector("#google-reviews-carousel");
@@ -286,14 +287,17 @@ class YelpReviewLayoutDesign extends LayoutDesign {
         stars.classList.add("stars");
         for (let i = 0; i < 5; i++) {
             let star = document.createElement("img");
-            star.setAttribute("src", yelpStarImage);
+
+            let starImage = i < this.review.rating ? yelpStarImage : notCountYelpStarImage;
+
+            star.setAttribute("src", starImage);
             star.setAttribute("alt", "star rating image for yelp");
 
             star.classList.add("yelp-star");
 
-            if (i > this.review.rating-1) {
-                star.classList.add("no-count");
-            }
+            // if (i > this.review.rating-1) {
+            //     star.classList.add("no-count");
+            // }
 
             stars.appendChild(star);
         }

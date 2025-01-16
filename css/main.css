@@ -1168,9 +1168,9 @@ sup             { vertical-align: super; line-height: 1.0; }
                                         margin: 0 0.1em;
                                         /*border-radius: 20%;*/
 
-                                        &.no-count {
-                                            background-color: lightgrey;
-                                        }
+                                        /*&.no-count {*/
+                                        /*    background-color: lightgrey;*/
+                                        /*}*/
                                     }
                                 }
                                 .verification-badge{
