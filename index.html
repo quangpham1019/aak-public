@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alo Asian Kitchen</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.ico" />
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!--*********************
+        SCRIPT TO HANDLE JAVASCRIPT-DISABLED BROWSERS
+    **********************-->
+    <noscript>
+        <div id="no-javascript">
+            <div class="logo">
+                <a href="./index.html"
+                aria-label="link on logo to redirect to our no-javascript website for browsers that do not have javascript enabled">
+                    <img alt="logo for alo asian kitchen, a pho restaurant in laguna niguel"
+                         src="assets/img/logo-removebg-preview.png"
+                    />
+                </a>
+            </div>
+            <h1>JavaScript is required for this website.</h1>
+            <p>Please enable JavaScript in your browser settings to view this page correctly.</p>
+            <br>
+            <a href="./index-no-javascript.html"
+               aria-label="button to redirect to our no-javascript website for browsers that do not have javascript enabled">
+                <button style="font-weight: bold; font-size: large">View our no-javascript website</button>
+            </a>
+        </div>
+    </noscript>
+
+
+    <!--*********************
+        GOOGLE API
+    **********************-->
+    <script>
+        (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+            key: "AIzaSyDhgPE-JwRSA--dLYfE29_QTySu8p6MUiQ",
+            v: "weekly",
+            // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+            // Add other bootstrap parameters as needed, using camel case.
+        });
+    </script>
+
+    <!--*********************
+        MAGNIFIC POPUP
+    **********************-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/jquery.magnific-popup.js" integrity="sha512-tOyzsVuGuz0il5EcXFi/qA5DI4BNLna4gHbWn+HbQBP0jmRhyqMKup24fzyKnxSX0jBxt2+qStqwwHDIh5TaGA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/magnific-popup.css" integrity="sha512-UhvuUthI9VM4N3ZJ5o1lZgj2zNtANzr3zyucuZZDy67BO6Ep5+rJN2PST7kPj+fOI7M/7wVeYaSaaAICmIQ4sQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!--*********************
+        BOOTSTRAP
+    **********************-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Latest compiled JavaScript for BOOTSTRAP -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <!--*********************
+        FONT-AWESOME 6.6
+    **********************-->
+    <script src="./assets/fontawesome-free-6.6.0-web/js/all.min.js"></script>
+    <link rel="stylesheet" href="./assets/fontawesome-free-6.6.0-web/css/fontawesome.min.css">
+
+    <!--*********************
+        GOOGLE FONTS
+    **********************-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+CO+Guides&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2:400,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div id="loading-screen">
+        <div id="loading-screen-content">
+            <div class="lds-spinner">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div id="loading-screen-message" class="lora-normal">All good things worth await...</div>
+        </div>
+    </div>
+
+    <!-- TODO: fix google map not displayed properly in mobile web safari (works fine in brave) -->
+    <!-- TODO: fix wording for dark meat, consider thigh/drumsticks -->
+    <!-- TODO: integrate about us into welcome section -->
+    <!-- TODO: add aria-label, alt for images -->
+    <!-- TODO: add scroll to navigate, add arrows indicator on bottom and top right of section to indicate possible navigation -->
+
+    <!--*********************
+        CONTENT-WRAPPER
+    **********************-->
+    <section style="visibility: hidden" id="content-wrapper" class="">
+
+        <!--*********************
+            CONTENT-WRAPPER-NAV
+        **********************-->
+        <div id="content-wrapper-nav" class="lora-normal">
+
+            <!--*********************
+                RESPONSIVE NAVBAR TOGGLE
+            **********************-->
+            <input type="checkbox" id="nav-check">
+            <div id="nav-btn">
+                <label for="nav-check" id="nav-toggle-label">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+
+            <!--*********************
+                LOGO
+            **********************-->
+            <div class="logo">
+                <img alt="logo for alo asian kitchen, a pho restaurant in laguna niguel"
+                     src="assets/img/logo-removebg-preview.png"
+                />
+            </div>
+
+            <!--TODO: animate CTAs like phone link, social media buttons-->
+            <!--*********************
+                NAV-ITEMS-WRAPPER
+            **********************-->
+            <div class="nav-list">
+                <div class="nav-item">
+                    <div id="menu-wrapper-nav">Menu</div>
+                </div>
+                <div class="nav-item">
+                    <div id="opening-hours-wrapper-nav">Hours</div>
+                </div>
+                <div class="nav-item">
+                    <div id="reviews-wrapper-nav">Reviews</div>
+                </div>
+                <!-- <div class="nav-item">
+                    <div id="catering-wrapper-nav">Catering</div>
+                </div> -->
+                <div class="nav-item">
+                    <div id="delivery-nav">Delivery</div>
+                </div>
+                <!--<div class="nav-item">-->
+                <!--    <div id="about-wrapper-nav">About Us</div>-->
+                <!--</div>-->
+                <div class="nav-item">
+                    <a id="phone-link" href="tel:+19493289951"
+                        aria-label="business telephone number for alo asian kitchen">
+                        <i class="fa-solid fa-phone"></i> +1 (949) 328-9951
+                    </a>
+                </div>
+            </div>
+
+            <!--*********************
+                SOCIAL-ICONS
+            **********************-->
+            <div class="social-icons">
+                <a href="https://www.yelp.com/biz/alo-asian-kitchen-laguna-niguel"
+                   class="yelp">
+                    <i class="social-icon fa-brands fa-yelp"></i>
+                </a>
+                <a href="https://www.facebook.com/ALOASIANKITCHENLN/"
+                   class="facebook">
+                    <i class="social-icon fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/aloasiankitchen/"
+                   class="instagram">
+                    <i class="social-icon fa-brands fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+
+        <!--*********************
+            CONTENT-WRAPPER-CONTENT
+        **********************-->
+        <div id="content-wrapper-content" class="lora-normal">
+
+        </div>
+
+        <!--*********************
+            CTA-PHONE-LINK
+        **********************-->
+        <a id="cta-phone-link" href="tel:+19493289951"
+           aria-label="business telephone number for alo asian kitchen">
+            <div id="cta-phone-before"></div>
+            <div id="cta-phone" class=""></div>
+            <div id="cta-phone-after">
+                <div></div>
+            </div>
+        </a>
+
+
+    </section>
+
+
+    <!--*********************
+        CONTENT-WRAPPER-CONTENT (COMPONENTS)
+    **********************-->
+    <div id="content-wrapper-components" style="display: none">
+
+        <section id="welcome" class="content-wrapper-component dancing-script-normal">
+
+            <!--*********************
+                WELCOME
+            **********************-->
+            <!--TODO: add brief introduction -->
+            <!--TODO: adjust font size to be contained within parents after resizing -->
+
+            <div class="hero-wrapper">
+                <div class="hero">
+                    <div id="catch-phrase-1">alo, <br/>Pho's here</div>
+                    <div id="catch-phrase-2">let it warm your day!</div>
+                </div>
+                <!--<div class="about-us"></div>-->
+                <div class="embed-map-wrapper">
+                    <iframe id="embed-google-map"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6649.869034924804!2d-117.70174432395503!3d33.55507764381779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcef1b1dc33085%3A0x9374e1a036e8a380!2sAlo%20Asian%20Kitchen!5e0!3m2!1sen!2sus!4v1736646781913!5m2!1sen!2sus"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu-wrapper" class="content-wrapper-component">
+
+            <!--*********************
+                MENU
+            **********************-->
+
+            <div id="menu" class="hide-scrollbar">
+
+                <div class="menu-section-heading">
+                    <div class="menu-heading-text">
+                        check out our menu
+                    </div>
+                    <div class="heading-content-divider"></div>
+
+                </div>
+                <!--*********************
+                    #menu LAYOUT
+                **********************-->
+                <!--<div id="menu">-->
+                <!--    <div class="menu-category-wrapper"></div>-->
+                <!--    <div class="menu-category-wrapper"></div>-->
+                <!--    <div class="menu-category-wrapper"></div>-->
+                <!--</div>-->
+
+                <!--*********************
+                    .menu-category-wrapper LAYOUT
+                **********************-->
+                <!--<div class="menu-category-wrapper">-->
+                <!--    <div class="menu-category-heading">-->
+                <!--        <div class="category-heading-clicker">-->
+                <!--            <h2 class="category-indicator"></h2>-->
+                <!--            <h2 class="menu-category-title"></h2>-->
+                <!--        </div>-->
+                <!--    </div>-->
+                <!--    <div class="menu-category-items">-->
+                <!--        <div class="menu-item"></div>-->
+                <!--        <div class="menu-item"></div>-->
+                <!--        <div class="menu-item"></div>-->
+                <!--    </div>-->
+                <!--</div>-->
+
+                <!--*********************
+                    .menu-item LAYOUT
+                **********************-->
+                <!--<div class="menu-item">-->
+                <!--    <div class="menu-item-img">-->
+                <!--        <img src="assets/img/item-1.jpg" alt="a pho bowl"/>-->
+                <!--    </div>-->
+                <!--    <div class="menu-item-description">-->
+                <!--        <div class="menu-item-name">Signature Pho</div>-->
+                <!--        <div class="menu-item-details">Flavorful cut of filet mignon served with cilantro, jalapeno, and meatball</div>-->
+                <!--    </div>-->
+                <!--    <div class="menu-item-price">18</div>-->
+                <!--</div>-->
+
+            </div>
+        </section>
+
+        <section id="opening-hours-wrapper" class="content-wrapper-component lora-normal">
+
+            <!--*********************
+                OPENING-HOURS
+            **********************-->
+            <!--TODO: redesign for responsiveness, consider removing table -->
+            <!--TODO: add banner that persists across the sections to display holiday hours/closing days-->
+            <!--TODO: display date for current week-->
+            <!--TODO: update closed date indicator based on predetermined closing dates (input from json)-->
+            <!--TODO: add date picker-->
+
+            <div id="opening-hours">
+                <div id="opening-hours-heading">
+                    <div id="opening-hours-heading-text">
+                        come visit us during these hours
+                    </div>
+                </div>
+                <div id="opening-hours-divider"></div>
+                <table id="opening-hours-table">
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td>Tuesday</td>
+                            <td style="background-color: darkorange">Wednesday</td>
+                            <td>Thursday</td>
+                            <td>Friday</td>
+                            <td>Saturday</td>
+                            <td>Sunday</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center">11:00am - 9:00pm</td>
+                            <td style="text-align: center">11:00am - 9:00pm</td>
+                            <td style="text-align: center; background-color: darkorange">closed</td>
+                            <td style="text-align: center">11:00am - 9:00pm</td>
+                            <td style="text-align: center">11:00am - 9:00pm</td>
+                            <td style="text-align: center">11:00am - 9:00pm</td>
+                            <td style="text-align: center">11:00am - 9:00pm</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <section id="reviews-wrapper" class="content-wrapper-component lora-normal">
+
+            <!--*********************
+                REVIEWs
+            **********************-->
+            <!--TODO: add indicator for scrolling down/up-->
+            <!--TODO: add arrows to scroll through reviews, replace manual horizontal scrolling-->
+
+            <div id="reviews">
+                <div id="reviews-heading">
+                    <div id="reviews-heading-text">
+                        what people say about us
+                    </div>
+                </div>
+                <div class="heading-content-divider"></div>
+
+                <div id="reviews-content-wrapper" class="hide-scrollbar">
+                    <div id="reviews-content">
+                        <div class="source-platform-heading">
+                            <h4>on Google</h4>
+                        </div>
+                        <section id="google-reviews-carousel-wrapper"
+                                 class="carousel-wrapper"
+                                 aria-label="carousel to display google reviews">
+                            <div class="left-button-carousel carousel-nav-button">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </div>
+                            <div id="google-reviews-carousel"
+                                 class="carousel hide-scrollbar">
+                            </div>
+                            <div class="right-button-carousel carousel-nav-button">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </div>
+                        </section>
+
+                        <br/>
+
+                        <div class="source-platform-heading">
+                            <h4>on Yelp</h4>
+                            <div id="yelp-biz-badge-rrc-XmDOz-YQtQ30FoGT7gtaig">
+                                <a href="http://yelp.com/biz/alo-asian-kitchen-laguna-niguel?utm_medium=badge_star_rating_reviews&amp;utm_source=biz_review_badge" target="_blank">Check out Alo Asian Kitchen on Yelp</a>
+                            </div>
+                        </div>
+                        <section id="yelp-reviews-carousel-wrapper"
+                                 class="carousel-wrapper"
+                                 aria-label="carousel to display yelp reviews">
+                            <div class="left-button-carousel carousel-nav-button">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </div>
+                            <div id="yelp-reviews-carousel"
+                                 class="carousel hide-scrollbar">
+                            </div>
+                            <div class="right-button-carousel carousel-nav-button">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="delivery" class="content-wrapper-component lora-normal">
+
+            <!--*********************
+                DELIVERY
+            **********************-->
+
+            <div id="delivery-content-wrapper">
+                <div id="delivery-heading">
+                    <div id="delivery-heading-text">order online</div>
+                    <div id="delivery-heading-subtext">and have our soul-warming food delivered to you!</div>
+                </div>
+                <!--<div class="heading-content-divider"></div>-->
+                <div id="delivery-options" class="hide-scrollbar">
+                    <a href="https://www.doordash.com/store/alo-asian-kitchen-laguna-niguel-2860831/"
+                       aria-label="logo with link to doordash website for order deliver for alo asian kitchen"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <img src="assets/img/doordash-seeklogo.png"
+                             alt="logo of doordash food delivery service"/>
+                    </a>
+                    <a href="https://www.ubereats.com/store/alo-asian-kitchen/ImfQSv5STdGfdW-plxZmeQ"
+                       aria-label="logo with link to uber eats website for order deliver for alo asian kitchen"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        <img src="assets/img/EN_order%20with_horizontal_black%20on%20green_left%20aligned@2x.png"
+                             alt="logo of uber eats food delivery service"/>
+                    </a>
+                    <a href="https://www.grubhub.com/restaurant/alo-asian-kitchen-28083-moulton-pkwy-laguna-niguel/6611656"
+                       aria-label="logo with link to grubhub website for order deliver for alo asian kitchen"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        <img src="assets/img/grubhub-logo-2.png"
+                             alt="logo of grubhub food delivery service"/>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <i id="indicator-open" class="fa-solid fa-v"></i>
+        <i id="indicator-collapse" class="fa-solid fa-greater-than"></i>
+
+        <!--*********************
+            BACKGROUND-IMAGE-ATTRIBUTION
+        **********************-->
+        <div id="background-image-attribution-1" class="background-image-attribution">
+            <a href="https://www.pexels.com/photo/cooked-food-in-the-bowl-6646037/"
+               rel="noreferrer noopener"
+               target="_blank"
+               aria-label="source link to background image of a pho bowl">
+                Cooked Food in the Bowl
+            </a>
+            by
+            <a href="https://www.pexels.com/@rdne/"
+               aria-label="link to profile of author of background image"
+               rel="noreferrer noopener"
+               target="_blank">
+                RDNE Stock project
+            </a>
+        </div>
+        <div id="background-image-attribution-2" class="background-image-attribution">
+            <a href="https://www.pexels.com/photo/cooked-food-in-the-bowl-6646034/"
+               rel="noreferrer noopener"
+               target="_blank"
+               aria-label="source link to background image of a pho bowl">
+                Cooked Food in the Bowl
+            </a>
+            by
+            <a href="https://www.pexels.com/@rdne/"
+               aria-label="link to profile of author of background image"
+               rel="noreferrer noopener"
+               target="_blank">
+                RDNE Stock project
+            </a>
+        </div>
+
+        <!--&lt;!&ndash;*********************-->
+        <!--    ABOUT-->
+        <!--**********************&ndash;&gt;-->
+        <!--&lt;!&ndash;TODO: add embed google map&ndash;&gt;-->
+        <!--&lt;!&ndash;TODO: add brief description of business&ndash;&gt;-->
+        <!--&lt;!&ndash;TODO: add contact info like email, phone number&ndash;&gt;-->
+        <!--<section id="about-wrapper" class="content-wrapper-component">-->
+        <!--    <div id="about-info">-->
+        <!--        <h2 class="title-text">About Us</h2>-->
+
+        <!--    </div>-->
+        <!--</section>-->
+
+    </div>
+
+
+    <!--*********************
+        JS SCRIPTS
+    **********************-->
+    <section>
+        <script type="module" src="js/index.js"></script>
+        <script>
+            (function(d, t) {
+                    var g = d.createElement(t);
+                    var s = d.getElementsByTagName(t)[0];
+                    g.id = "yelp-biz-badge-script-rrc-XmDOz-YQtQ30FoGT7gtaig";
+                    g.src = "//yelp.com/biz_badge_js/en_US/rrc/XmDOz-YQtQ30FoGT7gtaig.js";
+                    s.parentNode.insertBefore(g, s);
+                }
+                (document, 'script')
+            );
+        </script>
+
+        <!--<script src="https://apis.google.com/js/platform.js" async defer></script>-->
+    </section>
+
+</body>
+</html>
