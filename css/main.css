@@ -1163,7 +1163,7 @@ sup             { vertical-align: super; line-height: 1.0; }
 
                                     .yelp-star {
                                         /*background-color: red;*/
-                                        /*height: 80%;*/
+                                        height: 80%;
                                         /*padding: 3%;*/
                                         margin: 0 0.1em;
                                         /*border-radius: 20%;*/
