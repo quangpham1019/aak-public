@@ -11,11 +11,6 @@
     <!--*********************
         SCRIPT TO HANDLE JAVASCRIPT-DISABLED BROWSERS
     **********************-->
-    <script>
-        $(document).ready(function() {
-            document.querySelector("#content-wrapper").style.visibility = "initial";
-        });
-    </script>
     <noscript>
         <div id="no-javascript">
             <div class="logo">
@@ -81,12 +76,33 @@
 
 </head>
 <body>
+
+    <div id="loading-screen">
+        <div id="loading-screen-content">
+            <div class="lds-spinner">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div id="loading-screen-message" class="lora-normal">All good things worth await...</div>
+        </div>
+    </div>
+
     <!-- TODO: fix google map not displayed properly in mobile web safari (works fine in brave) -->
     <!-- TODO: fix wording for dark meat, consider thigh/drumsticks -->
     <!-- TODO: integrate about us into welcome section -->
     <!-- TODO: add aria-label, alt for images -->
-
     <!-- TODO: add scroll to navigate, add arrows indicator on bottom and top right of section to indicate possible navigation -->
+
     <!--*********************
         CONTENT-WRAPPER
     **********************-->
