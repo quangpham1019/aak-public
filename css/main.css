@@ -5,9 +5,9 @@
     scroll-behavior: smooth;
 }
 :root {
-    --content-wrapper-img: url("https://images.pexels.com/photos/6646034/pexels-photo-6646034.jpeg");
-    --content-wrapper-img-small-screen: url("https://images.pexels.com/photos/6646037/pexels-photo-6646037.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-    --menu-img: url("https://images.unsplash.com/photo-1715925717150-2a6d181d8846?q=80&w=3772&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    --content-wrapper-img: url("/assets/img/pho-background-1.webp");
+    --content-wrapper-img-small-screen: url("/assets/img/vertical-pho-background-2.webp");
+    --menu-img: url("/assets/img/logo-removebg-preview.webp");
 
     --navbar-small-screen-height: 10vh;
     --navbar-small-screen-height-with-svh: 10svh;
