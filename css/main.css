@@ -45,110 +45,6 @@ small, sub, sup { font-size: .83em; }
 sub             { vertical-align: sub; line-height: 1.0; }
 sup             { vertical-align: super; line-height: 1.0; }
 
-#loading-screen {
-    height: 100vh;
-    width: 100vw;
-    opacity: 0.8;
-
-    #loading-screen-content {
-
-        position: absolute;
-        top: 25%;
-        width: 100%;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        .lds-spinner {
-            /* change color here */
-            color: black;
-        }
-        .lds-spinner {
-            color: currentColor;
-            display: inline-block;
-            position: relative;
-            width: 80px;
-            height: 80px;
-            box-sizing: border-box;
-            div {
-                transform-origin: 40px 40px;
-                animation: lds-spinner 1.2s linear infinite;
-
-                &:after {
-                    content: " ";
-                    display: block;
-                    position: absolute;
-                    top: 3.2px;
-                    left: 36.8px;
-                    width: 6.4px;
-                    height: 17.6px;
-                    border-radius: 20%;
-                    background: currentColor;
-                }
-
-                &:nth-child(1) {
-                    transform: rotate(0deg);
-                    animation-delay: -1.1s;
-                }
-                &:nth-child(2) {
-                    transform: rotate(30deg);
-                    animation-delay: -1s;
-                }
-                &:nth-child(3) {
-                    transform: rotate(60deg);
-                    animation-delay: -0.9s;
-                }
-                &:nth-child(4) {
-                    transform: rotate(90deg);
-                    animation-delay: -0.8s;
-                }
-                &:nth-child(5) {
-                    transform: rotate(120deg);
-                    animation-delay: -0.7s;
-                }
-                &:nth-child(6) {
-                    transform: rotate(150deg);
-                    animation-delay: -0.6s;
-                }
-                &:nth-child(7) {
-                    transform: rotate(180deg);
-                    animation-delay: -0.5s;
-                }
-                &:nth-child(8) {
-                    transform: rotate(210deg);
-                    animation-delay: -0.4s;
-                }
-                &:nth-child(9) {
-                    transform: rotate(240deg);
-                    animation-delay: -0.3s;
-                }
-                &:nth-child(10) {
-                    transform: rotate(270deg);
-                    animation-delay: -0.2s;
-                }
-                &:nth-child(11) {
-                    transform: rotate(300deg);
-                    animation-delay: -0.1s;
-                }
-                &:nth-child(12) {
-                    transform: rotate(330deg);
-                    animation-delay: 0s;
-                }
-            }
-
-
-
-
-        }
-
-        #loading-screen-message {
-            font-size: calc(2vw + 2vh);
-        }
-    }
-}
-
 /**********************
     ANIMATIONS
 ***********************/
@@ -242,8 +138,8 @@ sup             { vertical-align: super; line-height: 1.0; }
 }
 @keyframes collapse-menu-category {
     0% {
-        transform: rotateX(0);
-        display: block;
+            transform: rotateX(0);
+            display: block;
     }
 
     100% {
@@ -323,22 +219,6 @@ sup             { vertical-align: super; line-height: 1.0; }
     46% { transform: translate3d(0em, 0, 0); }
 }
 
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-@keyframes lds-spinner {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
 
 /**********************
     GOOGLE FONTS
@@ -832,7 +712,7 @@ sup             { vertical-align: super; line-height: 1.0; }
 
                 transition: color 0.3s ease;
                 animation-duration: 1.3s;
-                animation-name: slide-in-from-close-top;
+                animation-name: slide-in-from-close-left;
 
                 .category-heading-clicker {
                     /*background-color: cadetblue;*/
@@ -2642,7 +2522,7 @@ sup             { vertical-align: super; line-height: 1.0; }
 
                     transition: color 0.3s ease;
                     animation-duration: 1.3s;
-                    animation-name: slide-in-from-close-top;
+                    animation-name: slide-in-from-close-left;
 
                     .category-heading-clicker {
                         /*background-color: cadetblue;*/
