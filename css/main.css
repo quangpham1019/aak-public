@@ -323,6 +323,22 @@ sup             { vertical-align: super; line-height: 1.0; }
     46% { transform: translate3d(0em, 0, 0); }
 }
 
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes lds-spinner {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
 
 /**********************
     GOOGLE FONTS
