@@ -10,12 +10,10 @@ $(document).ready(function () {
     window.addEventListener('load', () => {
         document.getElementById('loading-screen').style.display = 'none';
         document.getElementById('content-wrapper').style.visibility = 'initial';
+        initializeNavbar();
+        initializeMenuItems();
+        initializeReviews();
+        initializeReviewsCarouselsScrolling();
+        setUpAutoReviewContentSizing();
     });
-
-    initializeNavbar();
-    initializeMenuItems();
-    initializeReviews();
-    initializeReviewsCarouselsScrolling();
-    setUpAutoReviewContentSizing();
-
 });

@@ -154,7 +154,7 @@ sup             { vertical-align: super; line-height: 1.0; }
 ***********************/
 @keyframes slide-in-from-right {
     from {
-        translate: 100vw 0;
+        translate: 70vw 0;
         scale: 170% 1;
         opacity: 0;
     }
@@ -167,7 +167,7 @@ sup             { vertical-align: super; line-height: 1.0; }
 }
 @keyframes slide-in-from-left {
     from {
-        translate: -100vw 0;
+        translate: -70vw 0;
         scale: 200% 1;
         opacity: 0;
     }
@@ -721,7 +721,7 @@ sup             { vertical-align: super; line-height: 1.0; }
 
             #catch-phrase-1 {
                 font-size: 15svmin;
-                animation-duration: 0.8s;
+                animation-duration: 0.3s;
                 animation-name: slide-in-from-right;
                 animation-fill-mode: forwards;
             }
@@ -729,7 +729,7 @@ sup             { vertical-align: super; line-height: 1.0; }
                 font-size: 7.5svmin;
                 opacity: 0;
 
-                animation-duration: 1s;
+                animation-duration: 0.3s;
                 animation-name: slide-in-from-left;
                 animation-delay: 1s;
                 animation-fill-mode: forwards;
@@ -757,7 +757,7 @@ sup             { vertical-align: super; line-height: 1.0; }
                 border: thin solid black;
                 box-shadow: 0 0 10px 2px rgba(0,0,0,0.3);
 
-                animation-duration: 1.5s;
+                animation-duration: 0.5s;
                 animation-name: slide-in-from-close-bottom;
                 animation-fill-mode: forwards;
                 animation-delay: 2.5s;
