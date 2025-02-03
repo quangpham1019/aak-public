@@ -504,9 +504,7 @@ sup             { vertical-align: super; line-height: 1.0; }
                         }
 
                         & > * {
-                            /*background-color: blue;*/
-                            /*height: 80%!important;*/
-                            width: clamp(40px, 60%, 50px);
+                            width: 40px;
                         }
                     }
                 }
@@ -1552,7 +1550,6 @@ sup             { vertical-align: super; line-height: 1.0; }
 
                         a {
                             & > * {
-                                /*width: clamp(40px, 55%, 50px);*/
                             }
                         }
                     }
