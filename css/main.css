@@ -500,7 +500,7 @@ sup             { vertical-align: super; line-height: 1.0; }
                         transition: scale 0.3s ease;
 
                         &:hover {
-                            scale: 140% 140%;
+                            scale: 125% 125%;
                         }
 
                         & > * {
