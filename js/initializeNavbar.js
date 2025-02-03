@@ -4,6 +4,7 @@ function initializeNavbarItems() {
     let navItems = document.querySelectorAll('.nav-list .nav-item');
 
     navItems.forEach(item => {
+        if (item.firstElementChild.id === null || item.firstElementChild.id.slice(-'-nav'.length) !== '-nav') return;
         item.firstElementChild.addEventListener('click', function(event) {
             let curItem = event.currentTarget;
 
