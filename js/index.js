@@ -6,16 +6,13 @@ import {MenuCategory} from "./model/menuModels.js";
 import {setUpAutoReviewContentSizing} from "./adjustReviewContentSizing.js";
 
 $(document).ready(function () {
-
     window.addEventListener('load', () => {
         document.getElementById('loading-screen').style.display = 'none';
         document.getElementById('content-wrapper').style.visibility = 'initial';
+        initializeNavbar();
+        initializeMenuItems();
+        initializeReviews();
+        initializeReviewsCarouselsScrolling();
+        setUpAutoReviewContentSizing();
     });
-
-    initializeNavbar();
-    initializeMenuItems();
-    initializeReviews();
-    initializeReviewsCarouselsScrolling();
-    setUpAutoReviewContentSizing();
-
 });
