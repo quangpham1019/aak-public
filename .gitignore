@@ -5,6 +5,7 @@
 
 # Custom directory/files
 ignore
+.idea
 
 # User-specific files
 *.rsuser
